@@ -1,0 +1,15 @@
+deadlock
+race condition
+synchronization error
+multi-processing mutex
+semaphore
+starvation
+locking, 
+multiple threads
+thread
+spinlock
+concurrency
+pthreads
+threading
+mutex
+synchronization 

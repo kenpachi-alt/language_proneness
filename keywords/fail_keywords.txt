@@ -1,0 +1,6 @@
+reboot
+crash
+hang
+restart
+freeze
+execution stopped

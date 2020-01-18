@@ -1,0 +1,21 @@
+memory leak
+null pointer
+buffer overflow
+heap
+overflow
+dangling pointer
+double free
+segmentation fault
+segfault
+space leak
+dereference
+memory corruption
+memory overrun
+heap overrun
+heap overflow
+memory
+cache
+null ptr
+destructor
+deallocation
+deallocated

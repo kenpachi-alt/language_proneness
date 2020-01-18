@@ -1,0 +1,325 @@
+text,label
+    compatible with new middleware add for laravel 5.4 ,0
+    added test coverage  fixed DateRange join bug ,0
+    added MemberList() ,0
+    orangefs: constify inode_operations          Signed-off-by: Al Viro <viro@zeniv.linux.org.uk> ,0
+    SERVER-2976: jsMode now works with inline output ,0
+    channel info\edit ,0
+    Expose the request and reply members of rpc_req_generic()          This code adds two accessor functions to evprc  and helps integrate     evrpc with Google protocol buffers.          (Code by Shuo Chen; commit message by nickm) ,0
+    Added Dilation2D  Dilation2DBackpropFilter  Dilation2DBackpropInput (#1853)          * add ops          * fix style          * add more docs          * address comments          * fix test          * add serilization tests ,0
+    regmap: fix NULL pointer dereference in regmap_get_val_endian          Recents commits for getting reg endianness causing NULL pointer     dereference if dev is passed NULL in regmap_init_mmio. This patch     fixes this issue  and allows to parse reg endianness only if dev     and dev->of_node exist.          Signed-off-by: Pankaj Dubey <pankaj.dubey@samsung.com>     Signed-off-by: Mark Brown <broonie@kernel.org> ,1
+    fix bug in generate_map_constant_labels ,1
+    2007-09-20  Marek Habersack  <mhabersack@novell.com>                      * LoginView.cs: implemented RoleGroups support. Fixes bug                 #324633.          2007-09-20  Marek Habersack  <mhabersack@novell.com>                      * TemplateControlCompiler.cs: if a member passed to                 GetExpressionFromString has a TypeConverter attribute set  try to                 use the named type converter to convert the string value into the                 target type. Fixes bug #325489.               svn path=/trunk/mcs/; revision=86092 ,1
+    Set export_dir to the output_dir property ,0
+    -- SRE 0.9.8: now that the bug is fixed  I might as well enable        the test again... ,0
+    Use stubs from window.top for tests.          (Similar to idea suggested by @mrmr1993.)          This way:          - we do not have to replicate the stub code  and     - we have minimal impact on the live implementation. ,0
+    !htc #20371 allows for simple HTTPS usage from Java  fixes typo in APIs (#20373) ,1
+    x265: fix input file arg indexing ,1
+    Also patch threading when applying gevent monkey patch. Should fix #569. ,1
+    udev-rules: trivial coding style cleanups ,0
+    fix mysqli_*_free_storage() funcs to conform with their prototypes ,1
+    move all aspects to be a method  and cleaned up some sockets helper uglyness ms iz ,0
+"    demux/mkv: include dot when checking extensions for linked-files          Previously a filename lacking an extension could still pass the check      for example if a file is found with the name ""abc123mkv"".          There is also no need to use strncasecmp as     std::basic_string<...>::c_str guarantees that the data referred to by     the return-value is null-terminated.          Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org> ",1
+    caddy 0.9.5          Closes #9233.          Signed-off-by: Tomasz Pajor <tomek@polishgeeks.com> ,0
+    - bug fix: do not add accessors again for const...          - bug fix: do not add accessors again for constructor arguments of case     classes ,1
+    JMS-34: App.Run() can now be run multiple times.          - Added a method for looking up commands     - Using some logic to make sure default flags are not added more than       once ,0
+    hardly anything in PNGContext is shared; split it          Originally committed as revision 9689 to svn://svn.ffmpeg.org/ffmpeg/trunk ,0
+    passenger: update 4.0.42 bottle. ,0
+    TTY: ircomm: fix DTR being raised on hang up          Make sure to check ASYNC_INITIALISED before raising DTR when waking up     from blocked open in ircomm_tty_block_til_ready.          Currently DTR could get raised at hang up as a blocked process would     raise DTR unconditionally before checking for hang up and returning.          Signed-off-by: Johan Hovold <jhovold@gmail.com>     Acked-by: David S. Miller <davem@davemloft.net>     Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org> ,1
+    [heap] remove heap init from shipping binary.          This reduces the arm32 binary by around 20kB.          R=jkummerow@chromium.org  mstarzinger@chromium.org          Bug: v8:6055     Change-Id: If9098e49793b29dceb8292aff6f668ca28a07728     Reviewed-on: https://chromium-review.googlesource.com/652427     Reviewed-by: Jakob Kummerow <jkummerow@chromium.org>     Reviewed-by: Michael Starzinger <mstarzinger@chromium.org>     Commit-Queue: Yang Guo <yangguo@chromium.org>     Cr-Commit-Position: refs/heads/master@{#47863} ,0
+    new-style header in netbeans ,0
+    [XLA:LLVM] Rename ops.h to tuple_ops.h.          I would like to reclaim ops.h for a different purpose in a later patch.     It doesn't make sense to shove it all in the same header because     FusedIrEmitter uses (tuple_)ops.h  but my new functions will use     FusedIrEmitter.          PiperOrigin-RevId: 171622776 ,0
+    Fix double call to NSURLConnection start + wrong condition for low priority (fix #212) ,1
+    Fix infinite loop with invalid data (fuzzer test) ,1
+    Fix some nasty table load bugs ,1
+    fix searchbox label ,1
+    Fixes showing utc offset ,1
+    Fix NullReferenceException when an interface method named 'Invoke' is called. ,1
+    X87: [builtins] Unify Atanh  Cbrt and Expm1 as exports from flibm.            port 4d4eb611111b0216d702fe7fd2e61d31875998e9 (r37058)            original commit message:          BUG=          Review-Url: https://codereview.chromium.org/2097323002     Cr-Commit-Position: refs/heads/master@{#37277} ,0
+    2010-02-19  Marek Habersack  <mhabersack@novell.com>                  * ButtonTest.cs: added test for bug #325489          svn path=/trunk/mcs/; revision=152045 ,0
+    Move Jack's tools into AndroidSdkProvider.          This also eliminates the JackRule  which is no longer necessary  as its sole     purpose was to allow Jack's tools to be found. This is now part of     AndroidSdkProvider  like all other Android tools.          For now  the new attributes on android_sdk are optional and default to their     old values. In the future  the new attributes will become mandatory with no     defaults  like the other attributes on that rule.          Also fixes a bug where errors found during AndroidCommon.initJava would not     result in a null return from init  previously obscured by the early return     from initJack.          --     MOS_MIGRATED_REVID=98305022 ,1
+    fix null deref SERVER-3285          Patch by Mike Mueller ,1
+    ocl: binary program cache ,0
+    Updated enum element references to match the accepted proposal SE-0036: Requiring Leading Dot Prefixes for Enum Instance Member Implementations ,0
+    [ALSA] usb-audio: explicitly match Logitech QuickCam          Commit 93c8bf45e083b89dffe3a708363c15c1b220c723 modified the USB device     matching behaviour to ignore interface class matches if the device class     is vendor-specific.     This patch adds explicit ID matches for Logitech QuickCam devices  which     have a vendor specific device class (but standards-compliant audio     interfaces).     This fixes a 2.6.20 regression where the audio component of these     devices was no longer usable.     http://bugs.gentoo.org/show_bug.cgi?id=175715     https://bugs.launchpad.net/ubuntu/+source/linux-source-2.6.20/+bug/93822     https://bugtrack.alsa-project.org/alsa-bug/view.php?id=3040     Based on a patch from sergiom          Signed-off-by: Daniel Drake <dsd@gentoo.org>     Signed-off-by: Clemens Ladisch <clemens@ladisch.de>     Signed-off-by: Jaroslav Kysela <perex@suse.cz> ,1
+    Node IPv6 on portal and in admin ,0
+    fix test for query generation ,0
+    Simplify query to retrieve NotificationSetting on controllers ,0
+    ntl: update 11.1.0 bottle. ,0
+    removed redundant code and added wrapper objects to couple handlers with metadata from browserprocess ,0
+    [SILParser] parse protocol conformance where the substitution can be     Base.Element = x.          rdar://18021102               Swift SVN r22148 ,0
+    vsrc_buffer: remove dependency on AVFrame          Rename av_vsrc_buffer_add_frame to     av_vsrc_buffer_add_video_buffer_ref()  and change its inteface to make     it accept in input an AVFilterBufferRef rather than an AVFrame.          This way the interface can be used without requiring the     inclusion/installation of libavcodec headers. ,0
+    Dump of previous vibrations.          It's hard to find previous vibrations when you chase excessive use that     impacts the battery. A dump of previous vibrations allows us to     investigate where the vibrations come from.          Bug: 21933068     Change-Id: I14944732927c73401e5adc7345ea9823092b1883 ,1
+    added exploit module sapdb_webtools.rb               git-svn-id: file:///home/svn/framework3/trunk@5045 4d416f70-5f16-0410-b530-b9f4589650da ,0
+    fix potential free of NULL ,1
+            * TreeView.cs: Make sure we factor in the vert scrollbar when             calculating the horizontal scrollbar's maximum.               svn path=/trunk/mcs/; revision=69797 ,0
+    TruncateTranslogIT.testCorruptTranslogTruncation should wait for replica to allocate          The test checks if a file based or ops based recovery happened  but if the replica shard never finished recovering expectations are not met.          Fixes #25761 ,1
+    importer/base.rb: improve progress reporting ,0
+"    Use ApplicationInfo.dataDir instead of hardcoding ""/data/data/<PACKAGE NAME>"" in the stub application.          --     MOS_MIGRATED_REVID=102733123 ",0
+    Support SHOW STATS for specific module ,0
+    Debugging:  clean up/document some basic breakpoint behavior (not involving execution) and add tests. ,0
+    fix memory corruption if one on the on_modify handlers errors out ,1
+    [IPV4]: icmp_send() annotation          The last argument is network-endian (it will go straight into the packet).          Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>     Signed-off-by: David S. Miller <davem@davemloft.net> ,0
+"    Doc tweaks to lib/Dancer.pm.          - Mention Dancer::Tutorial     - Rename ""DISCLAIMER"" section to ""MORE DOCUMENTATION"" (this sounds better to me;       ""disclaimer"" is a negative-sounding term  usually used in the context of       ""if it doesn't work  it's not our fault"" :)     - Add link to www.perldancer.org/irc for those without an IRC client. ",0
+    [DomCrawler] Fixed incorrect handling of image inputs ,1
+    style(alerting): add fmt fixes ,0
+"    * treat umask as octal in ""config-set"" command ",0
+    Deleting unused CreatorDigestSettingsViewController (#409)          * Deleting CreatorDigestSettings          * Removing CreatorDigest scene ,0
+    New tests.          svn path=/trunk/mcs/; revision=65991 ,0
+    Rename `user_can_read_group?` to `user_can_reference_group?` ,0
+    Fixing some implicit int64->32 downcast errors.  (In most cases  by     having the ops explicitly return a failure that they can't handle     overly-large inputs).  Most of these should never affect correct     tf programs until people get a lot more memory in their machines.     Change: 118476613 ,1
+    powerpc/kernel: Make function __giveup_fpu() static          __giveup_fpu() is never called outside process.c  so it can be static.     That also means we don't need an empty definition in switch_to.h          Signed-off-by: Mathieu Malaterre <malat@debian.org>     [mpe: Also drop the empty version  rewrite change log]     Signed-off-by: Michael Ellerman <mpe@ellerman.id.au> ,0
+    Do not escape sharees          Fixes #2253          Do not escape special characters else it will look very strange. ,1
+    Admission control attributes has access to resource name ,0
+    minor change to avoid compiler error in visual studio. ,1
+    small change to schema          Summary:     as desc.          small fix in the feature_proc layer for the case when we only have one preproc type          Reviewed By: chocjy          Differential Revision: D4908933          fbshipit-source-id: 1338048fc395f85c3724721a9996ad1ee51f0f20 ,1
+    AG-1550 API for getting cell renderer instance ,0
+    Rewrote and redesign how the data source edit views look and work so they conform better to how account views look  removed tabs and put top nav items to add data source etc  made list  edit and new seperate url routes  #1483 ,0
+    usernames must not start with a number ,0
+    - Implemented callback filter. ,0
+    Forgot this file in my last commit. ,0
+    Fixes 267   Functions without params (like integral) now causes graph to update correctly ,1
+    Fixed last test + a mistake in other tests setup           - filterSrv expects the parameter to init to be the actual        dashboard object (I'll depend on that later on)  so        I had to pass dashboard.current in there  instead of        dashboard      - in the last test  the problem was exactly that again. ,0
+    Sorting Platform properties. Fixes #6421.          TESTED=unit test     RELNOTES: Sorting remote Platform properties for remote execution. May affect cache keys!     PiperOrigin-RevId: 219305300 ,1
+    Fixed an issue with UIScrollView support ,1
+    Change the implicit asp.net core version for FDD apps to be pinned as 2.1.1. ,0
+    Migrate several classes to Swift.          Migrate OEApplicationDelegate and several smaller classes to Swift. Original logic was ported with minor adoption of Swift conventions where appropriate. Note that the convention of OE_-prefixed private methods has been replaced with the use of Swift access modifiers. In some cases  Objective-C classes were modified to improve interoperability with Swift. ,0
+    Btrfs: fix async worker startup race          After a new worker thread starts  it is placed into the     list of idle threads.  But  this may race with a     check for idle done by the worker thread itself  resulting     in a double list_add operation.          This fix adds a check to make sure the idle thread addition     is done properly.          Signed-off-by: Chris Mason <chris.mason@oracle.com> ,1
+    Fix Joi schema so correcty validates that children array in nodes only has strings (#2109) ,1
+    Initial implementation of LaunchingBoundsController.          This changelist introduces the LaunchingBoundsController  a central     location for calculating launch bounds. It also defines a     positioner interface that can be registered with LaunchingBoundsController     to participate in bounds calculation.          Test: bit FrameworksServicesTests:com.android.server.am.LaunchingTaskPositionerTests     Test: bit FrameworksServicesTests:com.android.server.am.LaunchingActivityPositionerTests     Test: bit FrameworksServicesTests:com.android.server.am.LaunchingBoundsControllerTests     Bug: 64144308     Change-Id: I35eaf095e2edd562375403413050ce82618c44f2 ,0
+    ARM: mach-gemini: move special idle code out of line          ... and hook it to arm_pm_idle.          Signed-off-by: nicolas Pitre <nicolas.pitre@linaro.org> ,0
+    mtd: nand: remove unnecessary variable          We don't actually use the 'ret' variable; we set it  test it  and then it dies.          Signed-off-by: Brian Norris <computersforpeace@gmail.com>     Signed-off-by: Artem Bityutskiy <artem.bityutskiy@linux.intel.com>     Signed-off-by: David Woodhouse <David.Woodhouse@intel.com> ,0
+    Win deprecate 2.8 (#45473)          * Remove deprecated/expired functionality          * win:_msi: Remove the win_msi module          * removed some missed deprecated return options and added porting guide reference          Co-authored-by: dagwieers <dagwieers@users.noreply.github.com> ,0
+    Remove stream at the class level.          This is because only template rendering works with streaming.     Setting it at the class level was also changing the behavior     of JSON and XML responses  closes #1337. ,1
+    added platform test suites and other fixes ,1
+    QA Overview Tables in AdminPostMasterFilter ,0
+    staging: rtl8723au: Use correct register names to set parameters to reduce 80M spur          Use the correct register names when setting parameters to reduce 80M     spur. In addition apply updated 80M spur reduction parameters.          Original patch supplied by Andrew Chang <andrew.chang@realtek.com>          Signed-off-by: Jes Sorensen <Jes.Sorensen@redhat.com>     Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org> ,1
+    Fixed error where cell’s contentView does not stretch to cell’s full size properly ,1
+    DOC: Fixed legend in iris svm example ,0
+    Improved API for products.          Added following opportunities:          * params for products index  like in storefront     * products updating     * products creating          [#1236 state:resolved] ,0
+    #3498 setLearningRate methods for ComputationGraph ,0
+    Use Set#subtract and Set#merge for keeping track of used / unused keys ,0
+    Adds tests for GH-119 Fix ,0
+    swiftformat 0.37.3          Closes #36182.          Signed-off-by: Chongyu Zhu <i@lembacon.com> ,0
+    use the revealFileInOS id ,0
+    direct3d11: don't keep values that are only used once          Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org> ,0
+    feat(overlay): add scroll handling strategies (#4293)          * feat(overlay): add scroll handling strategies          * Adds the `scrollStrategy` option to the overlay state  allowing the consumer to specify what scroll handling strategy they'd want to use. Also includes a `ScrollStrategy` interface that users can utilize to build their own strategies.     * Adds the `RepositionScrollStrategy`  `CloseScrollStrategy` and `NoopScrollStrategy` as initial  out-of-the-box strategies.     * Sets the `RepositionScrollStrategy` by default on all the connected overlays and removes some repetitive logic from the tooltip  autocomplete  menu and select.          **Note:** I'll add a `BlockScrollStrategy` in a follow-up PR. I wanted to keep this one shorter.          Relates to #4093.          * fix: missing types on the scroll dispatcher          * refactor: use class for fake scroll strategy          * refactor: add onAttached and onDetached observables          * chore: rename observables ,0
+    Override ReadByte on DeflateStream and GZipStream          Improves throughput of ReadByte by ~15-20% and mostly eliminates involved allocations. ,0
+    store/tikv: don't store context and don't backoff when canceled (#3265) ,1
+    missing specs for 2 new events ,0
+    fix(dmg): Building DMG hangs on OSX High Sierra          Close #2115 ,1
+    #67 PostgreSQL triggers ,0
+    Change web limits; hide TTA option          file limits: 3MB->5MB     image limits: 2560x2560->3000x3000  1280x1280->1500x1500 ,0
+    eng_devcrypto: expand digest failure cases          Return failure when the digest_ctx is null in digest_update and     digest_final  and when md is null in digest_final.          Signed-off-by: Eneas U de Queiroz <cote2004-github@yahoo.com>          Reviewed-by: Matthias St. Pierre <Matthias.St.Pierre@ncp-e.com>     Reviewed-by: Richard Levitte <levitte@openssl.org>     (Merged from https://github.com/openssl/openssl/pull/7585) ,0
+    vault 0.6.0          Also      - add an option to run `make test`  and always do so when bottling     - all resources except `gox` have been vendored upstream          Closes #1983.          Signed-off-by: ilovezfs <ilovezfs@icloud.com> ,0
+    Fix CS (#14665)          * Run php-cs-fixer.          * Enable phpdoc_types rule. ,0
+    Fix geometry_to_bing_tiles function for geometry collections          Fix NPE in geometry_to_bing_tiles when input is a geometry collection. ,1
+    Kubectl should be able to display endpoints directly and for service              kubectl get endpoints <servicename>         kubectl describe service <servicename>          should have printers for endpoints ,0
+    Reorganise ResourceLayer implementation. ,0
+    ff_ffplay: Replace av_free_packet with av_packet_unref ,0
+    fix select multiple warning test case in IE ,0
+    - Fixed segfault in ecpg when using an array element.     - Free all memory in auto-prepare mode. ,1
+    repo::init tests: refactor global config path override          Provide a function that allows tests to set up a bespoke global     configuration path. ,0
+    * test/ruby/envutil.rb (EnvUtil#rubybin): fake also rbconfig.          git-svn-id: svn+ssh://ci.ruby-lang.org/ruby/trunk@26299 b2dd03c8-39d4-4d8f-98ff-823fe69b080e ,0
+    * test/openssl/test_pkcs7.rb: Remove redundant module namespace.               git-svn-id: svn+ssh://ci.ruby-lang.org/ruby/trunk@14135 b2dd03c8-39d4-4d8f-98ff-823fe69b080e ,0
+    Forgot this file in previous commit ,0
+    #11801 - Restricted font size input to valid entries. ,0
+    Assert at least 1 arg  reword method summary. ,0
+    command/connect/proxy: register monitor tests ,0
+    screenreader fixes ,1
+    fix ssh AuthorizedKeysFile path processing ,1
+    Cleanup some GlyphExtensions          No reason to have trivial extension methods used in one place. ,0
+    bfq: calculate shallow depths at init time          It doesn't change  so don't put it in the per-IO hot path.          Acked-by: Paolo Valente <paolo.valente@linaro.org>     Reviewed-by: Omar Sandoval <osandov@fb.com>     Signed-off-by: Jens Axboe <axboe@kernel.dk> ,0
+    fix state transition bugs in Mojo::Transaction::HTTP ,1
+    #3318 SQL assistant. Search inside object names (configurable) ,0
+    control.broadcast: Can now specify the channel to use for sending the broadcast message ,0
+"    mmc: cqhci: fix space allocated for transfer descriptor          There is not enough space being allocated when DCMD is disabled.          CQE_DCMD is not necessary to be enabled when CQE is enabled.     (Software could halt CQE to send command)          In the case that CQE_DCMD is not enabled  it still needs to allocate     space for data transfer. For instance:       CQE_DCMD is enabled:  31 slots space (one slot used by DCMD)       CQE_DCMD is disabled: 32 slots space          Fixes: a4080225f51d (""mmc: cqhci: support for command queue enabled host"")     Signed-off-by: Alamy Liu <alamy.liu@gmail.com>     Acked-by: Adrian Hunter <adrian.hunter@intel.com>     Cc: stable@vger.kernel.org     Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org> ",1
+    Move the ImportAdder over to using the IAddImportsService. ,0
+    mysql parser bug fixed ,1
+    [GSB] Properly apply rewrite rules for generic params -> generic params.          Although we were properly recording rewrite rules like tau_0_1 -> tau_0_0     in the rewrite tree  we were failing to apply them  so tau_0_1 wouldn’t     get properly canonicalized. Fix this  and add some assertions to make sure     we catch this with our current test suite.          Fixes rdar://problem/37469390. ,1
+    made XBase non abstract ,0
+    (1) Update build_opt option in 'apollo.sh'; (2) Show hdmap file path in function 'CreateMap'. (#942)          * [perception] add 'build_opt' option in apollo.sh to support the use of perception          * [perception] update fix in 'apollo.sh'          * Merge conflict ,1
+    Force DISABLE_COPYING() to be in private: class section. ,0
+    Fixed add method docs ,0
+    Minor Update to Pixi.js          - Fixes missing `animations` and incorrect type     - Renames Filter param `uniforms` to `uniformData` ,1
+"    Support ""-term"" in Ferret engine queries          Summary:     Ref T12819. Supports negating search terms  e.g. ""apple -honeycrisp"".          When negating a term  we're a little more strict about what can match (that is  what can //prevent// a document from being returned) since it's easy for a user to type ""apple -honeycrisp -honey -crisp -crispies -olcrispers -honeyyums"" to keep refining their search  but hard/impossible to split apart an overboard term.          Test Plan:       - Ran `apple -smith`  `apple -""granny smith""`  etc.       - Verified `phone -tact` does not exclude `phone contact`.       - (In theory  `phone -~tact` would  but the parser currently doesn't support this  and I'm not champing at the bit to add support.)          Reviewers: chad          Reviewed By: chad          Maniphest Tasks: T12819          Differential Revision: https://secure.phabricator.com/D18502 ",0
+    test: fix 3.4 tests ,0
+    Peek the fast scroll thumb when it transitions to enabled state          Change-Id: I0b472c898c5975a74da3af2c8da6e55c3678b850 ,0
+    Blackfin arch: Some memory and code optimizations - Fix SYS_IRQS          Signed-off-by: Michael Hennerich <michael.hennerich@analog.com>     Signed-off-by: Bryan Wu <bryan.wu@analog.com> ,0
+    fix CoreCLR build errors with clang5.0. (#15477)          * spmi: delete the explicit call to the constructor.          MethodContext was already initialized through `new MethodContext();`          * add an artificial using of lambda param.          the define `#define PAL_EXCEPT(dispositionExpression)`     can declare expression that has zero or one param. If it has zero param  then `__param` in the lambda is unused  prevent clang complains by adding this change. ,1
+    Adding graphical differences between Red/Blue.          hg-commit-id: 9dfe76962f8c ,0
+    Clean up logs  enable debug log for header except ,0
+    * Fixed signature for MeasureString          svn path=/trunk/mcs/; revision=20154 ,1
+    fix losing port forwarding info except the last one          Current forward_port() of Rex::Box::VBox could handle     port forwarding information at one shot.     So at the end of the loop there is only one port forwarding     information is left and other one will be lost.          This patch does gather all port forwarding information     then save them after the loop. ,1
+    add randint import ,0
+    Make deprecation notices as visible as warnings are right now. ,0
+    Fixing linter issue (quotes) ,0
+    Remove allowHTTP1 from http2.ServerOptions ,0
+    Read token state if a line is already correctly tokenized. ,0
+    backlight: add Backlight driver for lm3630 chip          This driver is a general version for LM3630 backlgiht driver chip of TI.          LM3630 :     The LM3630 is a current mode boost converter which supplies the power     and controls the current in two strings of up to 10 LEDs per string.     Programming is done over an I2C compatible interface.     www.ti.com          [akpm@linux-foundation.org: make bled_name[] static  a few coding style tuneups  create new set_intensity()  partly to avoid awkward layout gymnastics]     Signed-off-by: G.Shark Jeong <gshark.jeong@gmail.com>     Cc: Richard Purdie <rpurdie@rpsys.net>     Cc: Daniel Jeong <daniel.jeong@ti.com>     Signed-off-by: Andrew Morton <akpm@linux-foundation.org>     Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org> ,0
+    crypto: caam - fix decryption shared vs. non-shared key setting          Key sharing is enabled by default in the shared descriptor.          Using CBC decrypt  AES has to alter the key in order to decrypt.     During high traffic decryption rates  i.e  when sharing starts to     take place  we need to use a different OPERATION option to tell AES     that the key was already altered by the PRIOR descriptor - we need     the following kind of logic:          if ( shared )         operation where AES uses decryption key (DK=1)     else         operation where AES uses encryption key (DK=0)          this patch implements this logic using a conditional and     a non-conditional local jump within the decryption job     descriptor.          Signed-off-by: Kim Phillips <kim.phillips@freescale.com>     Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au> ,1
+"    Fix a bug in pg_class          submitted by: ""Peter Daum"" <gator@cs.tu-berlin.de> ",1
+    mac80211: Use mandatory rates as basic rates when starting mesh          Signed-off-by: Ashok Nagarajan <ashok@cozybit.com>     Signed-off-by: Thomas Pedersen <thomas@cozybit.com>     Signed-off-by: John W. Linville <linville@tuxdriver.com> ,0
+    No ticket: Test cleanup ,0
+    Fixed so the filetype for media dialog passes out media instead of image as file type. ,1
+    A little progress on the UnitOfWork. ,0
+    tracing: Remove code which merges duplicates          We now have the logic to detect and remove duplicates in the     tracing_map hash table. The code which merges duplicates in the     histogram is redundant now. So  modify this code just to detect     duplicates. The duplication detection code is still kept to ensure     that any rare race condition which might cause duplicates does not go     unnoticed.          Link: http://lkml.kernel.org/r/55215cf59e2674391bdaf772fdafc4c393352b03.1516069914.git.tom.zanussi@linux.intel.com          Signed-off-by: Vedang Patel <vedang.patel@intel.com>     Signed-off-by: Tom Zanussi <tom.zanussi@linux.intel.com>     Signed-off-by: Steven Rostedt (VMware) <rostedt@goodmis.org> ,0
+    Started reworking the auto layout system. uiBox is next. ,0
+    CGameLoop: Fix missing destructor ,1
+    staging: comedi: ni_labpc_common: use subdevice readback for eeprom          Use the comedi_subdevice 'readback' member and the core provided (*insn_read)     to handle the readback of the eeprom subdevice. Remove the then unused     'eeprom_data' member from the private data.          Signed-off-by: H Hartley Sweeten <hsweeten@visionengravers.com>     Reviewed-by: Ian Abbott <abbotti@mev.co.uk>     Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org> ,0
+    We seem to be missing some default parameters ,0
+    DRY ,0
+    [ARM] pxa/palm: fix PalmLD/T5/TX AC97 MFP          Signed-off-by: Marek Vasut <marek.vasut@gmail.com>     Signed-off-by: Eric Miao <eric.miao@marvell.com> ,1
+    Move selenium-webdriver dependency to build/package.json ,0
+    revwalk: return GIT_EREVWALKER earlier if no references were pushed          In the case that walk->one is NULL  we know that we have no positive     references  so we already know that the revwalk is over. ,0
+    DOC: Fixed template structure CSS (#16067)          This was overriding the CSS on the rest of the page.     Reported in     https://github.com/pandas-dev/pandas/pull/15581#issuecomment-295696168     Also inlines the CSS from our theme.          [ci skip] ,0
+    test(document): repro #6436 ,0
+    Fix for Issue #550          IE throws an error when calling insertBefore when beforeSlide is     undefined  other browsers do not.  I've added in an if/else to handle     the situation when beforeSlide is undefined so that the slide is still     added to the wrapper and prevents a JS error in IE. ,1
+    Update conio.h          #292 ,0
+    Fix size of image messages in conversation ,1
+    Implemented highlighting for stacked-bars  legends now supported for stacked-bars. ,0
+    RtlRunEncodeUnicodeString & RtlRunDecodeUnicodeString contributed by crazylord          svn path=/trunk/; revision=4473 ,0
+    Fixed bug in while-loops that caused an assertion to fail.          We forgot resetting true-/false-label to NULL after evaluating the     condition expression in dowhile- and while-loops.     This change fixes this.          This causes an assertion to fail in VisitIfStatement whenever there is an     if-statement after a while-loop before. e.g. like in:            var i=0  j=0;       while(j<5) { j++; }       if (i ==0 ) { j++; }                         Review URL: http://codereview.chromium.org/371070          git-svn-id: http://v8.googlecode.com/svn/branches/bleeding_edge@3255 ce2b1a6d-e550-0410-aec6-3dcde31c8c00 ,1
+    h264: refactor Exp-Golomb reading functions with existing mpeg demuxing code ,0
+    Fix bug with paths causing LuaRocks to break on Windows when using LuaFileSystem.     (Bug reported by Cosmin Apreutesei) ,1
+    KVM: Disable vapic support on Intel machines with FlexPriority          FlexPriority accelerates the tpr without any patching.          Signed-off-by: Avi Kivity <avi@qumranet.com> ,0
+    fft-test: format error output more readably          Originally committed as revision 24799 to svn://svn.ffmpeg.org/ffmpeg/trunk ,0
+    Fixes #3408 ,1
+    added support for search for tables on Firebird (issue #365) ,0
+    [SUNRPC]: Remove SPIN_LOCK_UNLOCKED          SPIN_LOCK_UNLOCKED is deprecated  use DEFINE_SPINLOCK instead          Signed-off-by: Jiri Slaby <jirislaby@gmail.com>     Signed-off-by: Andrew Morton <akpm@linux-foundation.org>     Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au> ,0
+    Remove airplane mode related wifi test for Wi-Fi only devices.          Change-Id: I5b319b98ac68c0b7f053c5baf084c3138db8fe07 ,0
+    perf($parse): removing references to Parser/Lexer from parsed expressions          This allows the parser and lexer objects to get GC-ed once the expression     is parsed.          Part of #8901 ,0
+    changes and examples updated ,0
+    Code tidy up ,0
+    chore(test): add micro-benchmark performance test for Observable.fromEventPattern ,0
+    gles2/renderer: add \n to logs ,0
+    PcManagerPlugin is can now handle an external reset vector signal ,0
+    Script to randomly write batches of points over a time interval. ,0
+    PEP8. clean-up ,0
+    Make kernel_module a preview resource until Chef 15          Signed-off-by: Tim Smith <tsmith@chef.io> ,0
+    fixes the null exception on date humanize ,1
+    Improves error messaging for bad (empty) CSV files.          PiperOrigin-RevId: 193404804 ,0
+    Fixed spelling error in runit module (#35948) ,1
+    [server] fix IP subnet mask CIDR range restriction bug found by Coverity ,1
+    * Fix description of matcher test ,0
+    remove example.py ,0
+    Secure endpoint test should call grpc_init. ,0
+    Cosmetic fix for r24861               git-svn-id: svn://svn.mplayerhq.hu/mplayer/trunk@24863 b3059339-0415-0410-9bf9-f77b7e298cf2 ,0
+    Typo fix  added MapObject.java ,1
+    Contacts: Fix check for version. ,1
+    perf: avoid redundand concurrency limiting on hard linking ,0
+    net: ethernet: freescale: drop owner assignment from platform_drivers          A platform_driver does not need to set an owner  it will be populated by the     driver core.          Signed-off-by: Wolfram Sang <wsa@the-dreams.de> ,0
+    remove RateLimitingSCollection ,0
+    Adding support for overriding app-awidget properties at runtime          This would allow apps to customize the behaviour/appearance of a widget based     on the app state          Test: atest CtsAppWidgetTestCases:UpdateProviderInfoTest     Bug: 63931362     Change-Id: I1eef705975c2310af7311b74acc23c089fb6d1ec ,0
+    [AST] Eliminate the unused by ComputingInheritedProtocols in ProtocolDecl. ,0
+    * audio_decoder/audio_decoder.c :     - Tout est pret pour accueillir la synchro :-)     - Les passages modifi�s sont encore en commentaire  parce qu'avec ma     synchro simul�e le %CPU du d�codeur audio passe de 0.1% � 9.7%  alors     que les op�rations sont toutes simples et pas appel�es tant que �a     (il faudra encore essayer en -Oqqch si �a change qqch) ;     - Reste � modifier l'audio output pour la synchro... coming soon ;          -- MaXX ,0
+    stsigtool should use the built in key by default ,0
+    Fixed #26744 -- Fixed a typo in regex for Accept-Language header parsing. ,1
+    [ALSA] fix behaviour of ac97_enum_mixer elements          AC97 Codec     ac97_enum mixer elements (e.g.  'Capture Source') did not work because     of wrong bitmask calculation in snd_ac97_get_enum_double() and     snd_ac97_put_enum_double().          https://bugtrack.alsa-project.org/alsa-bug/view.php?id=1072          Signed-off-by: Sergey Vlasov <vsu@altlinux.ru>     Signed-off-by: Jaroslav Kysela <perex@suse.cz> ,1
+    bug(query): fix bug in Count to add input value in reduce only when it is not NaN ,1
+    email_mirror: Fix some indentation issues. ,0
+    TST: Add tests for complex ufuncs.          The test for precision needed to have difference changed from 2*eps to     2.1*eps for the system supplied sinh. ,0
+    [DoctrineBundle] fixed regression ,1
+    Remove dead code in SIL linker          ... which is not only dead but also broken.     NFC ,0
+    wine: use secure url in comment ,0
+    Added some environment helpers in API config for better Lumen support.          Signed-off-by: Jason Lewis <jason.lewis1991@gmail.com> ,0
+    new implementation for single and multi AsyncCache ,0
+    staging: comedi: das08: Remove function pointers from board structure          Remove the `ai`  `ao`  `di` and `do` pointers from `struct     das08_board_struct`.  These were initialized in `das08_boards[]` and     `das08_cs_boards[]` to point to comedi instruction handler functions for     the subdevice  but there are only two sets of functions depending on     whether the `is_jr` member is true or false  and some of the functions     will be NULL if the corresponding `ai_nbits`  `ao_nbits`  `di_nchan` and     `do_nchan` members are zero.  Determine which handler functions to use     in das08_common_attach().          One element of `das08_boards[]` had `ao` set to NULL and `ao_nbits` set     to 12.  Set `ao_nbits` to 0 in this case to let das08_common_attach()     know this board has no AO subdevice.          Signed-off-by: Ian Abbott <abbotti@mev.co.uk>     Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org> ,0
+    OMAP4: 4430SDP: Add panel support to board file          4430SDP has two Taal DSI panels  connected to DSI 1 and DSI 2 modules.     The panels use a common PWM backlight  which will be implemented later     when the PWM driver has been improved to support the backlight.          Until the PWM driver has been improved  the following hack added to     arch/arm/mach-omap2/board-4430sdp.c can be used to set the backlight to     max:          static int omap_4430sdp_hack_backlight(void)     {            twl_i2c_write_u8(TWL_MODULE_PWM  0x7f  LED_PWM2OFF);            twl_i2c_write_u8(TWL_MODULE_PWM  0x7f  LED_PWM2ON);            twl_i2c_write_u8(TWL6030_MODULE_ID1  0x30  TWL6030_TOGGLE3);            return 0;     }     late_initcall(omap_4430sdp_hack_backlight);          Signed-off-by: Archit Taneja <archit@ti.com>     Acked-by: Tony Lindgren <tony@atomide.com>     Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ti.com> ,0
+    Another integer type needed for Windows. ,0
+    Add some unit tests to subqueries          This is not complete  but it is a starting point for more thorough tests     of subqueries.          This also reorders the use of `cmp.Diff` so the `want` is first and     `got` is second. This way  the `want` shows up as a minus sign in the     diff rather than  confusingly  as a plus sign. ,0
+    mosquitto 1.1.3          Closes Homebrew/homebrew#18308.          Signed-off-by: Jack Nagel <jacknagel@gmail.com> ,0
+    prepare for the release of smokeping-20060727_trunk ,0
+    Moved tests to root directory ,0
+    Cleanup: Remove unnecessary generic types          -------------     Created by MOE: https://github.com/google/moe     MOE_MIGRATED_REVID=205409290 ,0
+    Fix missing methods in !RCT_DEBUG          Reviewed By: bestander          Differential Revision: D3508704          fbshipit-source-id: 82c38819a83a50e0d5ba25480b5b4b7290c92e13 ,1
+    rsx/texture_cache: Fixups for local resource hit and fast-path added ,1
+    sql/parser: tweak UPSERT grammar for better docs          This causes the generated syntax diagrams in the docs to only have the supported     combinations of UPSERT/ON CONFLICT and RETURNING.          Closes #6733. ,0
+    [fixed] soundmanager2 loading. it's a hack  but JS drove me crazy so i gave up.     [fixed] all demos and tests having a html5 starter now use the new assets mechanism of the GWT backend. ,1
+    Issue #27809: Cleanup _PyEval_EvalCodeWithName()          * Rename nm to name     * PEP 7: add { ... } to if/else blocks ,0
+    BUGFIX: server006.phpt ,1
+    Update broadcast_reduce_op_value.cc (#9287)          fix a typo on the line 80 ,1
+    gnome-doc-utils: update 0.20.10_1 bottle. ,0
+    Docs: Update outdated phpdoc for `WP_Customize_Manager::validate_setting_values()` to reflect changes in [37942].          Props dlh.     See #37247.     Fixes #37759.          Built from https://develop.svn.wordpress.org/trunk@38299               git-svn-id: http://core.svn.wordpress.org/trunk@38240 1a063a9b-81f0-0310-95a4-ce76da25c4cd ,0
+    Fixes the grid toggle for none folder shares          Signed-off-by: Michael Weimann <mail@michael-weimann.eu> ,1
+"    tcp_nv: fix potential integer overflow in tcpnv_acked          Add suffix ULL to constant 80000 in order to avoid a potential integer     overflow and give the compiler complete information about the proper     arithmetic to use. Notice that this constant is used in a context that     expects an expression of type u64.          The current cast to u64 effectively applies to the whole expression     as an argument of type u64 to be passed to div64_u64  but it does     not prevent it from being evaluated using 32-bit arithmetic instead     of 64-bit arithmetic.          Also  once the expression is properly evaluated using 64-bit arithmentic      there is no need for the parentheses and the external cast to u64.          Addresses-Coverity-ID: 1357588 (""Unintentional integer overflow"")     Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>     Signed-off-by: David S. Miller <davem@davemloft.net> ",1
+    MIPS: ralink: adds support for MT7620 SoC family          Add support code for mt7620 SOC.          The code detects the SoC and registers the clk / pinmux settings.          Signed-off-by: John Crispin <blogic@openwrt.org>     Acked-by: Gabor Juhos <juhosg@openwrt.org>     Patchwork: http://patchwork.linux-mips.org/patch/5177/ ,0
+    MAGETWO-37904: [GitHub] Admin menu with 1 submenu item does not show the subitem #1292          - minor fix ,1
+    Linkify all rows at once to prevent multiple timeout restarts ,1
+    Fix documentation of timeout unit. ,0
+    Update Normal Patch trainer DVs based on Crystal ,0
+    fix scaladocs of accumulator ,0
+    fix study promotion broadcast ,1
+    Remove legacy primary shard allocation mode based on versions (#23016)          Elasticsearch v5.0.0 uses allocation IDs to safely allocate primary shards whereas prior versions of ES used a version-based mode instead. Elasticsearch v5 still has support for version-based primary shard allocation as it needs to be able to load 2.x shards. ES v6 can drop the legacy support. ,0
+    log: pass SCM_CREDENTIALS when logging to syslog ,0
+    集成微信内置浏览器判断到Senparc.Weixin.dll ,0
+    Sema: Allow property overrides where the setter is less visible          We were checking the accessibility of the setter incorrectly.     As a result  a 'public internal(set)' property could not override     another 'public internal(set)' property; the setter had to be     public in the override  which is unnecessarily visible.          Fixes <rdar://problem/34085586>. ,1
+    provider/scaleway: add importer support ,0
+    simplify IServerCallHandler ,0
+    Create test for Issue 1677  “Lift stores messages in LiftSession.cometSetup List in wrong order” ,0
+    Less integer conversions. ,0
+    test form with all but one control          svn path=/trunk/mcs/; revision=9331 ,0
+    each uses DomRange ,0
+    Issue #1491 - convert into JS powered goodie ,0
+"    nginx-0.1.40-RELEASE import              *) Bugfix: if a client sent too long header line  then the request            information did not logged in the error log.              *) Bugfix: the ""Set-Cookie"" header line was not transferred when the            ""X-Accel-Redirect"" was used; the bug had appeared in 0.1.39.              *) Bugfix: the ""Content-Disposition"" header line was not transferred            when the ""X-Accel-Redirect"" was used.              *) Bugfix: the master process did not close the listen socket on the            SIGQUIT signal.              *) Bugfix: after on-line upgrade on Linux and Solaris the process name            became shorter in the ""ps"" command. ",1
+    * solved race conditions issues when the OpenSkin dialog is       opened in blocking mode ,1
+    IRGen: Indirect cases are never IR-type-dependent.          And we don't want to infinitely recur into them. Fixes rdar://problem/22169679.          Swift SVN r32253 ,1
+    Fix auto-configuration class reference          Closes gh-7781 ,1
+    Implemented options and a clean layout ,0
+    DanielWagnerHall: Upper case enum constants          r17916 ,0
+    Refactor `find_for_git_client` and its related methods. ,0
+"    powerpc/ptrace: replace ptrace_report_syscall() with a tracehook call          Arch code should use tracehook_*() helpers  as documented in     include/linux/tracehook.h  ptrace_report_syscall() is not expected to     be used outside that file.          The patch does not look very nice  but at least it is correct     and opens the way for PTRACE_GET_SYSCALL_INFO API.          Co-authored-by: Dmitry V. Levin <ldv@altlinux.org>     Fixes: 5521eb4bca2d (""powerpc/ptrace: Add support for PTRACE_SYSEMU"")     Signed-off-by: Elvira Khabirova <lineprinter@altlinux.org>     Signed-off-by: Dmitry V. Levin <ldv@altlinux.org>     [mpe: Take this as a minimal fix for 4.20  we'll rework it later]     Signed-off-by: Michael Ellerman <mpe@ellerman.id.au> ",1
+    Changed the TextBox parameter back to DependencyObject because it does break with x:Bind ,1
+    ASoC: Fix mismerge of Speyside set_bias_level_post()          Signed-off-by: Mark Brown <broonie@opensource.wolfsonmicro.com>     Acked-by: Liam Girdwood <lrg@ti.com> ,1
+    Small tweak from review. ,0
+    liboping: update 1.10.0 bottle. ,0
+    Fixed wrong package name. ,1
+"    mvumi: 64bit value for seconds_since1970          struct mvumi_hs_page2 stores a ""seconds_since1970"" field which is of     type u64. It is however  written to  using 'struct timeval' which has     a 32-bit seconds field and whose value will overflow in year 2038.     This patch uses ktime_get_real_seconds() instead since it provides a     64-bit seconds value  which is 2038 safe.          Signed-off-by: Tina Ruchandani <ruchandani.tina@gmail.com>     Reviewed-by: Johannes Thumshirn <jthumshirn@suse.de>     Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com> ",1
+    Adding URL and HTTP method to the ApiException ,0
+    codereview: allow editing of local CL description     between hg clpatch and hg submit.          R=r     https://golang.org/cl/162059 ,0
+    Minor docstring formatting fix.          PiperOrigin-RevId: 156415121 ,0
+    New: Added global Remote Path mapping table to replace individual Local Category Path settings. ,0
+    rtsp: Fix a crash with the RTSP muxer          This was introduced in bc2a32969e.          The whole block that the statement was added to is only     relevant when used as a demuxer  but the other statements     there have had other if statements guarding them. Make     sure to only run this whole block if being used as a     demuxer.          CC: libav-stable@libav.org     Signed-off-by: Martin Storsjö <martin@martin.st> ,1
+    internal/debug: APIs for profiling and tracing          The debug package provides an RPC wrapper for glog settings and the     debugging facilities of the Go runtime. They can be triggered through     both command line flags and the IPC listener. ,0
+    Added imageForceResize option  to force writing to and saving images from canvas.          This will also process images via canvas that fit the maximum     constraints. ,0
+    powerpc/mpc5121_ads_cpld: Remove use of NO_IRQ_IGNORE          As NO_IRQ_IGNORE is only used between the static function cpld_pic_get_irq     and its caller cpld_pic_cascade  and cpld_pic_cascade only uses it to     suppress calling handle_generic_irq  we can change these uses to NO_IRQ     and remove the extra tests and pathlength in cpld_pic_cascade.          Signed-off-by: Milton Miller <miltonm@bga.com>     Acked-by: Grant Likely <grant.likely@secretlab.ca>     Signed-off-by: Benjamin Herrenschmidt <benh@kernel.crashing.org> ,0
+    Fix hanging when kNullOp exists  safter checking in executor (#3482) ,1
+    * 2015-02-13          git-svn-id: svn+ssh://ci.ruby-lang.org/ruby/trunk@49580 b2dd03c8-39d4-4d8f-98ff-823fe69b080e ,0
+    fix(core): add bootstrapped modules into platform modules list (#13740)          Closes #12015          PR Close #13740 ,1
+    a few more tests for the custom counter_cache naming code               git-svn-id: http://svn-commit.rubyonrails.org/rails/trunk@3826 5ecf4fe2-1ee6-0310-87b1-e25e094e27de ,0
+    fixes deck selection and unintended version changes after canceling deck editing (similar to #1078) ,1
+    Implement Project#withId ,0
+    Expose Node#wait_until as Node#synchronize ,0
+    -fixes and more fixes to new scene system  seems stable now..     BUT DONT TRUST ME IT MAY STILL BREAK  USE WITH CARE!! ,1
+    2009-06-22  Carlos Alberto Cortez <calberto.cortez@gmail.com>                  * ComboBox.cs: When handling WM_CHAR  process the message first  and             send it to the textbox only if it wasn't handled.             Fixes #507459.               svn path=/trunk/mcs/; revision=136594 ,1
+    Corrected the way databases were compared.  This allows running the test suite with two in memory SQLite databases.          git-svn-id: http://code.djangoproject.com/svn/django/trunk@14619 bcc190cf-cafb-0310-a4f2-bffc1f526a37 ,0
+    Fixes Pathname.install(:foo => :bar) to work when File.exist?(:bar) ,1
+    A few .dsp fixes ,1
+    cockroach: update 2.0.1 bottle. ,0
+    - A bit more PHP_WIN32 work ,0
+    mfd: Remove copy from WM831x I2C write function          This saves us allocating an array on the stack  giving a meaningless     performance improvement and ensuring that if drivers ever do large writes     we'll not allocate large arrays on the stack.          Signed-off-by: Mark Brown <broonie@opensource.wolfsonmicro.com>     Signed-off-by: Samuel Ortiz <sameo@linux.intel.com> ,0
+    feature(@nestjs/core) add hierarchical lifecycle hooks #938 ,0
+    Enable testing the GPU implementations of Adagrad and Adam          Summary:     Enable testing the GPU implementations of Adagrad and Adam incl sparse versions.     Closes https://github.com/caffe2/caffe2/pull/607          Reviewed By: dzhulgakov          Differential Revision: D5121552          Pulled By: Yangqing          fbshipit-source-id: da6b7dde456237c94cf74d00860e7327b2267eab ,0
+    removed required together for resource pools  clusters  and template deployments. fixes inability to deploy from template on vsphere clusters without resource pools. Also  resource pools and cluster should not be required together as they are independant in vsphere ,1
+    Introduce AwsProvider plugin ,0
+    Fix some bugs according to test suite     Delete unused files          svn path=/trunk/; revision=22445 ,1
+    introduce the 'thresholdForPauseCreation' configuration value ,0
+    Reformat JoinerSplitter ,0
+    ASoC: wm8995: Use IS_ENABLED() macro          Using the IS_ENABLED() macro can make the code shorter and simpler.          Signed-off-by: Fabio Estevam <fabio.estevam@freescale.com>     Signed-off-by: Mark Brown <broonie@linaro.org> ,0
+    THRIFT-3279 Fix a bug in retry_max_delay          The current max delay is unstable - when retry_delay == retry_max_delay the     second branch is taken  and retry_delay is set to retry_max_delay *     retry_backoff  which is larger than retry_max_delay.          This causes an oscillation between retry_max_delay and retry_max_delay *     retry_backoff.          This simply fixed it. ,1
+    sops: update 3.1.1 bottle. ,0
+    Add Connection.setAudioModeIsVoip          This API will be used by Telecomm to set the call's audio mode.          Change-Id: I29028e614c598d1f2501c4dfdcdbfc929b09f925 ,0
+    * ext/sha1/sha1-ruby.c (sha1_new): get rid of an unneeded       rb_obj_call_init() call.               git-svn-id: svn+ssh://ci.ruby-lang.org/ruby/trunk@1430 b2dd03c8-39d4-4d8f-98ff-823fe69b080e ,0
+    x86: fix 32-bit ioapic lockup with sparseirqs          Missed two lines when copying.          Fix panic on one of Ingo's machines that need to adjust ioapic id when     acpi off/ 32bit.          Signed-off-by: Yinghai Lu <yhlu.kernel@gmail.com>     Signed-off-by: Ingo Molnar <mingo@elte.hu> ,1
+    Switched to the new Swift native JSON type for --dump-package (#361)          * Switched to the new Swift native JSON type for --dump-package ,0
+    Fix fields_for_params when Boolean values ,1
+    consistency level of ALL on migrations               Former-commit-id: 0e7e808b713fedf86e8c97ae931116cd6c2e43a5 ,0
+    [MPR_WINETEST]     * Import from Wine 1.7.1.     CORE-7469          svn path=/trunk/; revision=60277 ,0
+    fixed rotateByCopy to avoid any rename()          fixes issue #3989 ,1
+    vo_directx: clear panscan borders in windowed mode          The window size is normally clipped against desktop size due to the     usage of WM_SIZING in w32_common.c. This is a useful (if accidental)     feature  but vo_directx didn't handle it well: the areas not covered     by video were filled with the colorkey  which looked ugly.     Explicitly clear these borders with black. ,1
+"    Don't show ""edit"" links in Differential for now          Summary: Ref T2222. These don't work yet. We just have to copy a couple fields  but let's sort that out later since this is purely a new feature.          Test Plan: Looked at a revision  no edit links.          Reviewers: btrahan          Reviewed By: btrahan          CC: aran          Maniphest Tasks: T2222          Differential Revision: https://secure.phabricator.com/D8222 ",0
+    Disable win32 error code mapping in prep for new custom error code categories ,0
+    Mangling: Don’t hardcode the mangling prefixes in symbols selected by SELECT_MANGLING ,0
+    add more scheduler benchmark testcases          - add benchmark test for PodAffinity     - add benchmark test for NodeAffinity     - add 1000-nodes test for PodAntiAffinity/PodAffinity/NodeAffinity ,0
+    Fix --enable-hardcoded-tables compilation: the generate table files now     need to include fft.h  not dsputil.h.          Originally committed as revision 22278 to svn://svn.ffmpeg.org/ffmpeg/trunk ,1
+    add test in descibe resourcequota ,0

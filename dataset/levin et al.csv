@@ -1,0 +1,1152 @@
+text,label
+Add marble diagrams for Single operators.--,0
+Change hasException to hasThrowable--,0
+Trying to extend the Scheduler interface according- to the comments at -19.--,0
+RunAsync method for outputting multiple values--,0
+forEach with Action1 but not Observer--I re-read the MSDN docs and found the previous implementation wasn't complying with the contract.--http://msdn.microsoft.com/en-us/library/hh211815(v=vs.103).aspx--I believe this now does.-,1
+Extract UnsubscribeTester to top level--,0
+Some cleaning up--,0
+Trying to fix non-deterministic test--- not sure of a way other than putting Thread.sleep in here to give time after each CountDownLatch triggers for the process scheduler to execute the next line of each thread--See https://github.com/Netflix/RxJava/pull/201 for more information.-,1
+1.x: Fix Completable swallows- OnErrorNotImplementedException (-3904)--,1
+Fix unit test after last() changed behavior--,1
+Incoporate review suggestions.--Splits a compound unit test into to parts.-Uses mockito instead of a bespoke test object.-Removes unused import statements.-Changes the order of the Finally action w.r.t. onComplete/onError.-,0
+Fixed byLine test to use line.separator system- property instead of \n.--,1
+Add CompositeSubscription--- also a utility method for creating a Subscription around a Future-,0
+"Spare a few redundant calls in SleepingAction- around determining the delay value (-3903)--- Remove redundant outer conditional.-- Skip calling into System.currentTimeMillis(), which could potentially result in different values.-",0
+Adding missing javadocs to TestSubject (-1322)--,0
+Added takeLast to Observable--,0
+"Reduce duplication by making ""schedule now"" the- special case--Forwards to ""schedule later"" with delay of 0 now.-",0
+"Wraps DoOnEach in a SafeObserver--This commit leverages the SafeObserver facility to get the desired-behavior in the face of exceptions.  Specifically, if any of the-operations performed within the doOnEach handler raises an exception,-that exception will propagate through the observable chain.-",1
+"Switch to AtomicIntegerFieldUpdater and volatile- int, instead of AtomicBoolean--",0
+Refactored TakeUntil to use TakeWhile.--,0
+Removed window between the two synchronized blocks.--,0
+Added license header to OperationBuffer.--,0
+---,0
+Forward subscription of wrapped subscriber--,0
+additions to tests--,0
+TakeWhile protect calls to predicate--,1
+subscribe methods with typed Action arguments--,0
+Restructure into smaller files--,0
+Set threads to daemons so they don't prevent system- from exiting--- This applies to any pools RxJava itself creates. It will be up to users to do this for Executors they inject.-,1
+Confusing Javadoc for `toObservable(Future)`- methods--https://github.com/Netflix/RxJava/issues/148-,0
+Implement a cached thread scheduler using event- loops--,0
+non-deterministic- testUserSubscriberUsingRequestAsync--fix non-deterministic failures of BackpressureTests.testUserSubscriberUsingRequestAsync--I was able to replicate the occasional failure by putting it in a tight loop. With these changes it no longer fails.-,1
+"Fix multiple subscription bug on operation filter--A new subscription must be created on every subscribe call, otherwise any-subscribe call after the first directly fails.-",1
+"Update Observable.isInternalImplementation, get rid- of NullPointerException--NullPointerException has been encountered during my tests. It is because java.lang.Class.getPackage() may return null ""... if no package information is available from the archive or codebase"" (documented feature).-",1
+Perf Tests with JMH--,0
+Add operators to create Observables from- BroadcastReceiver--it allows to listen global and local (with support LocalBroadcastManager) broadcasts-,0
+unit tests for covariance--- refactoring so not everything for the entire Observable ends up in a single class-,0
+Remove Unnecessary Subscription--- be explicit for error case in JoinObserver-,0
+Fixed issue -417--,1
+add synchronous test of resubscribe after error--,0
+"added variance to Action*, too--",0
+Cleanup Javadocs--,0
+Added ChannelObservable.get--,0
+"Added create with initial capacity, minor fix--",1
+Move last 6 remaining unit tests out.--,0
+Delay: error cut ahead was not properly serialized--,1
+Switched to a default scheduler that actually works- together with this operator.--,1
+"updated a test and added another one, trying to get- the expected behavior right--",0
+1.x: fix Completable.onErrorComplete(Func1) not- relaying function crash (-4027)--,1
+"Better naming, and new test--... using to compare 0.19 and 0.20 so want in both.-",0
+Add unit tests for recursive scheduler usage--These tests came from @mairbek at https://github.com/Netflix/RxJava/pull/229-issuecomment-16115941-,0
+"Implemented periodic scheduling, too. Needs testing- now.--",0
+"fix sticky intent duplication, add tests for- OperatorBroadcast--",1
+Make Functions.from typesafe--,0
+Add Single.doAfterTerminate()--,0
+made the public window methods more generic via the- basic (lol) super/extends fluff; also simplified api by removing a few- useless super definitions (there's no super of Opening and Closing)--,0
+Baseline Performance Tests--Start of suite of general performance tests for comparing overall changes.-,0
+made WINDOW_MAKER typed--,0
+"Change order of generics for Func from R, T to T, R- to match C- Rx--",0
+Removed synchronized block as per RxJava guidelines- (6.7).--,0
+Better name for worker class running scheduled- actions--,0
+CurrentThreadScheduler Memory Leak Fixed-MIME-Version: 1.0-Content-Type: text/plain; charset=UTF-8-Content-Transfer-Encoding: 8bit--- Current/Immediate/NewThread/Executor Schedulers are passing unit tests-- Current/NewThread/Executor Schedulers do not leak memory on the recursion test (Immediate can’t be used for recursion otherwise it stack overflows)-,1
+Refactoring for consistent implementation approach.--Combined ObservableExtensions into Observable to match how Rx works (Observable.* methods)-,0
+Performance refactoring: OperatorSubscribeFunction--- migrated Func1 to OperatorSubscribeFunction for internal operator implementations-- do not wrap with AtomicObserver when it's a trusted operator--https://github.com/Netflix/RxJava/issues/104-,1
+javadoc interlinkings and other javadoc- improvements--,0
+"use Java Subject<T, R> as contravariant in T and- covariant in R--",0
+Prevent direct instantiation of BlockingObservable- via no-arg constructor--- also questioning why to allow extending this and would like to make it a private constructor-,0
+GroupBy GroupedObservables should not re-subscribe- to parent sequence--https://github.com/Netflix/RxJava/issues/282--Refactored to maintain a single subscription that propagates events to the correct child GroupedObservables.-,1
+Handle concurrent unsubscription in drain (avoid- NPE).--,0
+tidying up AbstractOnSubscribe javadocs--,0
+Fix termination race condition in- OperatorPublish.dispatch--,1
+Unlock in finally block--,1
+Incorporate review suggestions.--- Changes finally0 to finallyDo.-- Removes unnecessary subscription-wrapping.-- Handle exceptions in onCompleted/onError-,0
+As per suggestions: Added single static instance of- ExecutorService for delayed posting Introduced ScheduledIOSAction to enable- CompositeSubscription--,0
+Refactor test to use CountDownLatch instead of- Thread.sleep--,0
+Add doOnSubscribe for Single--,0
+Beef up UnsubscribeTester--,0
+Fixed issue -799 - Added break to possibly-infinite- loop in CompositeException.attachCallingThreadStack--,1
+Fix the initialization of Completable.complete()- (-4146)--,1
+1.x: ConcatMapEager allow nulls from inner- Observables.--,0
+"Implement Scheduler method with dueTime--- added method: schedule(T state, Func2<Scheduler, T, Subscription> action, Date dueTime)-",0
+Fix non-deterministic unit test--,0
+Fix autoConnect calling onStart twice.--,1
+1.x: Expose Single.lift()--,0
+Implemented range operator--,0
+ObserveOn/SubscribeOn unit tests--,0
+GroupBy Test Improvement--ObserveOn was the wrong mechanism for delaying behavior as it was relying on the buffering of observeOn.-Now using delay() to delay the group since observeOn no longer buffers.-,0
+"Fixed javadoc and comments, cleaned up a bit, and- tried to fix synchronization.--",0
+Add finally0 to Observable.java .--,0
+Add takeUntil support in Single--,0
+ObserveOn and SubscribeOn concurrency unit tests--- these are very rudimentary and may have a determinism problem due to the Thread.sleep-,0
+avoiding some synchronization on combineLatest--,0
+Fixed a bug in the test scheduler that happened- when advancing time by a too little amount--,1
+Non-blocking implementation of ScheduledObserver--,0
+Conditionals: Fix all but 2 tests--,1
+Conditionals: Fix all but 2 tests--,0
+Fix for back pressure on the alternate- subscription.--,1
+add error handling for onNext failure so exceptions- don't get thrown up the stack but instead via onError--,1
+Add Single.fromCallable()--,0
+remove warnings and cleanup--,0
+HBASE-2513 hbase-2414 added bug where we'd- tight-loop if no root available--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@941546 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-4606  Remove spam in HCM and fix a- list.size == 0--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1185326 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-11813 CellScanner-advance may overflow- stack--,1
+HBASE-11671 TestEndToEndSplitTransaction fails on- master (Mikhail Antonov)--,1
+HBASE-10010 eliminate the put latency spike on- the new log file beginning--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1549384 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-7579 HTableDescriptor equals method fails- if results are returned in a different order; REVERT -- OVERCOMMITTED--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1471053 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-9366 TestHTraceHooks.testTraceCreateTable- errors out sometimes.--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1523816 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-3746  Clean up CompressionTest to not- directly reference DistributedFileSystem--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1089684 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-5857 RIT map in RS not getting cleared- while region opening--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1329470 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-13958 RESTApiClusterManager calls kill()- instead of suspend() and resume()--,1
+HBASE-5549 HBASE-5572 Master can fail if- ZooKeeper session expires (N Keywal)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1301775 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-14807 TestWALLockup is flakey--,1
+HBASE-2040  Fixes to group commit--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@889775 13f79535-47bb-0310-9956-ffa450edef68-,1
+HADOOP-1424. TestHBaseCluster fails with- IllegalMonitorStateException. Fix regression introduced by HADOOP-1397.--git-svn-id: https://svn.apache.org/repos/asf/lucene/hadoop/trunk/src/contrib/hbase@541095 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-2806 DNS hiccups cause uncaught NPE in- HServerAddress-getBindAddress--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@960650 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-1192 LRU-style map for the block cache--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@780527 13f79535-47bb-0310-9956-ffa450edef68-,0
+"HBASE-1647 Filter-filterRow is called too often,- filters rows it shouldn't have -- reversed it for a moment; it may have- broken things -- not sure yet--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@798510 13f79535-47bb-0310-9956-ffa450edef68-",1
+HBASE-3070 Add to hbaseadmin means of shutting- down a regionserver--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1003702 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-2397 Bytes.toStringBinary escapes printable- chars--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@951840 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-1447  Take last version of the hbase-1249- design doc. and make documentation out of it--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@785081 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-3313 Table name isn't checked in- isTableEnabled/isTableDisabled--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1081431 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-10194 [Usability]: Instructions in- CompactionTool no longer accurate because of namespaces--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1552229 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-6427 Pluggable compaction and scan policies- via coprocessors--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1367361 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-2787  PE is confused about flushCommits--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@957750 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-10606 Bad timeout in- RpcRetryingCaller-callWithRetries w/o parameters--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1572124 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-7703 Eventually all online snapshots fail- due to Timeout at same regionserver.--Online snapshot attempts would fail due to timeout because a rowlock could not be obtained.  Prior to this a-cancellation occurred which likely grabbed the lock without cleaning it properly. The fix here is to use nice cancel-instead of interrupting cancel on failures.----git-svn-id: https://svn.apache.org/repos/asf/hbase/branches/hbase-7290@1445866 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-11920 Add CP hooks for ReplicationEndPoint--,0
+HBASE-8383 Support lib/*jar inside coprocessor- jar--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1471754 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-10066. Use ByteArrayOutputStream-writeTo- where appropriate--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1547294 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-6667 TestCatalogJanitor occasionally fails;- PATCH THAT ADDS DEBUG AROUND FAILING TEST--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1379682 13f79535-47bb-0310-9956-ffa450edef68-,0
+"HBASE-6529 With HFile v2, the region server will- always perform an extra copy of source files--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1372313 13f79535-47bb-0310-9956-ffa450edef68-",0
+HBASE-1404 minor edit of regionserver logging- messages--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@773627 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-9227 RESTServer should handle the loginUser- correctly--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1514440 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-1869 IndexedTable delete fails when used in- conjunction with RowLock()--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@819060 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-11558 Caching set on Scan object gets lost- when using TableMapReduceUtil in 0.95+ (Ishan Chhabra)--,1
+HBASE-1938 Make in-memory table scanning faster ;-  reverted 20110726_1938_MemStore.patch till we figure why it seems to slow- tests--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1151653 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-11865 Result implements CellScannable;- rather it should BE a CellScanner--,0
+HBASE-6400 Add getMasterAdmin() and- getMasterMonitor() to HConnection (Enis)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1363009 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-2156  HBASE-2037 broke Scan--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@902213 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-10686 [WINDOWS] TestStripeStoreFileManager- fails on windows--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1575011 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-2781  ZKW.createUnassignedRegion doesn't- make sure existing znode is             in the right state (Karthik- Ranganathan via JD)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@963910 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-10556 Possible data loss due to non-handled- DroppedSnapshotException for user-triggered flush from client/shell--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1571501 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-3387 Pair does not deep check arrays for- equality--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1053484 13f79535-47bb-0310-9956-ffa450edef68-,1
+"HBASE-8355:- BaseRegionObserver-pre(Compact|Flush|Store)ScannerOpen returns null (Andrew- Purtell, Jesse Yates)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1483094 13f79535-47bb-0310-9956-ffa450edef68-",1
+HBASE-8062 Replace HBaseFsck.debugLsr() in- TestFlushSnapshotFromClient with FSUtils.logFileSystemState()--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1463646 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-12731 Heap occupancy based client pushback--,0
+"HBASE-2889 Tool to look at HLogs -- parse and- tail -f; added part 1, some fixup of hlog main--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@995222 13f79535-47bb-0310-9956-ffa450edef68-",0
+HBASE-12137 Alter table add cf doesn't do- compression test (Virag Kothari)--,1
+HADOOP-2308 null regioninfo breaks meta scanner--git-svn-id: https://svn.apache.org/repos/asf/lucene/hadoop/trunk/src/contrib/hbase@599875 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-8287 TestRegionMergeTransactionOnCluster- failed in trunk build -4010--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1465528 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-2365 Double-assignment around split--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@929856 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-9369 Add support for 1- and 2-byte integers- in OrderedBytes and provide types (He Liangliang)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1524297 13f79535-47bb-0310-9956-ffa450edef68-,0
+"Fixing broken build... forgot to add- JVMClusterUtil, etc.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@939848 13f79535-47bb-0310-9956-ffa450edef68-",1
+HBASE-8703 [WINDOWS] Timed-out processes exit- with non-zero code causing HealthChecker to report incorrectly. ADDENDUM- patch to fix flaky test--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1499047 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-4861 Fix some misspells and extraneous- characters in logs; set some to TRACE--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1205732 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-4169 FSUtils LeaseRecovery for non HDFS- FileSystems; added 4169-correction.txt  correction--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1155441 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-10449 Wrong execution pool configuration in- HConnectionManager--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1563878 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-6170 Timeouts for row lock and scan should- be separate (Chris Trezzo)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1354325 13f79535-47bb-0310-9956-ffa450edef68-,0
+"[jira] [HBASE-5074] Support checksums in HBase- block cache--Author: Dhruba--Summary:-HFile is enhanced to store a checksum for each block. HDFS checksum verification-is avoided while reading data into the block cache. On a checksum verification-failure, we retry the file system read request with hdfs checksums switched on-(thanks Todd).--I have a benchmark that shows that it reduces iops on the disk by about 40%. In-this experiment, the entire memory on the regionserver is allocated to the-regionserver's jvm and the OS buffer cache size is negligible. I also measured-negligible (<5%) additional cpu usage while using hbase-level checksums.--The salient points of this patch:--1. Each hfile's trailer used to have a 4 byte version number. I enhanced this so-that these 4 bytes can be interpreted as a (major version number, minor-version). Pre-existing hfiles have a minor version of 0. The new hfile format-has a minor version of 1 (thanks Mikhail). The hfile major version remains-unchanged at 2. The reason I did not introduce a new major version number is-because the code changes needed to store/read checksums do not differ much from-existing V2 writers/readers.--2. Introduced a HFileSystem object which is a encapsulates the FileSystem-objects needed to access data from hfiles and hlogs.  HDFS FileSystem objects-already had the ability to switch off checksum verifications for reads.--3. The majority of the code changes are located in hbase.io.hfie package. The-retry of a read on an initial checksum failure occurs inside the hbase.io.hfile-package itself.  The code changes to hbase.regionserver package are minor.--4. The format of a hfileblock is the header followed by the data followed by the-checksum(s). Each 16 K (configurable) size of data has a 4 byte checksum.  The-hfileblock header has two additional fields: a 4 byte value to store the-bytesPerChecksum and a 4 byte value to store the size of the user data-(excluding the checksum data). This is well explained in the associated-javadocs.--5. I added a test to test backward compatibility. I will be writing more unit-tests that triggers checksum verification failures aggressively. I have left a-few redundant log messages in the code (just for easier debugging) and will-remove them in later stage of this patch. I will also be adding metrics on-number of checksum verification failures/success in a later version of this-diff.--6. By default, hbase-level checksums are switched on and hdfs level checksums-are switched off for hfile-reads. No changes to Hlog code path here.--Test Plan: The default setting is to switch on hbase checksums for hfile-reads,-thus all existing tests actually validate the new code pieces. I will be writing-more unit tests for triggering checksum verification failures.--Reviewers: mbautin--Reviewed By: mbautin--CC: JIRA, tedyu, mbautin, dhruba, todd, stack--Differential Revision: https://reviews.facebook.net/D1521--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1298641 13f79535-47bb-0310-9956-ffa450edef68-",0
+HBASE-563   TestRowFilterAfterWrite erroneously- sets master address to 0.0.0.0:60100 rather than relying on conf--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@644948 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-8033 Break TestRestoreSnapshotFromClient- into TestRestoreSnapshotFromClient and TestCloneSnapshotFromClient (Ted Yu)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1454186 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-8351 Minor typo in Bytes- IllegalArgumentException throw (Raymond Liu)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1468291 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-9287 TestCatalogTracker depends on the- execution order--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1516292 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-4131 Make the Replication Service pluggable- via a standard interface definition--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1174963 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-12366 Add login code to HBase Canary tool- (Srikanth Srungarapu)--,0
+HBASE-3017 More log pruning--M conf/log4j.properties-  Make ZKW log at INFO-level-M src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java-  Log message cleanup.-M src/main/java/org/apache/hadoop/hbase/master/HMaster.java-  Remove excessive hostname+port qualifier on master for zk messages-M src/main/java/org/apache/hadoop/hbase/master/MasterFileSystem.java-  Log message cleanup-M src/main/java/org/apache/hadoop/hbase/master/ServerManager.java-  Format the ServerMonitor message.-M src/main/java/org/apache/hadoop/hbase/regionserver/HRegionServer.java-  Remove excessive hostname on zk message id; just add port-M src/main/java/org/apache/hadoop/hbase/zookeeper/ZKAssign.java-  Cleanup of messages.---git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@999057 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-7923 force unassign can confirm region- online on any RS to get rid of double assignments--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1464232 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-11499- AsyncProcess.buildDetailedErrorMessage concatenates strings using + in a loop- (Mike Drob)--,0
+HBASE-9600 TestColumnSchemaModel and- TestTableSchemaModel test cases are failing with IBM IBM Java 6--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1525179 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-1200 Add bloomfilters--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@946464 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-11248-KeyOnlyKeyValue-toString() passes- wrong offset to keyToString() (Ram)--,1
+HBASE-5259 Normalize the RegionLocation in- TableInputFormat by the reverse DNS lookup (Liyin Tang)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1238774 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-1816 Master rewrite; should have removed- safe-mode from regionserver-side too -- Needed to remove the wait up in top- of flush and compactions threads-- used to wait on safe mode... was stuck- there...--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@830844 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-2124  Useless exception in HMaster on- startup--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@899441 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-8299 ExploringCompactionPolicy can get- stuck in rare cases.--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1475966 13f79535-47bb-0310-9956-ffa450edef68-,1
+HADOOP-2295 Fix assigning a region to multiple- servers--git-svn-id: https://svn.apache.org/repos/asf/lucene/hadoop/trunk/src/contrib/hbase@599578 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-3653 : Parallelize Server Requests on HBase- Client--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1082648 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-1386 NPE in housekeeping--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@772703 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-7307 MetaReader.tableExists should not- return false if the specified table regions has been split (Rajesh)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1419998 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-2057  Cluster won't stop--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@894111 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-2757. Fix flaky TestFromClientSide test by- forcing region assignment--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@956716 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-1136  HashFunction inadvertently destroys- some randomness; REVERTING--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@735880 13f79535-47bb-0310-9956-ffa450edef68-,1
+fix spurious 400s produced by test--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@790486 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-3591 completebulkload doesn't honor generic- -D options--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1076709 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-7715 FSUtils-waitOnSafeMode can incorrectly- loop on standby NN (Ted Yu)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1440600 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-1537 Intra-row scanning; apply limit over- multiple families--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@951682 13f79535-47bb-0310-9956-ffa450edef68-,0
+"HBASE-3082  For ICV gets, first look in MemStore- before reading StoreFiles (Prakash via jgray)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1026910 13f79535-47bb-0310-9956-ffa450edef68-",0
+HBASE-920 Make region balancing sloppier--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@704781 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-798  Provide Client API to explicitly lock- and unlock rows (Jonathan Gray via Jim Kellerman)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@685391 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-1552 provide version running on cluster via- getClusterStatus--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@786666 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-1142 Cleanup thrift server; remove Text and- profuse DEBUG messaging--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@736495 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-15354 Use same criteria for clearing meta- cache for all operations (addendum) (Ashu Pachauri)--,0
+HBASE-10818. Add integration test for bulkload- with replicas (Nick Dimiduk and Devaraj Das)--,0
+HBASE-1866 Scan(Scan) copy constructor does not- copy value of cacheBlocks--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@818656 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-1773  Fix broken tests (setWriteBuffer now- throws IOE)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@805236 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-5927 SSH and DisableTableHandler happening- together does not clear the znode of the region and RIT map (Rajesh)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1339913 13f79535-47bb-0310-9956-ffa450edef68-,1
+"HBASE-3429 HBaseObjectWritable should support- arrays of any Writable or Serializable, not just Writable[]--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1056548 13f79535-47bb-0310-9956-ffa450edef68-",1
+HBASE-9095. AssignmentManager's handleRegion- should respect the single threaded nature of the processing--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1510799 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-11370 SSH doesn't need to scan meta if not- using ZK for assignment--,0
+HBASE-8737 [replication] Change replication RPC- to use cell blocks--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1499118 13f79535-47bb-0310-9956-ffa450edef68-,1
+HBASE-4460  Support running an embedded- ThriftServer within a RegionServer (jgray)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1186586 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-10885 Support visibility expressions on- Deletes (Ram)--,0
+HBASE-1722 Add support for exporting HBase- metrics via JMX--git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@813229 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-8921 [thrift2] Add GenericOptionsParser to- Thrift 2 server--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1501982 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-12176 WALCellCodec Encoders support for- non-KeyValue Cells (Anoop Sam John)--,0
+HBASE-9999 Add support for small reverse scan--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1573949 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-7197. Add multi get to RemoteHTable- (Elliott Clark)--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1422143 13f79535-47bb-0310-9956-ffa450edef68-,0
+HBASE-3167 HBase Export: Add ability to export- specific Column Family; Turn Block Cache off during export; improve usage doc--git-svn-id: https://svn.apache.org/repos/asf/hbase/trunk@1028546 13f79535-47bb-0310-9956-ffa450edef68-,0
+"Test deleting the percolate type differently.- Instead of checking the types exist api, register a DocumentTypeListener that- notifies when percolate queries have been cleared.--",0
+"Cluster Health API: Add `wait_for_nodes` (accepts- ""N"", ""<N"", "">N"", ""<=N"", and "">=N""), closes -269.--",0
+"improve handling of memory caching with file- system, only force compound file when really needed (when an extension that- exists within the compound file is part of the memory cached extensions)--",0
+"Added GeoDistance test which verifies the- difference in behaviour between ARC and PLANE, causing elliptical results--",0
+"NullPointerException for invalid faceted query,- closes -1136.--",0
+[TEST] Added test that verifies data integrity- during and after a simulated network split.--,0
+Cut over StringScriptDataComparator to use- BytesRef instead of Strings--Closes -2920-,1
+clean code--,0
+test: fix and simplify logic--,1
+"fix cluster state mapping informaton, return it- with the mapping name as key and source field--",1
+Optimize aliases processing--Closes- 2832-,0
+Fix- AckClusterUpdateSettingsIT.testClusterUpdateSettingsAcknowledgement() after- changes in -14259--Closes -14278-,1
+"add hasSingleArrayBackingStorage allow for- optimization only when there really is a single array, and not when there is- a multi dimensional one--",0
+[TEST] renamed variables in ScriptServiceTests--,0
+Fix typo in Hunspell logging--,0
+inital support for zen discovery module- (multicast discovery implemented)--,0
+Simplify TestCluster--TestCluster now doesn't use any reference counting anymore and-testcluster names are based on creation time to prevent confilcts if-builds hang.-,0
+"Tests: Add test for parsing ""_name"" field in- RangeQueryParser--",0
+[TEST] fixed TestCluster size() javadocs--,0
+"Query DSL: Add `and`, `or`, and `not` filters,- closes -216--",0
+clean-up long values--,0
+Fix file handle leak in readBlob method of- AbstractFsBlobContainer--,1
+Added clear scroll api.--The clear scroll api allows clear all resources associated with a `scroll_id` by deleting the `scroll_id` and its associated SearchContext.--Closes -3657-,0
+Small cleanup--,0
+"Allow to configure a common logger prefix using- `es.logger.prefix` system prop, closes -360.--",0
+fix name--,0
+"introduce read/writeSharedString while streaming- currently, we treat all strings as shared (either by full equality or- identity equality), while almost all times we know if they should be- serialized as shared or not. Add an explicitly write/readSharedString, and- use it where applicable, and all other write/readString will not treat them- as shared relates to -3322--",1
+"Change default operator to ""or"" for- ""low_freq_operator"" and ""high_freq_operator"" parameters for ""common"" queries--Closes -3178-",1
+"add a marker CachedFilter this allows to easily- and globally check if we cache a filter or not, all filter caching uses this- marker interface--",0
+"Added support for acknowledgements to update- cluster settings api--As a side note, the internal reroute call is now part of the ack mechanism. That means that if the response contains acknowledged flag, the internal reroute that was eventually issued was acknowledged too. Also, even if the request is not acknowledged, the reroute is issued before returning, which means that there is no need to manually call reroute afterwards to make sure the new settings are immediately applied.--Closes -3995-",0
+"Http Transport: Allow to configure- `max_header_size`, `max_initial_line_length`, and `max_chunk_size`, closes- -1174.--",0
+Add missing index name to indexing slow log--This was lost in refactoring even on the 2.x branch. The slow-log-is not per index not per shard anymore such that we don't add the-shard ID as the logger prefix. This commit adds back the index-name as part of the logging message not as a prefix on the logger-for better testabilitly.--Closes -17025-,1
+Added KeywordRepeatFilter that allows emitting- stemmed and unstemmed versions of the same token if stemmers are used--Closes -2753-,0
+Catch AmazonClientExceptions to prevent- connection loss If the AWS client throws an exception (e.g: because of a DNS- failure) it will end up killing the rejoin thread and stop retrying which can- lead to a node getting stuck unable to rejoin the cluster.--Closes -30.-,1
+zen disco: support for a node to act as a client- (and not become master) using discovery.zen.master setting (default to true).- It will automatically be set to false when node.client is set to true.--,0
+Facets: deprecation.--Users are encouraged to move to the new aggregation framework that was-introduced in Elasticsearch 1.0.--Close -6485-,0
+"Translog: Implement a file system based translog- and make it the default, closes -260.--",0
+"Introduced common test methods in- MatchedQueriesTests (e.g. createIndex, ensureGreen, refresh, assertHitCount)--",0
+Migrating NodesInfo API to use plugins instead of- singular plugin--In order to be consistent (and because in 1.0 we switched from-parameter driven information to specifzing the metrics as part of the URI)-this patch moves from 'plugin' to 'plugins' in the Nodes Info API.-,0
+"Fix parsing of file based template loading--We support three different settings in templates--* ""settings"" : { ""index"" : { ""number_of_shards"" : 12 } }-* ""settings"" : { ""index.number_of_shards"" : 12 }-* ""settings"" : { ""number_of_shards"" : 12 }--The latter one was not supported by the fix in -4235--This commit fixes this issue and uses randomized testing to test any of the three cases above when running integration tests.--Closes -4411-",1
+refactor sub fetch phase to also allow for hits- level execution--,0
+support yaml detection on char sequence--,0
+[TEST] Stabelize MoreLikeThisActionTests--The `testCompareMoreLikeThisDSLWithAPI` test compares results from query-and API which might query different shards. Those shares might use-different doc IDs internally to disambiguate. This commit resorts the-results and compares them after stable disambiguation.-,1
+Percolator response now always returns the- `matches` key.--Closes -4881-,1
+add debug log if using compressed stored fields--,0
+If matching root doc's inner objects don't match- the `nested_filter` then the `missing` value should be used to sort the root- doc. Closes -3020--,0
+[TEST] Don't delete data dirs after test - only- delete their content.--Closes -5815-,1
+"Improved test, printed out potential shard- failures--",0
+only pull Fields once from the reader--,1
+"Optimize multiple cluster state processing on- receiving nodes Nodes that receive the cluster state, and they have several- of those pending, can optimize and try and process potentially only one of- those. closes -5139--",0
+Fix- `indices.recovery.concurrent_small_file_streams` not being dynamically- settable--Fixes -4094-,1
+"Added support for acknowledgement from other- nodes in open/close index api--The open/close index api now waits for an acknowledgement from all the other nodes before returning its response, till the timeout (configurable, default 10 secs) expires. The returned acknowledged flag reflects whether the cluster state change was acknowledged by all the nodes or the timeout expired before.--Closes -3400-",0
+move DatabaseReaders initialization to- IngestGeoIpPlugin-onModule--,0
+lucene 4: use the proper token stream to return--,1
+rename node to DiscoveryNode--,0
+"Testing: Add test rule to repeat tests on binding- exceptions--Due to the possibility of ports being already used when choosing a-random port, it makes sense to simply repeat a unit test upon a bind-exception.--This commit adds a junit rule, which does exactly this and does not-require you to change the test code and add loops.--Closes -9010-",1
+Don't allow unallocated indexes to be closed.--Closes -3313-,1
+"Tests: Use all found index files instead of- static list for static bwc tests--It is a pain to add a new static index, and then have to update the old-index test.  This removes the need for the latter step.--closes -9854-",0
+add an index level setting to disable/enable- purging of expired docs (issue -1791)--,0
+"Remove Infinity values for Range facets when no- docs match the range, closes -1366.--",0
+Added UNICODE_CHARACTER_CLASS support to Regex- flags. This flag is only supported in Java7 and is ignored if set on a java 6- JVM--Closes -2895-,0
+"BytesStreamOutput default size should be 2k- instead of 32k We changed the default of BytesStreamOutput (used in various- places in ES) to 32k from 1k with the assumption that most stream tend to be- large. This doesn't hold for example when indexing small documents and adding- them using XContentBuilder (which will have a large overhead).--Default the buffer size to 2k now, but be relatively aggressive in expanding the buffer when below 256k (double it), and just use oversize (1/8th) when larger to try and minimize garbage and buffer copies.--relates to -3624-closes -3638-",0
+"Sorting on _score in the URI format is reversed,- closes -1191.--",1
+Changed GeoEncodingTests to ensure accuracy- always >1mm due to rounding errors with very small numbers--,1
+Fixed resolving closest nested object when- sorting on a field inside nested object--,1
+Fix RobinEngineIntegrationTest - missed to- explicitly create the index--,1
+Fix NPE in RangeAggregator--,1
+"Internal: use AtomicInteger instead of volatile- int for the current action filter position--Also improved filter chain tests to not rely on execution time, and made filter chain tests look more similar to what happens in reality by removing multiple threads creation in testTooManyContinueProcessing (something we don't support anyway, makes little sense to test it).--Closes -7021-",1
+Remove dead code and add missing @Override- annotations--,0
+[TEST] Re-add rebalance disable setting in- RecoveryFromGatewayTests--,0
+"fix a bug in new checksum mechanism that caused- for replicas not to retain the _checksums file. Also, now that checksums are- widely used, consider files without checksums as ones that need to be- recovered--",1
+Fielddata: Remove- BytesValues.WithOrdinals.currentOrd and copyShared.--These methods don't exist in Lucene's sorted set doc values.--Relates to -6524-,0
+"Recovery Settings: Change settings (still support- old settings) and allow for more dynamic settings, closes -1303.--",0
+optimize boolean queries when possible--,0
+"Remove get index templates deprecated methods In- 0.90.4, we deprecated some code:--* `GetIndexTemplatesRequest-GetIndexTemplatesRequest(String)` moved to `GetIndexTemplatesRequest-GetIndexTemplatesRequest(String...)`-* `GetIndexTemplatesRequest-name(String)` moved to `GetIndexTemplatesRequest-names(String...)`-* `GetIndexTemplatesRequest-name()` moved to `GetIndexTemplatesRequest-names()`--* `GetIndexTemplatesRequestBuilder-GetIndexTemplatesRequestBuilder(IndicesAdminClient, String)` moved to  `GetIndexTemplatesRequestBuilder-GetIndexTemplatesRequestBuilder(IndicesAdminClient, String...)`--* `IndicesAdminClient-prepareGetTemplates(String)` moved to `IndicesAdminClient-prepareGetTemplates(String...)`--* `AbstractIndicesAdminClient-prepareGetTemplates(String)` moved to `AbstractIndicesAdminClient-prepareGetTemplates(String...)`--We can now remove that old methods in 1.0.--**Note**: it breaks the Java API--Relative to -2532.-Closes -3681.-",0
+use custom similarity in search (if there is one)--,0
+improve memcached test--,0
+"Allow for plugins to register REST filter (better- support with async execution and some renaming), closes -1658.--",0
+lucene 4: Fixed- BitsetExecutionChildQuerySearchTests class.--,1
+"Shard Allocation: Closed indices are not properly- taken into account when rebalancing, closes -858.--",1
+Allow additional settings for the node in- ESSingleNodeTestCase--This change adds a method that extending classes can override to provide additional settings-for the node used in a single node test case.-,0
+"remove equals/hashcode as part of Pipeline and- adapt tests--Only MutateProcessor implemented equals / hashcode hence we would only use that one in our tests, since they relied on them. Better to not rely on equals/hashcode, drop them and mock processor/pipeline in our tests that need them. That also allow to make MutateProcessor constructor package private as the other processors.-",0
+pass on node seed to the node level settings in- TestCluster--,0
+Fix test failure.--,1
+fixed issue from merge--,1
+add anotehr test--,0
+Catch and Log RejectedExecutionException in async- ping--,0
+Rename Engine-seacher() into- Engine-acquireSearcher()--The name should reflect that the caller is responsible for-releaseing the searcher again.-,0
+"add ""same"" thread pool type (really, just for- testing)--",0
+"Histogram Facet: Allow to define a key field and- value script, closes -517.--",0
+remove unused code--,0
+"Mapping: When _all is disabled, optimize to not- gather all entries, closes -722.--",0
+Fix possible exception in toCamelCase method--,1
+Randomize node level setting per node not per- cluster--,0
+Aggregations: change to default shard_size in- terms aggregation--The default shard size in the terms aggregation now uses BucketUtils.suggestShardSideQueueSize() to set the shard size if the user does not specify it as a parameter.--Closes -6857-,0
+add peer recovery status to the indices status- API exposing both on going and summary when recovering from a peer shard--,0
+Tests: Improve test coverage.--Close -7428-,0
+increase netty worker count to default to the- updated value netty defaults to--,0
+[Test] make recovery slow down in- rerouteRecoveryTest aware of index size--,0
+make test less evil--,0
+tests repaired--,1
+fields are protected--,0
+"nullable problems: disable warnings on- ""complex"" getters/setters (IDEA-63958)--",1
+annotation default value parsing fixed--,1
+cleanup (IDEA-90461)--,1
+IDEA-70843 (fix Hector slider for GTK+ L&F)--,1
+additional null check--,1
+just one more DnDEnabler little fix :)--,1
+add suggestions for literal expressions- (IDEA-57593)--,1
+disable pattern configuration for the same- named packages (IDEA-151250)--,1
+gradle: correctly set TestModuleProperties for- modules containing '-' in names (IDEA-151590)--,1
+Replace instanceof template variable with- variable segment--,0
+Make is possible to enhance color schemes from- plugin in non-intellij environment (e.g. upsource)--,0
+cleanup--,0
+cleanup--,0
+Memory leak fixed. Area instances connected to- project and module haven't been disposed at their disposal.--,1
+Renaming preview files--,0
+implement open hash addressing in index leaf- page to avoid large moves--,0
+intellilang avoid costly service lookups--,0
+IDEA-127075 IDE hang on file structure--,1
+don't suggest 'convert to groovy-style property- access' inside closure--,1
+IDEA-114890 Find Jar On The Web: Looking For- Libraries progress can't ve cancelled--,1
+move statement should be enabled when moving to- the end of file--,1
+NPE--,1
+refactor name: it could be any RC--,0
+diff: better name for default diff tool--,0
+ui: use setter--,0
+"IDEADEV-1678, IDEADEV-1685 Added icons count on- folders in thumbnails view, Added EditExternaly to editors actions--",1
+IDEADEV-20992--,1
+fixed PY-2674 Assignment can be replaced with- augmented assignmet breaks context--,1
+PY-1635 Extract Method in middle of expression- generates broken code--,1
+move suppress/settings intention down- (IDEA-72320 )--,1
+Typos--,0
+FileNameCache: enable caching always don't- store common prefix (saves 8 entry bytes vs. less prefix average length)--,0
+fixed django template commenter again (PY-1949)--,1
+fix indefinite loop (IDEA-67750)--,1
+StackOverflow fixed--,1
+use common ExceptionUtil--,0
+Fix for upsource--,1
+IDEA-63381 we should find android module when- platform is specified--,1
+formatting of injected code refactored - 3--,0
+IDEA-94048 Maven run configuration - profiles- list gets randomly re-ordered after closing and opening project--,1
+make find toolwindow work in dumb mode and- correctly navigate--,1
+aware of not sourcemap file--,0
+Don't offer to download source by maven for- artifact with 'system' scope--,0
+WI-31168 Unable to save settings after upgrade- to 2016.1 (cherry picked from commit 5b98073)--,1
+better messages format--,0
+title changed--,0
+IDEA-81004 Deadlock (SoftWrapApplianceManager)--Breaking potentially endless loop and report an error-,1
+SVN: configure branches NPE--,1
+"reorder instructions, maybe it'll fix strange- IMSE--",1
+TreeUi: NPE when in showCentered() no visible- rows in tree--,1
+NPE fix--,1
+fix--,1
+Added code completion test.--,0
+fragments with differences in comments only are- considered equivalent--,0
+optimization: determine token end as next token- start in PsiBuilder--,0
+"Ruby test runner: Statistcis can be sort by- ""Tests"" column--",0
+diff: allow to highlight changes without border--,0
+IDEA-78863 Live templates are not accessible in- read-only file (e.g. versioned in Perforce or TFS)--,1
+fixed PY-12251 Project Interpreters: Create- virtualenv from settings doesn't update warnigns about python package- management tools--,1
+"report expressions like ""!b != c"" in ""Double- negation"" inspection and add test--",0
+correctly-sized icon in completion extender--,1
+Check VFS sanity action--,0
+code-dups cleanup--,0
+external system: add clickable link to log- folder to the project import failure message--,0
+PY-16335 Preserve formatting of converted- collection literals--,1
+FrameWrapper: do not restore frame state as- iconified (IDEA-87792)--,1
+added additional shortcut--,0
+optimization: cache org.junit.Test--,0
+PY-996--,0
+"IDEADEV-25382: idiotic ""...please recompile""- error message killed--",1
+editorPaintStart useless in our case--,0
+resolve and completion for Django settings- (PY-563)--,1
+Fixed typos in test.--,0
+"SMTestRunner: Statistics tab, total column- caption improved--",0
+IDEA-80573 GitCheckoutOperation: sleep a bit to- let file watcher report all changes for small repositories where refresh is- too fast.--,1
+ChangeUtil-encode/decodeInformation for groovy--,0
+fix navbar rebuild on popup invocation--,1
+method return fix should not touch super method- formal parameters--,1
+Maven: test fixed by removing unnecessary and- obsolete assertion--,1
+one more test that fails; some more code moved- to common framework--,0
+bad linking of Xerces messages--,1
+[vcs-log] make BekLinearGraph testable--,0
+IDEA-35738 Cannot drag around label with empty- text--,1
+plugins: tooltip for plugins with newer version- (IDEA-75998)--,0
+XML rename dialog doesn't accept character '.'- or '-' (IDEADEV-35547)--,1
+"JUnit UI redesign, part 4: ""rerun failed tests""- button moved to proper place--",1
+remember committed changes splitter proportions- (IDEADEV-16784)--,0
+Major changes in data structures.- Reimplementation & beautification.--,0
+Fixed ipnb editor layout.--,1
+"Cheaper ProgressManager.checkCanceled().- Mostly, it's call to abstract method eliminated.--",0
+Improved align behavior to align only- subsequent assignments or hashes--,0
+preferred focused component (IDEA-60570)--,1
+class kind calculation may produce INRE- (SCL-1349)--,1
+javadoc--,0
+"IDEA-139609 Gradle: New Module Wizard: ""Select- Gradle Projec""t dialog: selection is not confirmed by double-clicking or- pressing Enter--",1
+NPE--,1
+Cleanup code--,0
+Maven: escaping support in the resource- compiler (IDEADEV-35524)--,1
+form scope provider & dom lookups implemented--,0
+EP for upsource added--,0
+CPP-560 New Welcome Screen for CLion--,0
+support for forced compilation of a set of- files/modules--,0
+"added ""Overloaded varargs method"" inspection--",0
+[vcs-log] IDEA-125276 support regular- expressions in branch filter--,0
+Mac laf: add support for search controls with- history popups--,0
+IDEADEV-11483 IE conditional comments support- [in progress]--,0
+symlink support in vfs & SOE protection--,0
+"YARN-2635. TestRM, TestRMRestart,- TestClientToAMTokens should run with both CS and FS. (Wei Yan and kasha via- kasha)--(cherry picked from commit 80d11eb68e60f88e16d7d41edecbddfc935a6b10)-",0
+HDFS-2465. Add HDFS support for fadvise readahead- and drop-behind. Contributed by Todd Lipcon.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-0.23@1190625 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-2132. ZKRMStateStore.ZKAction-runWithRetries- doesn't log the exception it encounters. (Vamsee Yarlagadda via kasha)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1601066 13f79535-47bb-0310-9956-ffa450edef68-,0
+MAPREDUCE-2899. Replace major parts of- ApplicationSubmissionContext with a ContainerLaunchContext (Arun Murthy via- mahadev) - Merging r1170459 from trunk--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-0.23@1170460 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-2582. Fixed Log CLI and Web UI for showing- aggregated logs of LRS. Contributed Xuan Gong.--(cherry picked from commit e90718fa5a0e7c18592af61534668acebb9db51b)-,1
+"YARN-2111. In FairScheduler.attemptScheduling, we- don't count containers as assigned if they have 0 memory but non-zero cores- (Sandy Ryza)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1605115 13f79535-47bb-0310-9956-ffa450edef68-",1
+"YARN-3587. Fix the javadoc of- DelegationTokenSecretManager in yarn, etc. projects. Contributed by Gabor- Liptak. (cherry picked from commit 7e543c27fa2881aa65967be384a6203bd5b2304f)--",0
+MAPREDUCE-3121. NodeManager should handle- disk-failures (Ravi Gummadi via mahadev) - Merging r1208131 from trunk.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-0.23@1208135 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-2821. Fixed a problem that DistributedShell AM- may hang if restarted. Contributed by Varun Vasudev (cherry picked from- commit 7438966586f1896ab3e8b067d47a4af28a894106)--,1
+YARN-1063. Augmented Hadoop common winutils to have- the ability to create containers as domain users. Contributed by Remus- Rusanu. Committed as a YARN patch even though all the code changes are in- common.--(cherry picked from commit 5ca97f1e60b8a7848f6eadd15f6c08ed390a8cda)-,0
+HADOOP-6987. Use JUnit Rule to optionally fail test- cases that run more than 10 seconds.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1005977 13f79535-47bb-0310-9956-ffa450edef68-,0
+MAPREDUCE-3345. Fixed a race condition in- ResourceManager that was causing TestContainerManagerSecurity to fail- sometimes. Contributed by Hitesh Shah. svn merge -c r1199144- --ignore-ancestry ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-0.23@1199145 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-632. Changed ContainerManager api to throw- IOException and YarnRemoteException. Contributed by Xuan Gong. svn merge- --ignore-ancestry -c 1479740 ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1479741 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-2830. Add backwords compatible- ContainerId.newInstance constructor. Contributed by Jonathan Eagles.--(cherry picked from commit 43cd07b408c6613d2c9aa89203cfa3110d830538)-,0
+HADOOP-7057. IOUtils.readFully and- IOUtils.skipFully have typo in exception creation's message. Contributed by- Konstantin Boudnik.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1040849 13f79535-47bb-0310-9956-ffa450edef68-,0
+HADOOP-6133. Add a caching layer to- Configuration::getClassByName to alleviate a performance regression- introduced in a compatibility layer. Contributed by Todd Lipcon--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@812285 13f79535-47bb-0310-9956-ffa450edef68-,1
+Merge r1503933 from trunk to branch-2 for YARN-513.- Create common proxy client for communicating with RM (Xuan Gong & Jian He via- bikas)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1503935 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-1757. NM Recovery. Auxiliary service support.- (Jason Lowe via kasha)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1585784 13f79535-47bb-0310-9956-ffa450edef68-,0
+HADOOP-7223. FileContext createFlag combinations- are not clearly defined. Contributed by Suresh Srinivas.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1092565 13f79535-47bb-0310-9956-ffa450edef68-,0
+Merge -c 1529538 from trunk to branch-2 to fix- YARN-1090. Fixed CS UI to better reflect applications as non-schedulable and- not as pending. Contributed by Jian He.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1529539 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-1424. RMAppAttemptImpl should return the- DummyApplicationResourceUsageReport for all invalid accesses. (Ray Chiang via- kasha)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1601745 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-3583. Support of NodeLabel object instead of- plain String in YarnClient side. (Sunil G via wangda)--(cherry picked from commit 563eb1ad2ae848a23bbbf32ebfaf107e8fa14e87)-(cherry picked from commit b0d22b0c606fad6b4ab5443c0aed07c829b46726)-,0
+HADOOP-7341. Fix options parsing in CommandFormat.- Contributed by Daryn Sharp.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1132505 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-1910. Fixed a race condition in TestAMRMTokens- that causes the test to fail more often on Windows. Contributed by Xuan Gong.- svn merge --ignore-ancestry -c 1586192 ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1586193 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-1883. TestRMAdminService fails due to- inconsistent entries in UserGroups (Mit Desai via jeagles)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1582865 13f79535-47bb-0310-9956-ffa450edef68-,1
+merge YARN-360 from trunk. Allow apps to- concurrently register tokens for renewal. Contributed by Daryn Sharp.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1442442 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-1185. Fixed FileSystemRMStateStore to not- leave partial files that prevent subsequent ResourceManager recovery.- Contributed by Omkar Vinit Joshi. svn merge --ignore-ancestry -c 1533803- ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1533805 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-3379. Fixed missing data in localityTable and- ResourceRequests table in RM WebUI. Contributed by Xuan Gong (cherry picked- from commit 4e886eb9cbd2dcb128bbfd17309c734083093a4c)--,1
+"HADOOP-7034. Add TestPath tests to cover dot, dot- dot, and slash normalization. Contributed by Eli Collins--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1035142 13f79535-47bb-0310-9956-ffa450edef68-",0
+HADOOP-6367. Removes Access Token implementation- from common. Contributed by Kan Zhang.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@881509 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-539. Addressed memory leak of LocalResource- objects NM when a resource localization fails. Contributed by Omkar Vinit- Joshi. svn merge --ignore-ancestry -c 1466756 ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1466757 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-3028. Better syntax for replaceLabelsOnNode in- RMAdmin CLI. Contributed by Rohith Sharmaks--(cherry picked from commit fd93e5387b554a78413bc0f14b729e58fea604ea)-,0
+Merge r1580077 from trunk. YARN-1849. Fixed NPE in- ResourceTrackerService-registerNodeManager for UAM. Contributed by Karthik- Kambatla--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1580078 13f79535-47bb-0310-9956-ffa450edef68-,1
+MAPREDUCE-2766. Fixed NM to set secure permissions- for files and directories in distributed-cache. Contributed by Hitesh Shah.- svn merge -c r1195340 --ignore-ancestry ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-0.23@1195341 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-254. Update fair scheduler web UI for- hierarchical queues. (sandyr via tucu)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1423743 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-2730. DefaultContainerExecutor runs only one- localizer at a time. Contributed by Siqi Li (cherry picked from commit- 6157ace5475fff8d2513fd3cd99134b532b0b406)--,1
+"YARN-2122. In AllocationFileLoaderService, the- reloadThread should be created in init() and started in start(). (Robert- Kanter via kasha)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1601046 13f79535-47bb-0310-9956-ffa450edef68-",1
+HADOOP-6534. Trim whitespace from directory lists- initializing LocalDirAllocator. Contributed by Todd Lipcon--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@909806 13f79535-47bb-0310-9956-ffa450edef68-,0
+"Merge r1606407 from trunk. YARN-614. Changed- ResourceManager to not count disk failure, node loss and RM restart towards- app failures. Contributed by Xuan Gong--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1606408 13f79535-47bb-0310-9956-ffa450edef68-",0
+HADOOP-6682. NetUtils:normalizeHostName does not- process hostnames starting with [a-f] correctly.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@953929 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-3094. Reset timer for liveness monitors after- RM recovery. Contributed by Jun Gong (cherry picked from commit- 0af6a99a3fcfa4b47d3bcba5e5cc5fe7b312a152)--,1
+HADOOP-6139. Fix the FsShell help messages for rm- and rmr.  Contributed by Jakob Homan--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@793098 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-2798. Fixed YarnClient to populate the renewer- correctly for Timeline delegation tokens. Contributed by Zhijie Shen.--(cherry picked from commit 71fbb474f531f60c5d908cf724f18f90dfd5fa9f)-,1
+YARN-2269. Remove external links from YARN UI.- Contributed by Craig Welch--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1609591 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-2059. Added admin ACLs support to Timeline- Server. Contributed by Zhijie Shen. svn merge --ignore-ancestry -c 1597207- ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1597208 13f79535-47bb-0310-9956-ffa450edef68-,0
+HADOOP-6906.  FileContext copy() utility doesn't- work with recursive copying of directories. (vinod k v via mahadev)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@987374 13f79535-47bb-0310-9956-ffa450edef68-,1
+MAPREDUCE-2784. [Gridmix] Bug fixes in- ExecutionSummarizer and ResourceUsageMatcher. (amarrk)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-0.23@1237579 13f79535-47bb-0310-9956-ffa450edef68-,1
+HADOOP-6452 Hadoop JSP pages don't work under a- security manager--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@893490 13f79535-47bb-0310-9956-ffa450edef68-,1
+HADOOP-6951.  Distinct minicluster services (e.g.- NN and JT) overwrite each other's service policies.  Contributed by Aaron T.- Myers.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1002896 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-2819. NPE in ATS Timeline Domains when- upgrading from 2.4 to 2.6. Contributed by Zhijie Shen--(cherry picked from commit 4a114dd67aae83e5bb2d65470166de954acf36a2)-,1
+YARN-596. Use scheduling policies throughout the- queue hierarchy to decide which containers to preempt (Wei Yan via Sandy- Ryza)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1598198 13f79535-47bb-0310-9956-ffa450edef68-,1
+"HADOOP-6932.  Namenode start (init) fails because- of invalid kerberos key, even when security set to simple--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@991030 13f79535-47bb-0310-9956-ffa450edef68-",1
+YARN-1497. Fix comment and remove accidental- println--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1567491 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-1635. Implemented a Leveldb based- ApplicationTimelineStore. Contributed by Billie Rinaldi. svn merge- --ignore-ancestry -c 1565868 ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1565869 13f79535-47bb-0310-9956-ffa450edef68-,0
+"HDFS-2154. In TestDFSShell, use TEST_ROOT_DIR and- fix some deprecated warnings.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1147184 13f79535-47bb-0310-9956-ffa450edef68-",0
+YARN-2705. Fixed bugs in ResourceManager node-label- manager that were causing test-failures: added a dummy in-memory- labels-manager. Contributed by Wangda Tan.--(cherry picked from commit e9c66e8fd2ccb658db2848e1ab911f1502de4de5)-,1
+MAPREDUCE-2603. Disable High-Ram emulation in- system tests. (Vinay Kumar Thota via amarrk)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1138301 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-2608. FairScheduler: Potential deadlocks in- loading alloc files and clock access. (Wei Yan via kasha)--(cherry picked from commit c9811af09a3d3f9f2f1b86fc9d6f2763d3225e44)-,1
+YARN-3108. ApplicationHistoryServer doesn't process- -D arguments (Chang Li via jeagles)--(cherry picked from commit 30a8778c632c0f57cdd005080a470065a60756a8)-,1
+HDFS-7144. Fix findbugs warnings in- RamDiskReplicaTracker. (Contributed by Tsz Wo Nicholas Sze)--Conflicts:-	hadoop-hdfs-project/hadoop-hdfs/CHANGES-HDFS-6581.txt-,0
+HADOOP-7110. Implement chmod with JNI. Contributed- by Todd Lipcon--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1063090 13f79535-47bb-0310-9956-ffa450edef68-,0
+HADOOP-7187. Fix socket leak in GangliaContext. - Contributed by Uma Maheswara Rao G--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1085122 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-2502. Changed DistributedShell to support node- labels. Contributed by Wangda Tan (cherry picked from commit- f6b963fdfc517429149165e4bb6fb947be6e3c99)--,0
+HDFS-2414. Fix TestDFSRollback to avoid spurious- failures. Contributed by Todd Lipcon.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-0.23@1180540 13f79535-47bb-0310-9956-ffa450edef68-,1
+HDFS-73. DFSOutputStream does not close all the- sockets. Contributed by Uma Maheswara Rao G--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1157232 13f79535-47bb-0310-9956-ffa450edef68-,1
+HADOOP-7001.  Configuration changes can occur via- the Reconfigurable interface. (Patrick Kline via dhruba)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1038480 13f79535-47bb-0310-9956-ffa450edef68-,0
+MAPREDUCE-3238. Small cleanup in SchedulerApp.- (Todd Lipcon via mahadev) - Merging r1206921 from trunk--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-0.23@1206924 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-1555. Fixed test failures in- applicationhistoryservice.* (Vinod Kumar Vavilapalli via mayank) svn merge- --ignore-ancestry -c 1556753 ../YARN-321--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1562207 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-3457. NPE when NodeManager.serviceInit fails- and stopRecoveryStore called. Contributed by Bibin A Chundatt.--(cherry picked from commit dd852f5b8c8fe9e52d15987605f36b5b60f02701)-,1
+YARN-1718. Fix a couple isTerminals in Fair- Scheduler queue placement rules (Sandy Ryza)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1569929 13f79535-47bb-0310-9956-ffa450edef68-,1
+HADOOP-6441. Protect web ui from cross site- scripting attacks (XSS) on the host http header and using encoded utf-7.- (omalley)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@891132 13f79535-47bb-0310-9956-ffa450edef68-,1
+HDFS-3167. CLI-based driver for MiniDFSCluster.- Contributed by Henry Robinson.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1308160 13f79535-47bb-0310-9956-ffa450edef68-,0
+MAPREDUCE-2187. Reporter sends progress during- sort/merge. Contributed by Anupam Seth.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1152964 13f79535-47bb-0310-9956-ffa450edef68-,1
+"YARN-1913. With Fair Scheduler, cluster can logjam- when all resources are consumed by AMs (Wei Yan via Sandy Ryza)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1599401 13f79535-47bb-0310-9956-ffa450edef68-",1
+YARN-3361. CapacityScheduler side changes to- support non-exclusive node labels. Contributed by Wangda Tan (cherry picked- from commit 0fefda645bca935b87b6bb8ca63e6f18340d59f5)--,0
+svn merge -c 1371390 FIXES: YARN-14. Symlinks to- peer distributed cache files no longer work (Jason Lowe via bobby)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1371395 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-2065 AM cannot create new containers after- restart--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1607440 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-45. Add protocol for schedulers to request- containers back from ApplicationMasters. Contributed by Carlo Curino and- Chris Douglas.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1479773 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-2958. Made RMStateStore not update the last- sequence number when updating the delegation token. Contributed by Varun- Saxena.--(cherry picked from commit 562a701945be3a672f9cb5a52cc6db2c1589ba2b)-,1
+HDFS-1330 and HADOOP-6889. Added additional unit- tests. Contributed by John George.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-0.23@1163464 13f79535-47bb-0310-9956-ffa450edef68-,0
+HADOOP-7657. Add support for LZ4 compression.- Contributed by Binglin Chang.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-0.23@1220312 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-3613. TestContainerManagerSecurity should init- and start Yarn cluster in setup instead of individual methods. (nijel via- kasha)--(cherry picked from commit fe0df596271340788095cb43a1944e19ac4c2cf7)-,0
+YARN-1734. Fixed ResourceManager to update the- configurations when it transits from standby to active mode so as to- assimilate any changes that happened while it was in standby mode.- Contributed by Xuan Gong. svn merge --ignore-ancestry -c 1571539 ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1571540 13f79535-47bb-0310-9956-ffa450edef68-,1
+Merge r1601491 from trunk. YARN-2030. Augmented- RMStateStore with state machine. Contributed by Binglin Chang--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1601492 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-1936. Added security support for the Timeline- Client. Contributed by Zhijie Shen. svn merge --ignore-ancestry -c 1597153- ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1597154 13f79535-47bb-0310-9956-ffa450edef68-,0
+svn merge -c 1420232 FIXES: YARN-266. RM and JHS- Web UIs are blank because AppsBlock is not escaping string properly.- Contributed by Ravi Prakash--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1420233 13f79535-47bb-0310-9956-ffa450edef68-,1
+HADOOP-6375. Sync documentation for FsShell du with- its implementation. Contributed by Todd Lipcon--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@883206 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-280. RM does not reject app submission with- invalid tokens (Daryn Sharp via tgraves)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1425085 13f79535-47bb-0310-9956-ffa450edef68-,1
+HDFS-4733. Make HttpFS username pattern- configurable. Contributed by Alejandro Abdelnur.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1477241 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-3181. FairScheduler: Fix up outdated findbugs- issues. (kasha)--(cherry picked from commit c2b185def846f5577a130003a533b9c377b58fab)-,0
+Merge -c 1235858 from trunk to branch-0.23 to fix- MAPREDUCE-3683. Fixed maxCapacity of queues to be product of parent- maxCapacities.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-0.23@1235860 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-578. Fixed NM to use SecureIOUtils for reading- and aggregating logs. Contributed by Omkar Vinit Joshi. svn merge- --ignore-ancestry -c 1487672 ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1487686 13f79535-47bb-0310-9956-ffa450edef68-,0
+HDFS-1480. All replicas of a block can end up on- the same rack when some datanodes are decommissioning. Contributed by Todd- Lipcon.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1160897 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-2331. Distinguish shutdown during supervision- vs. shutdown for rolling upgrade. Contributed by Jason Lowe--(cherry picked from commit 088156de43abb07bec590a3fcd1a5af2feb02cd2)-,0
+MAPREDUCE-3392. Fixed Cluster's- getDelegationToken's API to return null when there isn't a supported token.- Contributed by John George. svn merge -c r1200484 --ignore-ancestry- ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-0.23@1200485 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-2519. Credential Provider related unit tests- failed on Windows. Contributed by Xiaoyu Yao.--(cherry picked from commit cbea1b10efd871d04c648af18449dc724685db74)-,1
+YARN-295. Fixed a race condition in ResourceManager- RMAppAttempt state machine. Contributed by Mayank Bansal. svn merge- --ignore-ancestry -c 1501856 ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1501857 13f79535-47bb-0310-9956-ffa450edef68-,1
+HADOOP-6583. Captures authentication and- authorization metrics. Contributed by Devaraj Das.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@915095 13f79535-47bb-0310-9956-ffa450edef68-,0
+svn merge -c 1379565 FIXES: YARN-66. aggregated- logs permissions not set properly (tgraves via bobby)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1379567 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-1920. Fixed- TestFileSystemApplicationHistoryStore failure on windows. Contributed by- Vinod Kumar Vavilapalli. svn merge --ignore-ancestry -c 1586414 ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1586420 13f79535-47bb-0310-9956-ffa450edef68-,1
+YARN-2740. Fix NodeLabelsManager to properly handle- node label modifications when distributed node label configuration enabled.- (Naganarasimha G R via wangda)--(cherry picked from commit db1b674b50ddecf2774f4092d677c412722bdcb1)-,1
+HADOOP-2398. Additional instrumentation for- NameNode and RPC server. Add support for accessing instrumentation statistics- via JMX. (Sanjay radia via dhruba)--git-svn-id: https://svn.apache.org/repos/asf/lucene/hadoop/trunk/src/contrib/hbase@611906 13f79535-47bb-0310-9956-ffa450edef68-,0
+"HADOOP-6148. Implement a fast, pure Java CRC32- calculator which outperforms java.util.zip.CRC32.  Contributed by Todd Lipcon- and Scott Carey--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@794944 13f79535-47bb-0310-9956-ffa450edef68-",0
+YARN-2493. Added node-labels page on RM web UI.- Contributed by Wangda Tan (cherry picked from commit- b7442bf92eb6e1ae64a0f9644ffc2eee4597aad5)--,0
+YARN-1936. Added security support for the Timeline- Client. Contributed by Zhijie Shen. svn merge --ignore-ancestry -c 1597153- ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1597154 13f79535-47bb-0310-9956-ffa450edef68-,0
+HADOOP-7353. Cleanup FsShell and prevent masking of- RTE stack traces. Contributed by Daryn Sharp.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/trunk@1132764 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-3100. Made YARN authorization pluggable.- Contributed by Jian He.--(cherry picked from commit 23bf6c72071782e3fd5a628e21495d6b974c7a9e)-,0
+YARN-2158. Improved assertion messages of- TestRMWebServicesAppsModification. Contributed by Varun Vasudev. svn merge- --ignore-ancestry -c 1608667 ../../trunk/--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1608668 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-1608. LinuxContainerExecutor has a few DEBUG- messages at INFO level (kasha)--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1558875 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-3853. Add docker container runtime support to- LinuxContainterExecutor. Contributed by Sidharta Seethana.--(cherry picked from commit 3e6fce91a471b4a5099de109582e7c6417e8a822)--Conflicts:-	hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/LinuxContainerExecutor.java-,0
+YARN-975. Added a file-system implementation for- HistoryStorage. Contributed by Zhijie Shen. svn merge --ignore-ancestry -c- 1556727 ../YARN-321--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-2@1562184 13f79535-47bb-0310-9956-ffa450edef68-,0
+YARN-2768 Improved Yarn Registry service record- structure (stevel)--,0
+HDFS-2500. Avoid file system operations in- BPOfferService thread while processing deletes. Contributed by Todd Lipcon.--git-svn-id: https://svn.apache.org/repos/asf/hadoop/common/branches/branch-0.23@1190072 13f79535-47bb-0310-9956-ffa450edef68-,0
+BZ-1025874: fixing incremental update of kjars--,1
+-Added fixes for waltz to run waltz50--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@7071 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+"JBRULES-340 core implementation for 'from' -The- from node is now added -ReteooBuilder is added, but not unit tested.--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@5713 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-",0
+JBRULES-393 Xml dump with illegal characters -fixed- by Javier Prieto--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@5949 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+BZ-986000 - DRL-to-RuleModel marshalling- improvements--,0
+JBRULES-2339: JBRULES-2440: fixing ruleflow group- management--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@32725 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+JBRULES-527: adding primitive support to alpha- hashing code--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@7150 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+JBRULES-1520: moving test to correct test file--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@19375 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+"JBRULES-3343 Property Specific -Added fix for- byPassModifyToLeftTupleSink, which was not working for LIANodes--",1
+[DROOLS-820] reuse PomModel if already available--,0
+"-fixed compilation issues, due to incorrect use of- PropagationContextImpl constructor.--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@19847 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-",1
+JBRULES-130--git-svn-id: https://svn.jboss.org/repos/labs/trunk/labs/jbossrules@3283 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+Removed unncessary else if check; replaced with- else--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@26039 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+JBRULES-1618 Check the context class-loader of the- current thread before using it--,1
+"- adding new test for issue related with IF and- pattern ordering, throwing a NotSupportedOperationException--",0
+[DROOLS-601] fix queries when used in combination- with agenda-groups--,1
+[BZ-1042867] fix ProjectClassLoader when running in- osgi--,1
+more test coverage for nesting of OR CEs--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@4586 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+JBRULES-1590: fixing problem with shadow proxy- cloning for collections--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@19783 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+refactoring--git-svn-id: https://svn.jboss.org/repos/labs/trunk/labs/jbossrules@2301 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+JBRULES-3170 Compiler erroneously resolves the- package of declared classes with the same name as basic classes--,1
+JBRULES-1805: fixing multithread bug--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@23501 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+[DROOLS-1026] improve equals/hashCode performances- for all rete nodes--,0
+"-removed @ignore for passing test, updated to- central test helper methods--",0
+[DROOLS-812] properly close InputStreams--,1
+JBRULES-976: fixing problems with collections- clonning and adding unit tests--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@13162 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+JBRULES-2121: JavaDialect isn't creating unique ids-  - fixed name that is checked--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@26929 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+ BZ-1044973 - Guided rule editor does not let the- user to set objects as a parameters for method calls that have objects super- type as a parameter--,1
+JBRULES-659: fixing the problem of multidimentional- arrays--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@9457 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+[DROOLS-991] allow to configure maxEventsInMemory- in FileLogger--,0
+Fixing NPE--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@6187 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+" - fixed an issue where a comment in a work item- definition file results in a null work item definition object, filtering out- null now--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@26933 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-",1
+[DROOLS-128] fix retriving of global entry set from- a Stateless session--,1
+JBRULES-527: fixing compilation problems--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@6992 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+remove support of deprecated brl files--,0
+Changes to resolve issues discovered in integration- tests--git-svn-id: https://svn.jboss.org/repos/labs/trunk/labs/jbossrules@3441 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+[BZ-1092084] raise a compilation error when the- same attribute is defined twice on a rule--,0
+-now works with non DroolsObjectInputStream- serialization.--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@13207 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+-fixed MVEL parser context naming issue.--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@23995 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+JBRULES-1736 Dynamically generated Types -Must get- classloader from the rulebase root classloader now--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@21573 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+[JBRULES-3668] format and shorten kproject.xml file--,0
+JBRULES-2439--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@31842 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+"JBRULES-498 Optimised HashMap implementations- -Changed ReteooWorkingMemory modifyObject to do a retract+assert.  Its also- now  doing  the same as Leaps, so we can move the modifyObject  method to- AbstractWorkingMemory.--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@6642 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-",0
+[DROOLS-198] avoid useless cleanup of staged- activations in phreak--,0
+-Make TupleSourceTest work--git-svn-id: https://svn.jboss.org/repos/labs/trunk/labs/jbossrules@2284 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+JBRULES-233 for leaps--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@4214 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+JBRULES-2835: use new Environment constant--,0
+JBRULES-2353: Update HumanTask to the new grid inf- and CommandExecutor 	- fix unsupported setError methods--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@30808 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+[DROOLS-336] avoid to share a LeftInputAdapterNode- if it has 2 sinks with different property reactive masks--,1
+- throw exception if no user transaction was found--,1
+ - reducing error level to warn to avoid- unnecessary warnings when session id cannot be found--,0
+-Few fixes to manners--git-svn-id: https://svn.jboss.org/repos/labs/trunk/labs/jbossrules@2061 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+JBRULES-2817 Make the KnowledgeAgent Tests more- robust and faster--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@36213 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+Fixing test--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@20387 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+JBRULES-737: fixing problem when inspecting classes- with static initializers--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@10190 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+[DROOLS-740] fix jitting of constraint with strings- concatenation--,1
+[DROOLS-818] register declared listeners on- StatelessKieSession--,1
+"[DROOLS-383] support for switch over String-- * Eclipse compiler has a least known documented configuration-   property ""org.eclipse.jdt.core.compiler.compliance"" which-   needs to be set along with the 'org.eclipse.jdt.core.compiler.source'-   and 'org.eclipse.jdt.core.compiler.codegen.targetPlatform' properties.-- * this is going to work only when the underlaying JVM is 7+-",0
+JBRULES-1820 Exception: Input stream is not- explicitly closed.--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@36154 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+"JBRULES-2849 workaround bug in JDK 5 concerning- alternatives in lookbehind assertions, using alternatives of lookbehind- assertions rather than a lookbehind assertion with alternatives.--",1
+"JBPM-3814, BZ 1002724 Bugfixes with regards to- concurrency (cherry picked from commit- 2bf24d6908c1976fca356b2e96279355e863db5a)--- Changed EnvironmentImpl to use a concurrent HashMap-- The most significant persistence changes are in the JpaPersistenceContextManager class-- Reverted locking changes to the SingleSessionCommandService since a fix for JBPM-3814 is not-  possible at the level of the SSCS in the form of locking (because of the app-scoped entity-  manager).-- Also deleted unsused interfaces (ApplicationScopedPersistenceContext, TransactionablePersistentContext)-",1
+-testRemovePackage now works.--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@7100 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+"JBRULES-2537 JSon Marshaller -Added JSon marshaller- using xstream, with unit tests.--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@33359 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-",0
+fix failing tests--,1
+JBRULES-1102 Bug in DefaultBetaConstraint class- indexing to never turn on -Fixed DefaultBetaConstraints -Added comprehensive- unit test--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@14396 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+BZ743283: Decision tables should support timer- column instead of deprecated duration attribute--,0
+[BZ-1007977] when returning a cached KieModule from- the KieRepository referring to a snapshot release check if there is a newer- release on the maven repository--,1
+JBRULES-85--git-svn-id: https://svn.jboss.org/repos/labs/trunk/labs/jbossrules@3162 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+BZ-1039639 - GRE doesn't recognize MVEL inline- lists when opening rule--,1
+JBRULES-1498 Thead safe partitioning of- WorkingMemory entry points--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@18794 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+Added ScannerChangeSetTest which scans CSV resource- file for changes.--,0
+fix incremental compilation when updating a- kiemodule without changing the release id (for snaphots)--,1
+BZ-1006481 - UI support for 'extends' rule keyword- broken--,1
+JBRULES-2375: fixing deadlock on queued actions--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@33500 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+JBRULES-1268 Activation.remove() is removing the- WRONG activation when used in events -the queue is set to null after dequeue--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@15781 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+JBRULES-3126 NPE when retracting an object with a- collection field which has been accumulated on--,1
+[DROOLS-94] fix BaseObjectClassFieldReader when- reading numeric values--,1
+JBRULES-1906: NPE when LiteralRestriction value is- set to null--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@24509 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+fixing reflection constructor to use int instead of- long for ksessionId--,1
+BZ975922 - GRE constraint operator list box- problems when re-opening file--,1
+[BZ-980385] fix comparison of 2 timer nodes--,1
+-update unit tests for LeftInputAdapterNode--git-svn-id: https://svn.jboss.org/repos/labs/trunk/labs/jbossrules@2283 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+BZ-1074672: Fixing legacy API to properly handle- resource configuration. (cherry picked from commit- 645d0e5cb86225a898391960350588d1817b1de2)--,1
+"Fix OutOfBoundException on- MemoryFileSystem.existsFile("""")--",1
+[DROOLS-839] fix LogicTransformer with Accumulate--,1
+JBRULES-447 - small fix for rule attributes--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@6003 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,1
+fix test using using no longer existing- ConsequenceException.getRule() method--,1
+[DROOLS-293] fix ObjectTypeNode id creation and- comparison--,1
+JBRULES-2817 Make the KnowledgeAgent Tests more- robust and faster 	- KAgent Event Listener test are enabled again! There- were modified to adopt the new KAgent test architecture--,0
+[BZ-1200383] when a dependency cannot be found log- the complete stack trace only in debug mode--,0
+"really, this is the fix for -154--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@3914 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-",1
+[JBRULES-3263] fix jitted contraints when invoking- an interface--,1
+"DROOLS-515 Kie-Camel is broken after Camel Update- -Added static field, to allow unit tests to ensure keys are ordered.--",1
+fix WELD problem caused by having a beans.xml in- drools-compiler--,1
+JBRULES-446 Support rulebase configuration via- jsr94 registerRuleExecutionSet properties--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@13123 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+"Fixed bug with ""disconnected"" factHandles- (JBRULES-3187) and added a test to verify that I fixed the bug!!--",1
+[DROOLS-37] fix jitting of comparison contraints- (cherry picked from commit 5ea47c020451949cc52708494afdfa50799467a2)--,1
+JBRULES-2934 Add NewRegisterWorkItemHandlerCommand- to CommandFactory with unit test--,0
+JBRULES-527: adding primitive support for hashcode- calculation on indexing--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@7155 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+[DROOLS-121] detect circular dependencies for- declared types--,1
+refactor GAV to ReleaseId--,0
+JBRULES-3714 Add capability to configure- date-effective/date-expires for SpreadSheet--,0
+JBRULES-313: adding fire limit option--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@12927 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+JBRULES-1641: ForEach node  - initial core- implementation of a for each node JBRULES-1551: Workflow human tasks  - human- task node with swimlane integration--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@20429 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+JBRULES-1730: Add support for other data types when- writing processes to XML  - pluggable data types support--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@21496 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+Added Analysis Result as HTML--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@15004 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+add support for maven version ranges--,0
+JBRULES-313: adding halt command--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@12902 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+allow to specify an optional Environment when- creating a new KieSession--,0
+"JBRULES-3200 Support for dynamic typing (aka- ""traits"")--",0
+Implementing support to incremental updates on- kcontainers--,0
+JBRULES-527: adding primitive support to indexing--git-svn-id: https://svn.jboss.org/repos/labs/labs/jbossrules/trunk@7158 c60d74c8-e8f6-0310-9e8f-d4a2fc68ab70-,0
+[DROOLS-389] Improve support for @Traitable POJOs- and @Trait interfaces--,0
+[DROOLS-114] Support Defeasible rules--,0
+move test output to one level down--for ReadClassDataTest and CompileJavaAgainstKotlinTest-,0
+Introduce RenderingContext and add as parameter- to DiagnosticParameterRenderer-render--RenderingContext holds data about the whole diagnostics allowing to adjust rendering of its parameters-,0
+Extracted error messages from- DefaultDiagnosticRenderer to special DefaultErrorMessages class.--,0
+Merge two JetTypeMapper-mapToCallableMethod- methods--,0
+Base class for multi-file tests extracted--,0
+Fixed KT-1797 No completion for nested class name- in extension function definition-- -KT-1797 Fixed-,1
+Extract Function: Make member/top-level function- private by default--,1
+Type annotations supported in Java elements--Reflection-related implementations are pending-,0
+Fix for the code to compile--,1
+fix tests after recent refactoring--,1
+Optimize search of package part files for- JetPositionManager--,0
+"Avoid wrapping AssertionError over and over- again, see KT-7501--",1
+"Refactoring: TypeInfoFactory.createTypeInfo()- without type -> noTypeInfo(), getNotNullType -> getTypeNotNull, nullability- refined, style fixes--",0
+JS: fix rhino 64k issue--,1
+Test data paths fixed--,1
+Change Signature: Do not fail on unresolved- PsiMethod  -KT-9535 Fixed--,1
+Added some new test for java8--,0
+Standard library is imported properly rather than- enclosing the user code--,1
+add test for private-to-this visibility in traits--,0
+Add test for lookups to classifier members--,0
+J2K: correct conversion of nested class- references-- -KT-5294 Fixed- -KT-5400 Fixed-,1
+Minor: additional logging when failing to read- file in VirtualFileKotlinClass--,0
+Add WITH_RUNTIME and WITH_REFLECT directives to- box tests--Currently all tests in boxWithStdlib/ run with both runtime and reflection-included; eventually they'll be merged into box/ using these directives-,0
+Escaping keywords used as identifiers in- DescriptorRenderer.-- -KT-2810 fixed-,1
+Constraint incorporation--In a constraint system a new bound is incorporated:-all new constrains that can be derived from it-(and from existing ones) are added-,0
+Unused method removed--,0
+Drop JetClassObject element and its usages--as class objects are now represented by JetObjectDeclaration element-,0
+js enumerable for ecma5--,0
+Tests for match--,0
+'hasSyntaxErrors' check moved from Diagnostic to- PositioningStrategy--This makes possible to mark diagnostic errors when syntax error are present (by overriding isValid in PositioningStrategy subclasses).-,0
+"Minor, move boxAgainstJava logic to a separate- test class--",0
+Reflection support--,0
+Try keyword--,0
+Introduce Variable: Forbid extraction from class- initializer (aside of its body)  -KT-8329 Fixed--,1
+Reporting real source file paths from K2JS- compiler--,1
+KT-737 compareTo() intrinsic--,1
+Lazy receiver parameter descriptor: to avoid- eager computation of default types--,0
+Config refactoring.--,0
+Debug output removed--,0
+rename JetTypeMapper constants--,0
+"Split ProtoBuf.Callable to three messages:- constructor, function, property--Serialize both at the moment, will drop the old one after bootstrap-",0
+Custom equals operator (includes little patch to- frontend)---KT-2354 fixed-,1
+More usages of asKtScope() removed--,0
+better root ns--,0
+"Removed doTest(char), since it was erroneous.--If lookupString and tailText are both null, completionChar is ignored.-",0
+Rendering nice unicode arrow for function types- in UI.--,0
+Fix for EA-39487--,1
+Invert if condition intention - smaller- availability range + refactored--,0
+Replaced AddReturnTypeFix with- SpecifyTypeExplicitlyAction for properties.--,0
+Refactoring of- AnnotationResolver.resolveAnnotation(s)Arguments--,0
+"reformat code, optimize imports--",0
+WithDeferredResolve removed (it was never used)--,0
+Refactored reference provider logic.--,0
+wrongly added test removed (correct one was added- before by Zhenja)--,0
+Prohibit Array<Nothing>--,1
+One more test added--,0
+"Minor, make ModuleDescriptor public in injectors--It's much more convenient to call injector.getModule() than-injector.getResolveSession().getModuleDescriptor()-",0
+rename--,0
+abstract + data and sealed + data are also- deprecated--,0
+Cleanup--,0
+Fixed highlighting for enum and object names in- code-- -KT-8134 Fixed-,1
+[KT-4124] Add support for simple nested classes--,0
+Remove unused method--,0
+"Exception fix: diagnose an error for a generic- type which is a subtype of itself, a set of tests -EA-64453 Fixed--",1
+Initial implementation of KT-6427 Completion to- use Java name suggestion to complete function parameters (+ filtered out- synthetic Kotlin classes from completion)--,0
+KT-1808 Auto import offers private static Java- classes  -KT-1808 fixed--,1
+reimplemented extension literal definition and- calls to comply with jquery conventions--,0
+Extract Function: Fix signature update on dialog- opening--,1
+do not mark error type  if the expression is- resolved to namespace  (EXPRESSION_EXPECTED_NAMESPACE_FOUND error)--,1
+Show warning on usages of javaClass<T>() in- annotations loaded from Java--,0
+tuple literals--,0
+Fix breakpoints in inline functions in libraries--,1
+Fixed EA-70945--,1
+"Fix for KT-9897: Cannot pop operand off an empty- stack"" with -= on ArrayList element--  -KT-9897 Fixed-",1
+"KT-8968 Special completion after ""super.""-- -KT-8968 Fixed-",1
+Base class for surrounders for statements--,0
+refactoring--,0
+Constructor body generation extracted as a method- (+ migrated to Printer for convenience)--,0
+Control-Flow Analysis: Fix bug in finally-block- repetition in the presence of non-local returns  -EA-65982 Fixed--,1
+"Decompiler: Introduce DeserializerForDecompiler--Component which can ""resolve"" descriptors without project-It builds dummy descriptors for dependencies which are enough to build decompiled text-",0
+Support for checking loaded descriptors agains an- expected txt file--,0
+Fix KT-10472: compare all overloads including- varargs in a single pass.--,1
+Formatting--,0
+Abstract Lazy test for gianostics--,0
+Method cache for ClassDescriptorSerializer--,0
+Minor refactor--,0
+"Extract Function: Consider reference ""broken"" if- corresponding diagnostics are changed after code fragment extraction - -KT-8633 Fixed--",1
+Supported propagation for subclass of- j.u.Collection and similar classes.--,0
+Create from usage: Create constructor parameter- by reference in delegation specifier  -KT-6601 Fixed--,0
+Removed unused methods from KtScope.--,0
+Introduce Variable: Support extraction of string- template fragments  -KT-2089 Fixed--,0
+Implemented better rendering for parameters with- default values in decompiler and descriptor renderer.-- -KT-1582 fixed-,0
+KT-3639 Can't find sources of AbstractIterator- when navigating from stack strace-- -	 fixed-,1
+"Deprecate and don't write KotlinClass$Kind, to be- removed later--",0
+Smart completion: code improvements and- refactorings after code review--,0
+Lazy resolve: Package-level objects are handled- properly--,1
+Get rid of obsolete syntax in quickfixes changing- lambda's signature--- Do not wrap parameters with '()'-- Do not set return type for them-- Fix existing testData-,0
+refactored generation of static initializer--,0
+"fix KT-9299 In a project with circular- dependencies between modules, IDE reports error on use of internal class from- another module, but the corresponding code still compiles and runs.---KT-9299 Fixed-",1
+Fix header scope for secondary constructors--Add companion object's scope and nested classes-- -KT-6996 fixed-,1
+Prevent lazy types to be accidentally computed in- debug--,1
+" - Adjusted build.properties so that default values- work directly.  - Refactored the usage of parameter lists by using a new- ParameterList (implementing List<Parameter>) and adding helper methods.  -- Form now derives from ParameterList.  - ConnectorCall.getRequestHeaders() and- getResponseHeaders() now return a ParameterList, other helper methods- removed.  - Added urlEncode() on Parameter.  - Reference now sets new scheme- names in lower case to respect normalization rules.  - Added more unit tests- for the Resltet API; Contributed by Lars Heuer.  - Fixed bug in Jetty 5 HTTPS- connector preventing the usage of the specified SSL keystore in certain- cases. Found by Dave Pawson.  - Added constructors to DefaultServer using the- protocol's default port  - Updated Jetty 6 to version beta 17.  - Fixed type- in JdbcClient sample XML document. Reported by Thierry Boileau.  - Added new- FileRepresentation constructor accepting a File instance.  - Improved- ByteUtils.write() methods for streams by automatically buffering output- streams if necessary.  - Templatized AbstractChainlet. Contributed by Lars- Heuer.  - Fixed AbstractRestlet which was not reporting the proper error when- non standard Method instances were called but not handled.  - Added FILE- protocol to Protocols enumeration.  - Added- com.noelios.restlet.data.FileReference.  - Added ReferenceList to handle- ""text/uri-list"" representations.  - Renamed Resource.getVariantsMetadata() to- getVariants() for simplification purpose.  - Added Resource.getIdentifier() :- Reference method.  - Renamed com.noelios.restlet.impl.HttpServerCallImpl to- HttpServerCall.  - Renamed ""initParameters"" into ""properties"" for Component- interface and related classes.  - Refactored the methods allowing the- attachment of connectors in Component interface and related classes.  -- Removed ""name"" property from Connector and Component interfaces and related- classes.  - Added modifiable ""properties"" map to the Connector interface.  -- Added FileClient implementing a client connector for the FILE protocol,- allowing standard access to local file systems.  - Added- ServerCall.getRequestInput() method to factorize common logic among HTTP- server connectors.  - Added ClientCall.getResponseOutput() method to- factorize common logic among HTTP and FILE connectors.  - Moved- StringUtils.normalizePath() method to FileReference.--",0
+" - Renamed the ""org.restlet.ssl.hostnameVerifier""- attribute into just ""hostnameVerifier"" for consistency with existing naming.--",0
+"Fixed ""not found"" status for Options requests.--",1
+" - All core representation classes have been moved- from the ""org.restlet.resource"" package into a new- ""org.restlet.representation"" package. Make sure to adjust your import- instructions.--",0
+Fixed ZipClientHelper test case.--,1
+Fixed generation of cache directives in the- cache-control header.--,1
+" - Refactored the JdbcClient to return XML result- sets (using a new RowSetRepresentation class). In addition, the    XML- request can now contain several SQL statements to be executed as a batch.- Contributed by Thierry Boileau.--",0
+ - Simple HTTP connector works again--,1
+ - Cleaned code to remove Eclipse 3.4 warnings and- errors.--,0
+ - Moved SIP test cases to test module--,0
+"JAX-RS extension: - added to changes.txt, that I- switched to API 0.11 - fixed a big bug related to the determining of the- MessageBodyWriter - using org.restlet.data.Conditions.getStatus() for- javax.ws.rs.core.Request.evaluatePreconditions() instead of using an own- implementation (the Restlet method has a bug, I'm waiting for the patch to be- applied) - fixed a bug in JaxRsUriBuilder.buildFromMap*() - returning status- 500 instead of 406, if no message body writer could be found (according to a- change in the specification)--",1
+ - Fixed unit test due to random Java method- introspection order--,1
+        - The Request-isConfidential() method has- been refactored to           be supported by Message and Response as well.- The method           Request-setConfidential() has been removed (back to- Restlet           1.0 state). Added Protocol-isConfidential() method to- support           the new implementation which rely on Request-getProtocol().-           Reported by Kevin Conaway.--,0
+ - Renamed DirectoryResource into- DirectoryServerResource to match its new super class name.--,0
+"Fix issue -853--DefaultSslContextFactory would ignore enabledCipherSuites unless you also specified enabledProtocols, due to a copy-paste error.-",1
+ - Upgraded Simple server to version 4.1.2.- Contributed by Niall Gallagher.--,0
+Fixed regression. Reported by Guido Schmidt--,1
+ - Fixed NIO client blocking due to reuse attempt- of a busy connection--,1
+ - Added Metadate-getParent() method.  - Added- better Variant-toString() implementation.--,0
+JAX-RS extension continued: - Added an- ObjectFactory to the JAX-RS extension for customized root resource class and- provider instantiation. Contributed by Bruno Dumon.--,0
+ - More optimizations for internal connectors.--,0
+Fixed bug--,1
+"       - When updating a file via the FILE- connector, some deletion          issue could occur on Windows due to JVM- integration issues          with the OS. A workaround to reduce this was to- invoke the          garbage collection. Reported by Kevin Conaway.--",1
+ - Continued SIP transaction support--,0
+ - Fixed connection closing regression--,1
+Removed Representation-getDigester* methods. There- is no reason to favor this way to wrap a Representation.--,0
+ - Initial code for enhanced internal HTTP- connectors.--,0
+Fixed bug in DomRepresentation causing the loss of- both public and system DocType. Reported by Lee Saferite.--,1
+ - Initial code for new default HTTP connector and- SIP connector.--,0
+Fixed content negotiation issue in the servlet- extension.--,1
+ - Continued NIO connector--,0
+Compute logged duration only if needed.--,0
+Added support of the Authentication-Info header.--,0
+ - Fixed bugs--,1
+      - Renamed Representation-write(Appendable) to- append(Appendable).--,0
+ - Fixed issue with HTTP client connector not- correctly reporting connection and other IO errors.--,1
+Fixed javadocs.--,0
+Added support of the dataservices extension in- Android.--,0
+        - Refactored WADL extension based on John- Logsdon feed-back.           Add convenience methods and constructors on- MethodInfo and           RepresentationInfo. Removed unecessary methods on   -        WadlResource like getRepresentationInfo(Variant) and          - getParametersInfo(RequestInfo|ResponseInfo|Representation-           Info).--,0
+JAX-RS-Extension: - added javadoc to util methods.--,0
+"JAX-RS extension - Issue 800 (an NPE): I've checked- all methods with the name, and all possible points for NPE should be defanged- now--",1
+ - Updated Jetty to version 6.1.15--,0
+ - Fixed issues in Grizzly code.--,1
+ - Fixed bug causing unit tests to fail--,1
+Added parsing of RDF XML.--,0
+JAX-RS-Extension: - encoding of UriBuilder- parameters implemented--,0
+ - Bumped versions to 1.0 RC3  - Updated docs  -- Removed deprecated methods--,0
+ - Minor refactoring in RDF extension.--,0
+Added support of Ranges.--,0
+ - Disabled failing test cases (temp)--,1
+ - The ServletContextAdapter passed by the- ServerServlet to the Restlet's Application was    not given to the- constructor but via the setContext() method. Reported by Tammy Croteau.--,1
+ - Initial code for new default HTTP connector and- SIP connector.--,0
+ - Reference now verifies the validity of- characters before setting them. Suggested by Stephan Koops.--,0
+Add SpringRouter-style supplemental direct routing- via the attachments property.  This allows for multiple routes for the same- bean or routes which would be illegal/unmatched as bean names.--,0
+Add support for template route matching mode--,0
+ - Improved exception handling on createResource().--,0
+Fixed potential NPE when the product name is null.- Reported by Vincent Ricard.--,1
+Removed debug traces.--,0
+ - Deprecated ServletConverter and added an- equivalent    ServletAdapter class to prevent confusion with the  - ConverterService reintroduced in Restlet 1.2.  - Added root Helper class.--,0
+JAX-RS extension continued: - @FormParam is now- supported--,0
+      - The simplified logging formatter (one line)- is now available only in         the Java SE edition as it could cause- troubles with Java EE container         and potentially GAE/Android as we- reconfigure the default log manager         programmatically. Reported by- Kristoffer Gronowski and Bo Xing.--,1
+ - Fixed plugin descriptors for some extensions.--,1
+Fixed code generation for the GAE edition.--,1
+Completed implementation of apispark extension.--,0
+" - Some unit test were catching exceptions,- preventing JUnit from failing the tests.--",1
+ - Initial code for new default HTTP connector and- SIP connector.--,0
+ - Initial code for new default HTTP connector.--,0
+       - Fixed HTTPS issues in internal connector.--,1
+Removed unnecessary instruction.--,0
+ - Fixed filling state bug in Buffer class  -- Removed received inbound message from messages queue when fully received  -- Connection closing seems to work again  - CouchDBUpload test working again--,1
+Fixed internal client connector.--,1
+Fixed test case.--,1
+"Add comments describing methods (from HTTP, Webdav- RFC).--",0
+       - The CLAP connector didn't set the- expiration date based on          its 'timeToLive' parameter. Reported by- Peter Becker.--,1
+Introducing a new Directory constructor with a- LocalReference instance.--,0
+Allowed custom parsing of Atom documents.--,0
+"Fixed issue -649, if needed, add base64 padding- characters to encoded md5 hash before decoding. Reported and contributed by- Andy Dennie.--",1
+ - Initial code for new default HTTP connector and- SIP connector.--,0
+Indexed directories were not properly handled with- the CLAP protocol. Reported by Rob Heittman.--,1
+Fixed potential infinite loops while reading- headers (issues -599 and -656). Reported by weiweiwang.--,1
+ - Fixed potential NPE in ReferenceList--,1
+ - Continued SIP transaction support--,0
+" - Continued support for non-blocking HTTPS to the- internal NIO connectors, client-side and server-side.--",0
+Fixed NPE in the dataservices extension due to bad- parsing of referential constraints.--,1
+prevented primitive type from being returned as- models in API Declarations (https://github.com/restlet/apispark/issues/1168)--,1
+EvaluatePrecondition* to Request* renamed--,0
+"        - Updated Jetty to version 7.0 RC4.- Upgraded the Jetty           extension: replaced ""headerBufferSize"" parameter- by           ""requestHeaderSize"" and ""responseHeaderSize"" parameters.        -   Removed ""lowThreads"" parameter no longer available.--",0
+ - Fixed latest issues. Submitted by Thierry- Boileau.--,1
+1.0 beta 9 (not released yet)  - Merged Restlet and- UniformInterface interfaces into a single Restlet interface for- simplification purpose.  - Moved connectors handling from OriginServer upto- Component as other components like Proxies need them.  - Renamed UniformCall- and related methods into RestletCall.  - Renamed RestletCall.getHandler*()- methods into getRestlet*().  - Updated Jetty 6 to version 6.0 beta 14.  -- Fixed issue with ServletCall.getRequestUri returning a trailing '?'. Reported- by Yuri de Wit.  - Renamed NRE implementation classes HandlerTarget and- HandlerMapping to RestletTarget and RestletMapping.  - Added a new extension- to NRE to support Apache Commons FileUpload to facilitate the processing of- multipart forms. Suggested by Yuri de Wit.  - Removed RestletContainer and- RestletServer interfaces.  - Renamed DefaultRestletContainer and- DefautRestletServer to RestletContainer and RestletServer for simplification- purpose.  - The parent of all Restlets is now a simple Component and not- necessarily a RestletContainer.  - Factory and Manager were refactored for- clarification and simplification purpose.  - Added getInitParameters() to- Component to allow external code to pass init params in a standard way (for- example a main method or the ServerServlet).--,0
+ - Additional WADL refactorings.--,0
+Fixed potential NPE.--,1
+Added warning message when no client connector- supports the request's protocol.--,0
+Fixed range issue -607.--,1
+        - Fixed bug in XstreamRepresentation- failing to use the DOM           XML driver. Reported by Florian Georg.--,1
+Fixed issue 210 : a Language tag is composed of a- list of subtags--,1
+Updated Ranges test case.--,0
+ServerResource now supports empty POST and PUT- requests.--,0
+ - Fixed Message-release() Javadocs.--,0
+Updated to Scripturian 1.0RC3--,0
+       - Fixed selector exhaustion issue with- Grizzly connector.          Reported by Bruce Lee.--,1
+        - Fixed error in Conditions.getStatus()- sometimes returning           304 for methods other than HEAD and GET.- Contributed by           Stephan Koops.--,1
+UPDATE ADD now possible with subdocuments fields--,0
+Fixed issue with inner class and Object Database- interface--,1
+Huge refactoring on GraphDB: - changed class- names in vertex and edge - Optimized memory consumption by removing nested- records - Optimized speed in ORecord.equals() and hashCode(): now avoid field- checks (experimental)--,0
+Fixed bug on oidentifable but not odocument- fetching--,1
+Unneeded index flush was removed--,0
+"fixed collection fields in query results, issue - -3212--",1
+Patch by Luca Molino about the management of JSON- with document type not only as first attribute--,0
+Fixed issue 684 about strict mode--,1
+Implemented issue 109:- http://code.google.com/p/orient/issues/detail?id=109 About in-memory clusters- inside regular persistent databases.--,0
+Issue 762 was fixed.--,1
+DbDeleteTest is made more stable.--,1
+Fixed a bug on browsing clusters in transaction- as issue https://github.com/tinkerpop/blueprints/issues/312--,1
+Issue -1604. Remote bag. Fix save notification.--,1
+Created 2 new test case with creation of vertexes- and edges in not default clusters--,0
+Profiler: - all the metrics now have a- description and a type - supported new HTTP REST command /profiler/metadata- to retrieve all the metadata--,0
+Fixed issue 156 about deep inheritance--,1
+Drop database implemented and tested against- local and remote db--,0
+"Issue -2900, OFlatDatabase was removed.--",1
+Fixed issue on delete when the database is not- yet opened--,1
+"Support for not-logget Transactions by setting- OTransaction.setUsingLog(false). Default is true, so full compatibility is- guaranteed--",0
+Issue -71:- http://code.google.com/p/orient/issues/detail?id=71 Working in progress--,0
+"Supported new syntax in SQL UPDATE to use a inner- query as target. Example: update ( traverse V.in, E.out from V ) set date =- sysdate() where out.size() > 1--",0
+Fixed issue on browsing of entire cluster/class--,1
+Fix by Andrey on marshalling/unmarshalling of- embedded documents--,1
+Improved performance by handling begin and end of- offsets in cluster data.--,0
+Fixed issue -255 about hooks: wasn't called- during TX - added new test cases - check of recursive call for the same- record in hook.--,1
+Removed old code to handle temporary records in- indexes--,0
+Fixed issue 1198: NullPointerException in- OCommandExecutorSQLResultsetAbstract.assignTarget--,1
+fixes -1980: permissions follow role's- inheritance--,1
+Fixed bug on database drop in Maven Tests--,1
+Renamed threads to a more understandable ones--,0
+implementing math operations--,0
+Cleanup inspection warnings--,0
+Improved automatic backup management of errors--,0
+Fixed issue 800 closing the socket on timeout--,1
+Fixed problem with remote connection to- distributed storage--,1
+"GraphDB: supported 3 locking modes: no locking,- database level locking (default) and record level locking--",0
+Fixed bug on management of indexes with the- introducing of new ODistributedStorage--,1
+Fixed issue -1521 about JSON management of- embedded lists with different types--,1
+Console: fixed jdk6 problem in more elegant way- (thanks to Andrey's suggestion)--,0
+removed not useful system out from test cases.--,0
+"Minor: fixed javadoc, put a variable as final,- managed no return in OPLA/execute block--",0
+implemented integration of globla property with- binary serialization--,0
+Fixed some errors in remote calls.--,1
+fixed bug on shutdown--,1
+Started support for server-side triggers--,0
+Fixed problem of ConcurrentModificationException- reported by Bayoda: the problem should be due to a wrong isolation on Map in- cache: used exclusive lock even for keys() and get().--,1
+"Changed syntax for ""create class"" command. Now- wants the keyword ""CLUSTER"" and also accepts cluster names--",0
+Renamed everywhere OTreeMap in OMVRBTree as the- new name of the algorithm: OMVRBTree--,0
+"Fixed issue 110 about HTTP/REST invocation of- ""command"" parameter passing a SELECT statement--",1
+Further work or traverse: - supported new- OSQLPredicate to specify a predicate using SQL language--,0
+Minor: fix warning--,0
+Huge refactoring on GraphDB: - changed class- names in vertex and edge - Optimized memory consumption by removing nested- records - Optimized speed in ORecord.equals() and hashCode(): now avoid field- checks (experimental)--,0
+fixed minor issue with thread local management--,1
+Working to fix corrupted data in sockets--,1
+Minor optimization in RidBag--,0
+Changed log level to debug--,0
+Removed checks if db is open as a bug reported in- the ML by Stefan Ollinger--,1
+Improved memory usage and optimized general speed--,0
+Fixed bugs on index where internal records were- not deleted--,1
+Fixed issue on empty links--,1
+OPLA: supported invocation of Java static methods--,0
+Fixed issues with sharing. Added also first test- case on sharding--,1
+last attempt of fixing test failing on ci.--,1
+Distributed: fixed issue -2008 on deploying- database--,1
+"Fixed a bug in concurrency: - adaptive lock can- be configured by OGlobalConfiguration - Created new- OGlobalConfiguration.ENVIRONMENT_CONCURRENT for this purpose -- OSharedResourceAdaptiveLinked class has no sense to exists anymore: removed -- segments don't lock the storage anymore but has own lock. This could be- removed but it will tested for a while - update and delete record operations- lock the storage in exclusive mode, but probably this can be optimized in the- next future ---",1
+Fixed issue about out*() functions--,1
+Minor: removed some warnings--,0
+Fixed issue -3741--,1
+Fixed issue -2472 about null values in Lists--,1
+Index in tx: Fixed issue 468 about deletion--,1
+Issue -1607 WAL page change tracking was- reimplemented.--,0
+Released 0.9.8 with the fix on partitioning in- Key/Value Server--,1
+OOM  reported by NMSWorks was fixed.--,1
+Issue -1404 Write cache speed improvements.--,0
+Fixed issue on set password for OUser.--,1
+Issue 161: added the support for custom strategy- on creation of records- http://code.google.com/p/orient/wiki/Security-Customize_on_creation--,0
+"Fixed issue about parenthesis in SQL query, added- one more test to the suite for it--",1
+Fixed issue -1445 providing the new TIMEOUT in- most of the commands--,0
+Fixed problem with LET and context variables--,1
+Implemented new commands: - truncate cluster -- truncate class--,0
+Fixed bug using SQL projection against Object- Database interface. Now returns always documents instead of POJOs when the- ODocument has no class associated.--,1
+Implemented self-repair in case the security is- broken. This new method in the ODatabaseListener interface will allow to- handle corruptions in better way.--Console now displays a message and after a user input fix it. Cool!-,0
+Fixed issue reported by Steven about TX- congruency with nested records. The bug was reported in rollback.--,1
+HTTP static content now supports single file as- configuration--,0
+removed nasty warnings in compilation--,0
+Improved management of distributed cluster nodes--,0
+Improved import/export tools--,0
+fixed cluster id selection in distributed mode.--,1
+Fix failed WAL test.--,1
+Fix by Andrey to get working test cases even on- Linux (Windows seems to eat anything)--,1
+Fix by Luca Molino on schema and in-thread db--,1
+fix for use of different serializer by the db- compare--,1
+Working to fix corrupted data in sockets--,1
+Fixed problem with linkeset modified right after- query in remote configuration--,1
+Issue -1404 WAL durability test improvements.--,0
+first implementation of binary record serializer- debug info. issue -4027--,0
+Minor improvement on collection remove--,0
+Fix by Luca Molino to close issue 619--,1
+Improved auto-recognize of type in JSON reader--,0
+Issue -1607 Fix blueprints tests and TX NPEs.--,1
+Fixed issue on missed saving of the configuration- when Local Data has multiple files. Reported by Ed Barbeau:- http://groups.google.com/group/orient-database/msg/0299391834b65b73--,1
+CAMEL-5906: Added new camel-servletlistener- component for bootstrapping Camel in web app without using spring etc. Work- in progress.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1428278 13f79535-47bb-0310-9956-ffa450edef68-,0
+Minor cleanup--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@712728 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-3014 camel-josql should have SQL language- META-INF which can be found automatically by camel-core--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@980675 13f79535-47bb-0310-9956-ffa450edef68-,0
+MR-187: Added more unit tests.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@824320 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-1712 Upgraded the camel-ibatis to JUnit4--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@785119 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-1842 Added OSGi integration test for- camel-mail and camel-cxf--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@795813 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-870: Added transferExchange option to- camel-jms.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@756685 13f79535-47bb-0310-9956-ffa450edef68-,0
+Added unit tests based on the mailing list- question--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1224673 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-2445 applied patch with thanks to Stan and- Jeff--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@906342 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-541: Removed a bad tangle in camel spi. Not- this package has no tangles.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@748992 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-1369: Removed @MessageDriven as its- replaced with @Consume.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@749562 13f79535-47bb-0310-9956-ffa450edef68-,0
+improved the camel-bam module to handle- concurrent processing better & dealing with JDBC/JPA exceptions if concurrent- updates to the same process occur at the same time; also added more better- tests--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@563909 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-751 Get the CamelContext ErrorHandler to- work--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@679345 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-1198: Ant path matcher now also possible- with camel-ftp.--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@730753 13f79535-47bb-0310-9956-ffa450edef68-,0
+"CAMEL-4077: Sanitiy check route in XML DSL, that- there is input and outputs in routes.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1134300 13f79535-47bb-0310-9956-ffa450edef68-",0
+Fix test error reported by TeamCity--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@739402 13f79535-47bb-0310-9956-ffa450edef68-,1
+Updaed the mail component so that mail headers- are correctly copied over from message to message.  This highlighted the fact- that th TO: should always be what is specified on the outbound endpoint- instead of the To: in the message. Added a test the validates headers are- preserved.--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@537937 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-6053: Allow to override blueprint config- admin placeholders from unit test.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1443931 13f79535-47bb-0310-9956-ffa450edef68-,0
+corrected typo.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1331967 13f79535-47bb-0310-9956-ffa450edef68-,0
+added fix for- https://issues.apache.org/activemq/browse/CAMEL-347 to enable JUEL to invoke- methods in expressions--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@631503 13f79535-47bb-0310-9956-ffa450edef68-,0
+"CAMEL-1338: Added basic operator support for- simple language - end users is confused its not working, and nice to have- core support for basic operators. Added ?method=methodname for the bean- langauge so its in line with the bean component.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@744707 13f79535-47bb-0310-9956-ffa450edef68-",0
+CAMEL-5370: Added direct-vm component to act as- synchronous direct calls between multiple camel contexts in the same JVM (eg- like direct + vm together). Can be used to support transactions spanning- multiple camel contextes / bundles.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1350591 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-3203: Fixed adding routes with quartz- endpoints to already started camel should add jobs to scheduler.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1005489 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-1461: JMSProducer only sets JMSReplyTo if- exchange is out capable. Fixed a NPE.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@757693 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-2339: Scheduled consumer now log- java.lang.Error at FATAL level before rethrowing--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@896858 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-2930 clean up the codes for wiki--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@962786 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-1099: Added FileIdempotentRepositry--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@723291 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-1370 caching the StreamSource by caching- the inputStream or reader--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@746872 13f79535-47bb-0310-9956-ffa450edef68-,0
+Removed the System.out.print line from RunMojo--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@758544 13f79535-47bb-0310-9956-ffa450edef68-,0
+Fixed test--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@962779 13f79535-47bb-0310-9956-ffa450edef68-,1
+Fix compile error--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@707028 13f79535-47bb-0310-9956-ffa450edef68-,1
+[CAMEL-1510] BatchProcessor interrupt has side- effects (submitted on behalf of Christopher Hunt)--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@765686 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-2919: Debugger API--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@961615 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-4244 Add ThreadPoolProfileBuilder and- change ThreadPoolFactory to use the ThreadPoolProfile--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1159342 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-3879 Applied patch of DanK with thanks--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1099050 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-2470: Adding test for sending back a reply- to JMSReplyTo based on a temporary queue.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@949117 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-751 fixed the spring configuration url- error--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@679379 13f79535-47bb-0310-9956-ffa450edef68-,1
+Fixed tests.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1062115 13f79535-47bb-0310-9956-ffa450edef68-,1
+Added unit test for mistyped URI--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@640963 13f79535-47bb-0310-9956-ffa450edef68-,0
+MailConsumer and MailProducer now use the- endpoint reference from its super class and doesn'n manager its own instance- variable--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1054815 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-2011: JmsEndpoint is now singleton.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@814584 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-6013 fixed the issue that  Validator- component fails on XSD with indirect relative import--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1438352 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-656: Polished dataset and timer component.- Added @deprecation to not used method. Removed unused imports.--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@712497 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-3447: Camel uses same media size names as- Java Printer API. Thanks to Torsten for patch.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1051120 13f79535-47bb-0310-9956-ffa450edef68-,0
+Set the isCreateCamelContextPerClass on tests- that can pass with it to speed up the tests--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1152396 13f79535-47bb-0310-9956-ffa450edef68-,0
+removed the generics from the Process interface- so that it must take an Exchange parameter to avoid ClassCastException when- sending any old Exchange into an Endpoint<FooExchange>--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@534145 13f79535-47bb-0310-9956-ffa450edef68-,1
+Added another test--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@921999 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-3788 Merged the patch into camel-http4--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1083724 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-3689: AdviceWith can now manipulate routes.- This allows you for example to replace parts of routes during testing.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1072545 13f79535-47bb-0310-9956-ffa450edef68-,0
+"further improvements for CAMEL-133, a client can- now create an exchange on an endpoint specifying the ExchangePattern it wants- to use for an Exchange via Endpoint.createExchange(pattern)--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@572625 13f79535-47bb-0310-9956-ffa450edef68-",0
+resource class refactoring; introducing a- reusable base class for sub-resources - also added a new RoutesResource to- simplify the root resource further--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@745556 13f79535-47bb-0310-9956-ffa450edef68-,0
+minor tidy up of test case--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@654441 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-1320: Created gzip data format--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@756039 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-3114: Fixed rss component bug with uri- encoding.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@998608 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-2206: Added new Sampler EIP. Thanks to- Stephen Gargan for the contribution.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@883614 13f79535-47bb-0310-9956-ffa450edef68-,0
+Fixed test on other boxes--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@904741 13f79535-47bb-0310-9956-ffa450edef68-,1
+Removed the printStackTrace line in the- CxfWsdlFirstTest--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@665997 13f79535-47bb-0310-9956-ffa450edef68-,0
+"added contains() method to the DSL for- .header(""foo"").contains(""cheese"") for multi-value headers--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@539516 13f79535-47bb-0310-9956-ffa450edef68-",0
+CAMEL-1977: Http based components should filter- out camel internal headers.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@814567 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-1789 Let the Camel Route support to lookup- the service which is exported from the OSGi bundle--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@792398 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-4023 Properties to Cxf ClientProxyFactory- can be set on endpoint uri or CxfEndpoint bean.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1128561 13f79535-47bb-0310-9956-ffa450edef68-,0
+Removed the System out from the GenericFile--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@752424 13f79535-47bb-0310-9956-ffa450edef68-,0
+Fixed compiler issue on JDK 1.5--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1056650 13f79535-47bb-0310-9956-ffa450edef68-,1
+Fixed tests using released version.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@991460 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-1933: Overhaul of JMX. Added managed send- to.Prepared for camel/route context runtime configuration to be managed.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@808777 13f79535-47bb-0310-9956-ffa450edef68-,0
+Fix for MulticastStreamCachingTest after- interceptor changes--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@658260 13f79535-47bb-0310-9956-ffa450edef68-,1
+Fixed unit test having problem on Windows- deleting files for cleanup.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@888416 13f79535-47bb-0310-9956-ffa450edef68-,1
+fixed test case which was failing sometimes on- linux--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@576445 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-2636 Fixed the issue of IOException: Bad- file descriptor--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@934852 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-2325: Removed not needed code.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@895568 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-1255: Fixed missing classes in .jar - osgi- export stuff--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@734408 13f79535-47bb-0310-9956-ffa450edef68-,1
+Checkstyle--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1228067 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-4071 clean up the camel OSGi integration- test and load the karaf spring feature first--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1133394 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-3796 Polish the- CxfRsProducerAddressOverrideTest--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1084067 13f79535-47bb-0310-9956-ffa450edef68-,0
+added explicit generics to avoid possible- compiler wierdness in the DSL like we had yesterday where the compiler- decided to use Object rather than ProcessorType in some DSL expressions--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@585089 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-1004 - added a ServiceStatus property to- most Service implementations - and exposed the status of a route--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@748071 13f79535-47bb-0310-9956-ffa450edef68-,0
+Removed the System.out.println of the test--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1206115 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-4059: Fixed test on windows--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1132659 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-2970: JmsProducer supports non blocking- async routing engine for InOut Exchanges (request-reply over JMS).--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@978995 13f79535-47bb-0310-9956-ffa450edef68-,0
+Fixed test on other boxes.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@933097 13f79535-47bb-0310-9956-ffa450edef68-,1
+Polish the unit test of JmsMessageBindTest--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1023715 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-2180: Do not use copy of exchange when- processing in doCatch.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@881175 13f79535-47bb-0310-9956-ffa450edef68-,0
+Camel fails if onCompletion has been mis- configured from Java DSL.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1040143 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-2510 Fixed the issue of Mixing jetty/http- in a route screws up the URI used by HttpClient--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@917529 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-939 - Fix csv test that fails on slower- machines sometimes.--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@700232 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-1665 fixed the unit test error--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@781238 13f79535-47bb-0310-9956-ffa450edef68-,1
+Fixed unit test. Doh what a mistake--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@887104 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-3240 Fixed camel-core build error.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1058911 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-2795: Fixed tests--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@952909 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-4176: Fixed fallback to use http4 or http4s- for proxy scheme when configured as property on CamelContext properties.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1144310 13f79535-47bb-0310-9956-ffa450edef68-,1
+allow the installed languages to be browsed- restfully for CAMEL-1355--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@752938 13f79535-47bb-0310-9956-ffa450edef68-,0
+polished--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1209457 13f79535-47bb-0310-9956-ffa450edef68-,0
+[CAMEL-1289] HeaderFilterStrategy - move from- Component to Endpoint (for JHC component)--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@743889 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-6048: camel-xmljson fixed issue so- attrbiutes with name type can be serialized. Thanks to Arne M Stroksen for- the patch.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1443634 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-845: added firedtime property.--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@688957 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-1933: Overhaul of JMX. Routes can now be- started/stopped.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@808328 13f79535-47bb-0310-9956-ffa450edef68-,0
+CAMEL-1091 - Fix compilation issue on Java 1.5--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@718279 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-1078.  Fix potential NPE.--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@788149 13f79535-47bb-0310-9956-ffa450edef68-,1
+CAMEL-1134 make the ZipDataFormat Stream friendly--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@722005 13f79535-47bb-0310-9956-ffa450edef68-,0
+tidied up some of the default JMS configurations;- for more detail see http://cwiki.apache.org/CAMEL/jms.html--git-svn-id: https://svn.apache.org/repos/asf/activemq/camel/trunk@545124 13f79535-47bb-0310-9956-ffa450edef68-,0
+Polished code--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@812510 13f79535-47bb-0310-9956-ffa450edef68-,0
+Added some logs for debuging--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@757865 13f79535-47bb-0310-9956-ffa450edef68-,0
+Fixed test--git-svn-id: https://svn.apache.org/repos/asf/camel/trunk@1407748 13f79535-47bb-0310-9956-ffa450edef68-,1
+"Add a ResourceResolver implementation for WebJars--Prior to this commit, WebJars users needed to use versioned links within-templates for WebJars resources, such as `/jquery/1.2.0/jquery.js`.-This can be rather cumbersome when updating libraries - all references-in templates need to be updated.--One could use version-less links in templates, but needed to add a-specific MVC Handler that uses webjars.org's webjar-locator library.-While this approach makes maintaing templates easier, this makes HTTP-caching strategies less optimal.--This commit adds a new WebJarsResourceResolver that search for resources-located in WebJar locations. This ResourceResolver is automatically-registered if the ""org.webjars:webjars-locator"" dependency is present.--Registering WebJars resource handling can be done like this:--```java-@Override-protected void addResourceHandlers(ResourceHandlerRegistry registry) {-  registry.addResourceHandler(""/webjars/**"")-          .addResourceLocations(""classpath:META-INF/resources/webjars"")-          .resourceChain(true)-              .addResolver(new WebJarsResourceResolver());-}-```--Issue: SPR-12323--polish-",0
+"Add ability to customize message channels--@EnableWebSocketMessageBroker message channel configuration can now be-customized via WebSocketMessageBrokerConfigurer. It is necessary to-make this easy and even required as part of the basic configuration-since by default the message channels are backed by a thread pool of-size 1, not suitable for production use.--Issue: SPR-11023-",0
+polishing--,0
+MockHttpServletResponse supports multiple- includes (SPR-	)--,0
+JSR-223 based StandardScriptFactory (including- <lang:std> support)--This commit also completes 4.2 schema variants in spring-context.--Issue: SPR-5215-,0
+Adapted getXmlAsSource implementation to avoid- compilation failure in IntelliJ IDEA--,0
+@Resource injection points support @Lazy as well--Issue: SPR-	-,0
+DataBinder tries ConversionService if- PropertyEditor could not produce required type--Issue: SPR-13042-,0
+"Introduce ""dummy"" Environment implementation--For testing purposes in which an Environment implementation is required-but a ConfigurableEnvironment is not desirable.--All methods are no-ops and return null, therefore NPEs are likely.-",0
+SPR-	 - Allow XStreamMarshaller subclasses to- customise XStream object--,0
+made ConversionExecutor internal; removed other- unused operations from public SPI--,0
+javadoc--,0
+Only register Date converters with global format--Change JodaTimeFormatterRegistrar and DateFormatterRegistrar to only-register converters for the Date and Calendar types when a global format-has been defined. This means that the ObjectToObject converter will-handle String->Date conversion using the deprecated Date(String)-constructor (as was the case with Spring 3.1).--Issue: SPR-	-,1
+Polish JavaDoc--,0
+"added public ""validateDatabaseSchema"" method to- Hibernate LocalSessionFactoryBean (SPR-	)--",0
+Polish Javadoc for PropertySource implementations--,0
+"SPR-8454 Introduce Registration style objects,- rename several Spring MVC *Configurer helpers to *Registry, add more tests--",0
+ResponseEntity's HeadersBuilder allows for- specifying existing HttpHeaders--Issue: SPR-12324-,0
+SPR-5802 - NullPointerException when using- @CookieValue annotation--,1
+New method to return string representation of- typeDescriptor--,0
+Polish AbstractHandlerMethodMapping--Issue: SPR-11541-,0
+SPR-7305 -- o.s.http.client.SimpleClientHttpRequestFactory does not allow to specify a- java.net.Proxy--,0
+Add timeout async request handling to OSIV- components--This change adds async web request timeout handling to OSIV filters-and interceptors to ensure the session or entity manager is released.--Issue: SPR-10874-,1
+"Allow file locations for resource handling--Prior to this change, location checks for serving resources would append-`/` to the location path it didn't already have one.--This commit makes sure not to append a `/` if the provided location is-actually a file.--Issue: SPR-12747-",1
+Shutdown Reactor env when relay handler is- stopped--The Reactor Environment (that's used by the TcpClient) manages a-number of threads. To ensure that these threads are cleaned up-Environment.shutdown() must be called when the Environment is no-longer needed.-,1
+Allow binary messages in StompSubProtocolHandler--Issue: SPR-12301-,0
+DataSourceUtils lets timeout exceptions through- even for setReadOnly calls (revised; SPR-7226)--,1
+Polishing--,0
+"added ""boolean isRegisteredWithDestination()""- method (SPR-7065)--",0
+getAllInterfacesForClass introspects parent- interfaces as well (SPR-7247)--,1
+Fixed setFavorPathExtension delegation code--,1
+Allow configuring custom ThreadPoolTaskExecutor--Issue: SPR-12272-,0
+Clean up spring-webmvc-portlet tests warnings--Clean up compiler warnings in the tests of spring-webmvc-portlet. This-commit adds type parameters to all the types (mostly `List` and `Map`).--After this commit the only warnings in spring-web left are the-subclasses of `MyCommandProvidingFormController`.-,0
+Refactor from deprecated GenericTypeResolver- calls--Refactor AbstractMessageConverterMethodArgumentResolver and-BridgeMethodResolver to use ResolvableType in preference to deprecated-GenericTypeResolver calls.--Issue: SPR-10980-,0
+Inlined AntPathStringMatcher into AntPathMatcher--Also initializing the capacity of the AntPathStringMatcher cache to 256 now.-,0
++ add implicit (String) type for typed string- values w/o a specified type--,0
+Revised- PersistenceExceptionTranslationInterceptor to lazily retrieve- PersistenceExceptionTranslator beans on demand--Issue: SPR-10894-,0
+JndiObjectFactoryBean explicitly only chooses- public interfaces as default proxy interfaces (SPR-5869)--,1
+"SPR-8883 - RestTemplate.headForHeaders throws- ""IllegalArgumentException: No InputStream specified"" on server resource which- status code are 4xx--",1
+included qualifier value in debug log for each- transaction (SPR-6811)--,0
+Polish (minor)--,0
+"Allow setting WSDL document as a Resource--Prior to this change, LocalJaxWsServiceFactory allowed specifying a WSDL-document URL. Now users may also specify a WSDL document represented as-a Spring Resource object for convenience.--Issue: SPR-9909-",0
+Provide alternative message code resolver styles--Introduce new 'style' property to DefaultMessageCodesResolver allowing-for alternative message styles. Current styles are PREFIX_ERROR_CODE-and POSTFIX_ERROR_CODE. The default style retains existing behavior.--Issue: SPR-9707-,0
+"Guard against null in -visitInnerClass--Issue: SPR-8358,SPR-8186-",1
+"Prepared for JDK 1.9--Aiming for the JdkVersion class to support one generation ahead now, in order for the test suite to properly detect 1.7/1.8+ JVMs even when running against a JDK 1.9 preview at some point.-",0
+Polish MockHttpServletRequestBuilder--,0
+added test with custom repository annotation--,0
+more work on enabling non-namespace extensions of- xml parsing--,0
+"SPR-9056 Make DelegatingWebMvcConfiguration- config callbacks not final--It should be possible to progress from extending-WebMvcConfigurerAdapter (w/ @EnableWebMvc) to extending-WebMvcConfigurationSupport directly, to extending-DelegatingWebMvcConfigurationSupport. This change-makes that possible.-",0
+SPR-6466 - ContentNegotiatingViewResolver can not- handle View implementations returning null as content type--,1
+Add context hierarchy tests to Spring MVC Test--Issue: SPR-5613-,0
+SPR-5973: Extract UriComponentTemplate out of- UriTemplate--,0
+"Fix conversion of Message<?> payload for replies--If a custom MessageConverter is set, it is not used for replies defined-via the Message abstraction. This commit harmonizes the behaviour of the-`MessagingMessageConverter` so that the conversion of the payload can-be converted for both incoming and outgoing messages.--Issue: SPR-12912-",1
+fixed scheduling tests--,1
+"Consistent support for JTA 1.1- TransactionSynchronizationRegistry--JtaTransactionManager's configuration options for a TransactionSynchronizationRegistry are now in sync with the options for UserTransaction/TransactionManager. Specifically, there are setTransactionSynchronizationRegistry/getTransactionSynchronizationRegistry methods for programmatic configuration now.  Motivated by Spring's adapting to a Hibernate JtaPlatform, specifically the Hibernate 4.3 changes in that area.--Issue: SPR-10839-",1
+"Provide controller level Cache-Control support--Prior to this commit, Cache-Control HTTP headers could be set using-a WebContentInterceptor and configured cache mappings.--This commit adds support for cache-related HTTP headers at the controller-method level, by returning a ResponseEntity instance:--ResponseEntity.status(HttpStatus.OK)-    .cacheControl(CacheControl.maxAge(1, TimeUnit.HOURS).cachePublic())-    .eTag(""deadb33f8badf00d"")-    .body(entity);--Also, this change now automatically checks the ""ETag"" and-""Last-Modified"" headers in ResponseEntity, in order to respond HTTP-""304 - Not Modified"" if necessary.--Issue: SPR-8550-",0
+"Consistent use of varargs, consistent template- method order--",0
+Polishing (including removal of javadoc imports- that show as package cycles in IntelliJ)--,0
+AnnotatedElementUtils wraps unexpected exceptions- with descriptive IllegalStateException--Issue: SPR-10441-,1
+"Fix race when flushing messages--The use of an AtomicBoolean and no lock meant that it was possible-for a message to be queued and then never be flushed and sent to the-broker:--1. On t1, a message is received and isConnected is false. The message-   will be queued.-2. On t2, CONNECTED is received from the broker. isConnected is set-   to true, the queue is drained and the queued messages are forwarded-3. On t1, the message is added to the queue--To fix this, checking that isConnected is false (step 1 above) and the-queueing of a message (step 3 above) need to be performed as a unit-so that the flushing of the queued messages can't be interleaved. This-is achieved by synchronizing on a monitor and performing steps 1-and 3 and synchronizing on the same monitor while performing step 2.--The monitor is held while the messages are actually being forwarded-to the broker. An alternative would be to drain the queue into-a local variable, release the monitor, and then forward the messages.-The main advantage of this alternative is that the monitor is held for-less time. It also reduces the theoretical risk of deadlock by not-holding the monitor while making an alien call. The downside of the-alternative is that it may lead to messages being forwarded out of-order. For this reason the alternative approach was rejected.-",1
+HandlerExecutionChain prevents re-adding the- interceptors array to the list (and declares varargs now)--Issue: SPR-12566-,1
+JavaDoc on- AnnotationConfigApplicationContext-scan(String...)--,0
+SPR-5636 - @RequestMapping matching should be- insensitive to trailing slashes--,1
+Fix minor issue in MockHttpServletRequest--Previously MockHttpServletRequest-sendRedirect did not set the HTTP status-or the Location header. This does not conform to the HttpServletRequest-interface.--MockHttpServletRequest will now:--  - Set the HTTP status to 302 on sendRedirect-  - Set the Location header on sendRedirect-  - Ensure the Location header and getRedirectedUrl are kept in synch--Issue: SPR-9594-,1
+DataSourceUtils lets timeout exceptions through- even for setReadOnly calls (revised; SPR-7226)--,1
+removed unused method; polishing--,0
+"Clean up spring-expression tests warnings--Clean up compiler warnings in the tests of spring-expression. This-commit adds type parameters to some of the types (mostly `List` and-`Map`). Some of them can't be cleaned up, some tests are even-specifically for raw types.-",0
+ServletRequestAttributes skips well-known- immutable values when updating accessed session attributes--Issue: SPR-11738-,0
+"Fix package cycles in spring-test--Code introduced in conjunction with SPR-5243 introduced package cycles-between the ~.test.context and ~.test.context.web packages. This was-caused by the fact that ContextLoaderUtils worked directly with the-@WebAppConfiguration and WebMergedContextConfiguration types.--To address this, the following methods have been introduced in-ContextLoaderUtils. These methods use reflection to circumvent hard-dependencies on the @WebAppConfiguration and-WebMergedContextConfiguration types.-- - loadWebAppConfigurationClass()- - buildWebMergedContextConfiguration()--Issue: SPR-9924-",1
+Changed use of AssertThrows to @Test(expected =- ...)--,0
+fixed bug related to array autogrow--,1
+fixed detection of element type in case of nested- collections (SPR-7569)--,1
+bean properties of type enum array/collection can- be populated with comma-separated String (SPR-6547)--,1
+"fixed ""hibernateManagedSession"" mode to actually- work against Hibernate 4.0 (SPR-8776)--",1
+revised WebApplicationContext lookup--,0
+renamed 'isJava6VisibilityBridgeMethodPair' to- 'isVisibilityBridgeMethodPair' (SPR-8660)--,0
+SPR-7107 - RestTemplate/UriTemplate/UriUtils- improperly encoding UTF-8--,1
+Workaround Javadoc bug with JDK 8 (b112+)--Remove Javadoc linkplain to ExceptionHandler-value() from-AnnotationMethodHandlerExceptionResolver to work around JDK-Javadoc bug 9007707.-,1
+Polishing--,0
+"Resolve nested placeholders via PropertyResolver--Prior to this change, PropertySourcesPropertyResolver (and therefore-all AbstractEnvironment) implementations failed to resolve nested-placeholders as in the following example:--    p1=v1-    p2=v2-    p3=${v1}:{$v2}--Calls to PropertySource-getProperty for keys 'p1' and 'v1' would-successfully return their respective values, but for 'p3' the return-value would be the unresolved placeholders. This behavior is-inconsistent with that of PropertyPlaceholderConfigurer.--PropertySourcesPropertyResolver -getProperty variants now resolve any-nested placeholders recursively, throwing IllegalArgumentException for-any unresolvable placeholders (as is the default behavior for-PropertyPlaceholderConfigurer). See SPR-9569 for an enhancement that-will intoduce an 'ignoreUnresolvablePlaceholders' switch to make this-behavior configurable.--This commit also improves error output in-PropertyPlaceholderHelper-parseStringValue by including the original-string in which an unresolvable placeholder was found.--Issue: SPR-9473, SPR-9569-",1
+SPR-5251: URI Templates for @InitBinder--,0
+tests for custom conversion service / validator--,0
+polishing--,0
+[SPR-8387] Introduced- supports(MergedContextConfiguration) method in the SmartContextLoader SPI;- updated existing loaders accordingly; and fleshed out implementation of and- tests for the new DelegatingSmartContextLoader.--,0
+"Fix nested @Component annotation instantiation- bug--3.1 M2 introduced a regression that causes false positives during-@Configuration class candidate checks. Now performing a call to-AnnotationMetadata-isInterface in addition to checks for @Component and-@Bean annotations when determining whether a candidate is a 'lite'-configuration class. Annotations are in the end interfaces, so both-are filtered out at once.--Issue: SPR-8761-",1
+Improve StringUtils.cleanPath--Issue: SPR-11793-,1
+"SpringJUnit4ClassRunnerAppCtxTests now verifies- seamless support for using @Inject in addition to @Autowired, etc.--",0
+Improve documentation of SpringFactoriesLoader--,0
+Servlet/PortletRequestDataBinder perform- unwrapping for MultipartRequest as well (SPR-7795)--,1
+SPR-5624 - A default HandlerExceptionResolver- that resolves standard Spring exceptions--,0
+Fix Jackson @JSONView when using XML- serialization--Issue: SPR-12149-,1
+Add putIfAbsent on Cache abstraction--This commit adds a putIfAbsent method to the Cache interface. This-method offers an atomic put if the key is not already associated in-the cache.--Issue: SPR-11400-,0
+Add Jackson2ObjectMapperBeanFactory--Issue: SPR-9739-,0
+revised version checks and exception signatures--,0
+added DataSourceFactory strategy; promoted- EmbeddedDatabaseConfigurer strategy to public API; added ability to add any- number of SQL scripts for db population--,0
+Hibernate synchronization properly unbinds- Session even in case of afterCompletion exception (SPR-8757)--,1
+fixed JSR-303 Validator delegation code- (SPR-6557)--,1
+IdToEntityConverter defensively handles access to- getDeclaredMethods--Issue: SPR-11758-,1
+SQLStateSQLExceptionTranslator checks exception- class name for timeout indication before resorting to- UncategorizedSQLException--Issue: SPR-11959-,1
+Improve exception message--Issue: SPR-12898-,0

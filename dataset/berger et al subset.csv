@@ -1,0 +1,629 @@
+text,label
+changing interface to improve rendering,0
+cs Visitor,0
+README Adapter,0
+README in StaticFactory,0
+grammatical correction,0
+README for Builder,0
+test with mockup,0
+added facade composite and adapter,0
+comments,0
+README Decorator,0
+some fixes on comments,0
+fix PSR-0,0
+fix tiny typo,0
+fix typo,1
+bugfix in UserMapper::findAll,1
+Experimental support for mixins with interpolated selectors.,0
+Declare `e` properly in `mediaFeature`,1
+chunkify with a zero-width regexp,0
+1.5.0 release,0
+change @arguments behaviour to be more like js,0
+add '--no-color' option,0
+critical fix for browser,1
+Make rhino error support better,0
+ability to insert uppercase color names,0
+Fixed inner quotes,1
+Added rootpath tests.,0
+Fix #791 - avoid engineering syntax in dimensions,1
+Fix global variable leaks,1
+fix 'File not found' import error,1
+"[models] Properly respect the return value of the radio group delegate's willShow method.
+
+The logic was inverted.",1
+[core] Flesh out the metrics tests.,0
+Ability to customise album and photo scroll view background colors.,0
+[core] Modernize NIIsPad.,0
+"Added justify text example, which only works in CoreText",0
+[attributedlabel] Add support for inline images.,0
+Update the photo albums project to not use ASI anymore and the new processor features.,0
+[overview] Suppress analyzer warnings.,0
+[overview] Fix strict warnings.,0
+"[attributedlabel] Don't remove images when the run delegate deallocates.
+
+This caused periodic crashes that were revealed by avoiding the memory leak fixed in 3b46abf455389e55384663b526a0567e13e27460.",1
+"Fixed bugs related to reusing table view cells
+
+- SegmentedControl selected index reapplied from FormElement object
+- DatePicker date is saved to FormElement on change",1
+"[photos] Fix bugs in the layout of the photo scroll views.
+
+Due to pushing the scroll view down to a subview I needed to update
+the way we calculate centering the photo. This needed to be done
+when the scrollview's layoutSubviews method was called so I created
+a simple subclass of UIScrollView that handles this. The rest of
+the photo scroll view functionality was able to stay in the root
+of the view.
+
+Also fixed some issues with photo centering. The problem was related
+to when we set the frame of the paging scroll view and the fact that
+it was simply setting the frame of all of the subviews, without giving
+them the opportunity to maintain their existing state.",1
+Fix rotation issues in the paging scroll view demo by forwarding the proper events to the view.,1
+Removed networking operations from Nimbus. AFNetworking is now the default networking stack.,0
+[core] Add NIError.h/m.,0
+Restoring FindTypeMapFor,0
+Reverting commit where destination objects passed in are void methods,1
+Adding overload for ForSourceMember that just takes in the property name as a string,0
+Fixed issue where the profile was not being used correctly,1
+"Better syntax: Ability to write Map<B>(objectA) instead of Map<A,B>(objectA)
+
+Tests for Map method with one generic parameter",0
+Adding sample for mapping to interfaces,0
+Integrating patch to fix ambiguous match exceptions on multiple IEnumerable implementors,1
+"Added ability for custom resolver to programatically determine if the mapping should be ignored (and thus use destination value).
+
+closes #21",0
+Win RT version compiling including unit tests,0
+"PrimitiveArrayMapper implementation
+
+Fixes AutoMapper/Automapper#279",0
+Fixed bug where destination collections were not cleared before mapping,1
+"Fixed issue with mapping og void methods
+
+Fixed a bug where matching void methods were added to the typemap on
+CreateMap, thus failing with a .NET type coersion exception. Such
+methods should've been filtered out but the ReturnType was checked
+against null instead of typeof(void). Added unit tests to support the
+fix.
+
+closes #214",1
+Fixing bug where type map resolution did not attempt to find a map for the underlying member type,1
+Trying to fix SN problem and probing adapter resolver issue,1
+Adding a test to verify deep nested graph of filling existing destinations; closes #170,0
+"- Removing configuration validation from dynamic mapping
+- Adding overloads for mapping to existing objects for dynamic mapping",0
+"e,E to use XVimMotion",0
+"Prevent crashes after deletion.
+
+If you delete the last characters on a line the cursor ends up in an
+invalid position. Replace all [view cut] with [view del], where the
+latter adjusts the cursor position after deletion.",1
+Made 'dj' and 'dk' function like vim,0
+"Design changes of Evaluators.
+Added separated files for some evaluators.
+NSTextView+VimMotion is added to implement vim motion.
+TextObjectEvaluator is goint to use this category to handle motions.
+And Normal and Visual evaluator will use the evaluator as its super
+class.
+Its implemntation is not completed.",0
+Initial parser implementation based on a FSM,0
+Merged latest,0
+"Support Ctrl-p, Ctrl-n in command and search history",0
+"Made scrollToCursor more like vim
+
+If scrolling more than the page height then center the view",0
+Fix block selection corruption,1
+Fix memory leaks,1
+fix first selection range of visual mode of 'V',1
+"Following bug fix for nextLine
+ - 'j' on a blankline moves cursor 2 lines donw",1
+"Fix #443
+The root cause of the problem was inconsistent state of observer objects.
+Because we have not unhook ""dealloc"" method, if XVim is disabled once and
+a view is newly created and deallocated the method ""removeObserver"" is called
+for a object which is not registered as a observer.
+
+This has not been a problem in Xcode4 because Xcode4 deos not dealloc unused
+view objects. Xcode5 does properly dealloc unused view objects which leads crashes.",1
+Fix memory leak,1
+"add tracing for BEGIN/COMMIT/ROLLBACK
+
+Traces the beginning and ends of transactions.",0
+Add named query parameter binding from map or struct.  Fixes #61,0
+"Adds support for SAVEPOINT, ROLLBACK TO SAVEPOINT, and RELEASE SAVEPOINT",0
+gofmt,0
+gofmt,0
+maybeExpandNamedQuery: ignore time.Time struct - fixes #84,1
+Support nested fields in embedded structs,0
+gofmt,0
+cache sql queries for get/insert/update/delete. shaved about half the overhead off according to benchmarks,0
+added unit tests for tagging,0
+switch imports back go coopernurse/gorp,0
+"Add support for time.Time objects to gorp.
+
+This commit adds support for storing and retriving time.Time objects,
+by passing through such objects to the underlying driver.  This
+resolves gorp issue #14.
+
+The commit is tested and works with the github.com/mattn/go-sqlite3
+driver.
+
+The commit does not currently work with the
+github.com/ziutek/mymysql/godrv driver, due to a bug in the mysql
+driver.  This problem is resolved by mymysql pull request #77.  I have
+successfully tested that with the fix from pull request #77 applied to
+mymysql, and with the current commit applied, gorp can correctly store
+and retrieve time.Time objects from mysql databases.
+
+This commit is NOT tested with the github.com/lib/pq driver.",0
+"dialect: support quoting column names
+
+Add support for quoting column names when generating queries. If a table
+uses a reserved word for a column name (silly but happens) then there
+will be a SQL error when trying to fetch a mapped struct.",0
+fixed type orddict(),1
+"Added weighted_default/2 and some bugfixes
+
+* non_empty/1 now covers binary types too
+* fixed a bug with noshrink/1",1
+"Implemented sampleshrink/1,2, type changes, added safe_pop to stack ADT",0
+"Refined stats printing subsystem, minor cleanups.
+
+* Implemented collect/3, aggregate/3, measure/3, with_title/1.
+* Cleaned up macro definitions.
+* Cleaned up proper.erl exported types.",0
+"Permit caller to ""prime"" PropEr's typeserver and random generator prior to testing
+
+The motivation of this change request is to permit testing of a
+module's exported functions by using both PropEr *and* Meck.  Before
+Meck is enabled to mock a module, the cache of PropEr's typeserver
+must be first populated.  Otherwise, PropEr is unable to gather a
+module's specs.
+
+Sample code to illustrate this technique:
+
+````
+-spec check_specs(module()) -> term().
+check_specs(Mod) ->
+    %% pass through to the original Function Under Test (FUT)
+    check_specs(Mod, fun(_Module, _Fun, Args) -> meck:passthrough(Args) end, [], []).
+
+-spec check_specs(module(), fun((module(), atom(), list()) -> term())) -> term().
+check_specs(Mod, FUT) ->
+    check_specs(Mod, FUT, [], []).
+
+-spec check_specs(module(), fun((module(), atom(), list()) -> term()), proplist()) -> term().
+check_specs(Mod, FUT, PropErOptions) ->
+    check_specs(Mod, FUT, PropErOptions, []).
+
+-spec check_specs(module(), fun((module(), atom(), list()) -> term()), proplist(), proplist()) -> term().
+check_specs(Mod, FUT, PropErOptions, MeckOptions) ->
+    proper:global_state_erase(),
+    proper:global_state_init_size(1),
+    case proper_typeserver:get_exp_specced(Mod) of
+        {ok, MFAs} ->
+            meck:new(Mod, MeckOptions),
+            try
+                %% @NOTE Expand MFA clauses for larger arity as needed
+                Fun = fun({M,F,0}) ->
+                              meck:expect(M,F, fun() -> FUT(M, F, []) end);
+                         ({M,F,1}) ->
+                              meck:expect(M,F, fun(A1) -> FUT(M, F, [A1]) end);
+                         ({M,F,2}) ->
+                              meck:expect(M,F, fun(A1, A2) -> FUT(M, F, [A1, A2]) end)
+                      end,
+                lists:foreach(Fun, MFAs),
+                proper:check_specs(Mod, PropErOptions)
+            after
+                meck:unload(Mod)
+            end;
+        {error,Reason} ->
+            error(Reason, [Mod, PropErOptions, MeckOptions])
+    end.
+````",0
+"added types, minor refactoring, added rudimentary README instructions",0
+Removed unnecessary $ from test wrapper tags.,0
+more fixes,1
+"Strengthen some specs
+
+While at it, shortened some comment lines so that they fit
+on one line in my emacs buffer...",0
+better indentation,0
+Simplify add_exports/1 transformation.,0
+"Fixes in initial state computation
+
+*Now initial_state/0 is only called during command generation
+ and evaluated during command execution.
+
+*Also fixed proper_types:parameter/3",1
+fixed bug in proper_types:with_parameters/2,1
+"Move things again, trying to suit GOPATH scheme.",0
+"Add "")"" only if the type is a function.",1
+Add semantic_rename/test.0003.,0
+Fix win port issues. Signal handling and default sock type.,1
+Add function pretty printing.,0
+Use path.Join instead of simple Sprintf.,0
+Add 'rename' test.0004.,0
+"Update test.0028, include unary op check.",0
+"Add support for built-in package ""unsafe"".",0
+"Use case-insensitive filtering as a fallback, if no proposals were found.
+
+Closes #91.",0
+Fix sneaky package parser rewrite regression.,1
+"Fix win32 build, due to package renames in one of the latest weeklies.",1
+"Make a global universeScope variable.
+
+Also fixes all TODOs regarding ""return the real built-in type"" thing.",0
+Fixed when a crash when there is bogus import statement; alias but no path.,1
+"Closes #740. This should fix the segfault.
+
+The segfault happened because SwitchToProgram() didn't
+check for the being errored before resuming playback.
+
+This adds that check in SwitchToProgram().
+
+It also adds it to the StartPlaying() loop. This part is just
+so that an error message gets displayed before we exit.
+
+For an extra level of paranoia this also adds a check for a null
+context pointer in the packet reading portion of GetFrame(). 
+This prevents a segfault if GetFrame() is called when there is 
+no context pointer; so long as there it is reset clearing any
+buffered packets.
+
+There are still remaining problems in LiveTV that I think are 
+sufficiently canvased by the existing tickets; this just prevents
+a segfault if we switch to an empty file. Addressing the creation
+empty files is a seperate issue.
+
+
+
+git-svn-id: http://svn.mythtv.org/svn/trunk@8098 7dbf422c-18fa-0310-86e9-fd20926502f2",1
+"Atari and Odyssey2 support, patch by Bill Soudan.
+
+
+git-svn-id: http://svn.mythtv.org/svn/trunk@3755 7dbf422c-18fa-0310-86e9-fd20926502f2",0
+"My last patch to this got rid of the attempts to load
+""No cover"" as a cover file, but also took away
+the side effect of it causing a reset of the poster
+on the screen.  This resets the poster to blank 
+while still not trying to load a non existant poster.
+
+
+
+
+
+git-svn-id: http://svn.mythtv.org/svn/trunk@6957 7dbf422c-18fa-0310-86e9-fd20926502f2",1
+"Change the video rating statetype to ten states to match mythmusic and the watch recordings screen.
+
+git-svn-id: http://svn.mythtv.org/svn/trunk@19671 7dbf422c-18fa-0310-86e9-fd20926502f2",0
+"A little more of the new scanner code is in this commit.
+
+Please test DVB scanning in Europe with this commit.
+
+This removes depreciated parts of dvbsignalmonitor, as they
+are no longer used in scanwizard. The code now uses the range
+and value reporting signals, instead of the old non-range 
+reporting signals.
+
+This moves SIScan thread handling code from ScanWizardScanner to SIScan.
+Removes the USING_DVB checks on SIScan code in ScanWizard[Scanner] since,
+as of  the last scanning checkin, SIScan no longer depends on DVB stuff 
+to compile. This also adds some of the pcHDTV v4l scanning code to 
+scanwizard, basically everything that doesn't depend on a pcHDTV v4l
+enabled SIScan.
+
+Finally, this makes some changes to SIScan, but just header and define
+stuff. Everything else depends on using the new FrequencyTable class in
+frequencytables.h, but testing by John Pullan seems to indicate that
+the new frequency tables are breaking DVB scanning in Europe. So I will
+make a patch that just adds the FrequencyTable stuff for testing before
+anything goes into svn.
+
+
+
+git-svn-id: http://svn.mythtv.org/svn/trunk@6884 7dbf422c-18fa-0310-86e9-fd20926502f2",0
+"Make the new vsync code optional, dependent on a new setting in the playback
+section.
+
+
+git-svn-id: http://svn.mythtv.org/svn/trunk@1582 7dbf422c-18fa-0310-86e9-fd20926502f2",0
+"Displays Later Showings in the same font as Earlier, Disabled, and other non-recordings states
+
+
+
+git-svn-id: http://svn.mythtv.org/svn/trunk@7763 7dbf422c-18fa-0310-86e9-fd20926502f2",0
+"Fix suggested by David Abrahams for problems when pkg-config installed,
+and syntax warning fix (variable was being redefined)
+
+
+git-svn-id: http://svn.mythtv.org/svn/trunk@8640 7dbf422c-18fa-0310-86e9-fd20926502f2",1
+"A Couple of fixes for compiling under OpenBSD
+
+
+
+git-svn-id: http://svn.mythtv.org/svn/trunk@7241 7dbf422c-18fa-0310-86e9-fd20926502f2",1
+"replace asm with __asm__ since the ffmpeg sync in [20797] removed -fasm from CFLAGS
+
+fixes hopefully pcc compilation
+
+git-svn-id: http://svn.mythtv.org/svn/trunk@21571 7dbf422c-18fa-0310-86e9-fd20926502f2",1
+"Fixes #1873. Fixes DVB-T Radio, by writing fake video stream pid.
+
+I didn't use the patch because it had some errors in it, but I added a one liner which should fix the problem.
+
+
+
+git-svn-id: http://svn.mythtv.org/svn/trunk@10087 7dbf422c-18fa-0310-86e9-fd20926502f2",1
+"Fix a problem with DVB subtitles which don't take the current OSD
+dimensions into account.
+
+The raw subtitle images are scaled to be correct for a screen resolution 
+of 720x576 (at least thats true for european subtitles) this just scales
+the images to be the correct size for the current OSD dimensions.
+
+git-svn-id: http://svn.mythtv.org/svn/trunk@8415 7dbf422c-18fa-0310-86e9-fd20926502f2",1
+"rmdec: Pass AVIOContext to rm_read_metadata()
+
+Fix null pointer dereference
+Fixes Ticket2588
+
+Signed-off-by: Michael Niedermayer <michaelni@gmx.at>
+(cherry picked from commit bf87908cd8da31e8f8fe75c06577170928ea70a8)
+Signed-off-by: Jean-Yves Avenard <jyavenard@mythtv.org>",1
+"Group items now have signals to indicate that they're about to go back and that they've gone back.
+
+The recording group item now hooks into the ""goingBack"" signal of it's list item and resets the group to ""Default"" if you select the create new group then go back.
+
+Remnoved the unused Pre/Post roll group so that it's text wouldn't need to be translated.
+
+
+git-svn-id: http://svn.mythtv.org/svn/trunk@4133 7dbf422c-18fa-0310-86e9-fd20926502f2",0
+"delete 'gecko' and 'konqueror' testing
+http://rb.corp.taobao.com/r/23647/
+
+
+git-svn-id: http://code.taobao.org/svn/tengine/trunk@33 8a6cbc4f-5610-49f6-9325-3f9afe71ff98",0
+added the 'log_empty_request' directive,0
+fix the wrong number of arguments in keepalive_timeout,1
+fixed a segment fault bug with upstream check module when check timeout is longer than the check interval,1
+"add identity for syslog
+http://rb.corp.taobao.com/r/29643/
+
+
+git-svn-id: http://code.taobao.org/svn/tengine/trunk@64 8a6cbc4f-5610-49f6-9325-3f9afe71ff98",0
+merge changes between nginx 1.2.6 and nginx 1.2.7,0
+ngx_http_user_agent_module bugfix,1
+"add input body filter
+http://rb.corp.taobao.com/r/22419/
+
+git-svn-id: http://code.taobao.org/svn/tengine/trunk@16 8a6cbc4f-5610-49f6-9325-3f9afe71ff98",0
+merge nginx changes between 1.2.5 and 1.2.6,0
+add consistent_hash_module for tengine,0
+"repair a bug in upstream, process_header and process_body_in_memory
+http://rb.corp.taobao.com/r/23292/
+
+git-svn-id: http://code.taobao.org/svn/tengine/trunk@24 8a6cbc4f-5610-49f6-9325-3f9afe71ff98",1
+bugfix: don't record request time in subrequest,1
+bugfix when use chrome and safari.,1
+"Bugfix: the ""[alert] zero size buf"" error.",1
+"1 fix bugs of the limit_req module(please read this issue https://github.com/taobao/tengine/pull/1).
+
+2 add test case for limit_req module.
+
+3 refactor some code and fixed code style.",1
+* src/main/clojure/clojure/core/logic.clj: improvements to !=fd,0
+* test/logos/test/core.clj: add flatten o test,0
+* src/logos/match.clj: sketch,0
+* src/logos/bench.clj: better formatting,0
+* src/main/clojure/clojure/core/logic.clj: implement super? for RangeFD,0
+* src/logos/minikanren.clj: quick note,0
+* project.clj: can unify all core datatypes,0
+* src/main/clojure/clojure/core/logic.clj: move some stuff around,0
+"* src/main/clojure/clojure/core/logic.clj: remove expand for now, clean up how integers and more complex domains are handled. as long as a seq of intervals can be produced, we can do generic ops.",0
+* src/main/clojure/clojure/core/logic.clj: fix make-cs calls,1
+"* src/main/clojure/clojure/core/logic.clj: fix typo in tests, fix exclude-from-dom, y* will be a set in -distinctfdc, list-sorted? impl",1
+* src/logos/minikanren.clj: fix the behavior of rest-lvars during reification,1
+allow `fixc` to take rands. x can be a vector values in this case.,0
+fixed typo in locals-membero recursive call,1
+note on how we intend to fix walk-term for IPersistentMaps,0
+"v6.47.0. Bugfix. Improvement.
+
+- v6.47.0 July 31, 2013
+	- Added `FileModel::deleteSource`
+	- Added support for specifying inline content within the styles block
+	- Fixed `DocPad::parseFileDirectory`",1
+watch generate will now output time it was regenerated - as it is super dooper fast these days,0
+"Removed base Model requirement for Document
+
+This var is unused since DocumentModel inherits from FileModel",0
+0.9.7. added maxAge option,0
+"v6.31.0. Improvement.
+
+- v6.31.0 April 24, 2013
+	- DocPad will now warn you when you have files of the same outPath
+	- File and Document IDs will now always be their `cid` (before they
+use to be their relativePath on occasion)
+	- Fuzzy searching no longer searches for the id
+	- Server is now able to serve cached pages while a non-initial
+generation is occurring
+	- We no longer replace tabs with 4 spaces for the content of files and
+documents (we still do it for YAML meta data headers on documents)
+		- This means if you're a plugin developer, you may need to update
+your plugin's test's `out-expected` folder accordingly
+			- If this is too difficult, we've added a `removeWhitespace` config
+option for your plugin tester, set it to `true`, [see here for
+usage](https://github.com/docpad/docpad-plugin-paged/blob/master/src/pag
+ed.tester.coffee)
+	- Change events will now fire when adding a url to a file
+	- URL cache index for serving files is now generated via change
+events, rather than after generation",0
+Minor code standards enforncement,0
+Updated for Express.js v3. Need to update some plugins to.,0
+cleanded docpad dev comments,0
+"Cleaned up the generation code. Tests passing. May need to change the mtime query to include new documents, as new imported documents with an old mtime won't be generated.",0
+Fix jschardet being undefiend if Iconv fails - Ref #411,1
+v6.54.8. Bugfix.,1
+"v6.21.7. Bugfix.
+
+- v6.21.7 January 25, 2013
+	- Fixed port not defaulting correctly on the `docpad-server` executable since v6.21.5
+		- Closes [issue #407](https://github.com/bevry/docpad/issues/407) thanks to [man4u](https://github.com/man4u)
+	- Updated dependencies
+		- [bal-util](https://github.com/balupton/bal-util) from ~1.16.0 to ~1.16.1",1
+typo error in markdown plugin renderer,1
+Replace gname2Qname with origName2QName,0
+-pretty flag to jsbeautify output,0
+Remove force-inline option (closes #102).,0
+Flag to exclude stdlib from output (refs #203).,0
+Move Defined and Nullable to Language.Fay.FFI,0
+Add tests for () conversions,0
+Allow aeson 0.7.*,0
+Fix FFI callbacks when too many arguments are provided.,1
+Fix console example (closes #201),0
+"Add lazyness to infix operators (* + - etc)
+
+In the test case I've replaced undefineds with a division by 0 due to
+undefined not being in scope. I have also tested this by replacing the 1
+and the 0 with undefined in the generated javascript and running it
+through node manually",0
+"Fix fields of records that should also not be forced, also very important (refs #237).",1
+Don't override existing modules with constructor definitions. Fixes ModuleRecordClash test,1
+Remove unused CompileErrors and do some renaming,0
+"Make error messages a tiny bit friendlier, and some general house-keeping.",0
+Fix invalid Symbols as Idents in ModuleScope,1
+Each module adds its own entries to the jsToFay/fayToJs hashes. Also put jsToFayUserDefined and fayToJsUserDefined in runtime.,0
+Expand macro ++ in such a way as to allow use in patterns.,0
+Moved code generation ot of lfe_comp into lfe_codegen.,0
+First *trial' version of parameterized modules.,0
+"Handle compiler option warnings_as_errors
+
+We do this in the samw way as the vanilla compiler by flagging an
+error when there are warnings, but leaving them as warnings.",0
+Clean up handling of print depth and make it consistent.,0
+Added (set- ...) macro to for records. Internal cleanup.,0
+"Removed user_drv.erl and user_drv.beam as no longer needed and io-server
+protocol has been changed.",0
+Move code generation out of lfe_comp into lfe_codegen.,0
+Add main/1 as export in dummy module,0
+"Added formatted output. Very like the erlang versions but they do
+output LFE forms. Characters and based numbers useless for now.",0
+Initial release.,0
+Extend ? macro to handle optional timeout and default value.,0
+"Fix indenting of known forms when no depth limit
+
+The pretty printer did not correctly handle the case when there was no
+depth limit and just ignored the rules.",1
+Better error checking in guards.,0
+"Fix stupid bug in lfe_macro_include which calls undocumented function
+
+Also take the chance to improve some comments.",1
+"Unwind variable scoping code in lfe_trans.erl
+
+To do this properly will take more work than I am prepared to do
+for the moment. Also fixed binary handling in from_bitseg.",1
+Making sure not defining MR_SHORTHAND does NOT include any unnecessary runtime changes,1
+Fix NSAttributeDescription lookups using attributesByName by switching to fast enumeration,1
+Create new spec based upon ImportSingleRelatedEntityTests.m,0
+add some notes to pick up with later,0
+Added inContext helper to get a managed object in another context,0
+"Separate printing context chain method into its own method
+change contextWorkingName to property workingName",0
+Minor formatting updates,0
+Added Unit test for string to number conversion,0
+Cleanup code is now debug-only,0
+Fix Memory Leaks found through instruments,1
+Re-add fix for cleanup of background queue,1
+Converted CoreDataRecipes sample to MagicalRecordRecipes sample application,0
+"Fix memory leak, add check for previous import",1
+"fix comments, add new context helper, made helpers more consistent",0
+"Remove project/boot lib references from build-definition descriptor
+
+These directories/jars do not exist anymore in sbt 0.11+",0
+"Add execluded.folders property for specifying a list of folders to be
+excluded from Idea project view. Closes #41.
+
+Removed exclude.libmanaged.folders property. Use
+'excluded.folders=lib_managed' instead.",0
+"Added correct classpath for sbt build project.  Sbt sources now included!
+Added ability to skip sbt sub-project in idea module generation
+Added managed source directories when applicable.",0
+Set version for 0.10.0 release,0
+"Add 'Runtime' scope support to unmanagedClasspath
+
+Also added support for classes dirs in unmanagedClasspath, 
+in addition to jars (Issue #181).",0
+Set version 1.5.2,0
+Use 0.2-SNAPSHOT,0
+Use android-sbt 0.6.4 stable version,0
+some cosmetic refactorings,0
+Tabs to spaces formatting fixes,0
+better log message,0
+"Process 'provided' scope before test and runtime (#186)
+
+Fixes a case where a dependency declared as 'provided' will
+end up as 'test' scoped when the same dependency is also a
+transitive dependency of test scoped dependency. Provided dependency
+may be needed for compilation, so it ending as test dep breaks 
+compilation in Idea.",1
+Make classifiers of sources and javadocs configurable (issue #97),0
+"Download classifiers by default unless no-classifiers or no-sbt-classifiers is specified.
+
+Fixes issue #63",0
+Temporary fix to avoid duplicate project dependencies and add FIXME describing correct solution.,1
+Fix bug and add test for shadowing of optional value with fnk args,1
+More cleanup and docs,0
+"Incorporated positional compile to replace eager-compile.
+
+This is largely an export so Jason can take a look; I still plan to clean
+things up.",0
+Add a test for positional-fnks via positional-fn,0
+Bump schema version,0
+Cut 0.1.1 release,0
+Update project.clj to 0.0.2-SNAPSHOT,0
+Prepare for next development iteration,0
+All tests pass,0
+Fix bug in compose-schemata / comp-partial for optional args,1
+Fix and test ability to rename non-maps with [:x :as y],1
+Proper fix for ability to rename non-maps with [:x :as y],1
+better error messages for graph,0
+better lazy test -- make sure that lazy error checking happens,0
+Fix bug in merge-disjoint with nil map,1
+"adding references() to compiled unit.
+
+the compiled unit now contains a references() function. the references
+is resolved from the compiled units declaration content, not the
+compiled content.",0
+"more updates to the resolver...
+
+more updates to the resolver, added the compiler services in there.",0
+adding line info to output,0
+updated reflection sample,0
+"upgrade to TS compiler 0.9 beta
+
+updated compiler to beta (6/6/2013), emitter, declaration local units.",0
+bringing back declaration and source mapping.,0
+"added declarations to compiled unit object.
+
+additional updates on d.ts files added to the resource (resx) folder.
+the node.d.ts file now differs from the default in that it now contains
+a portions of lib.d.ts minus the DOM specific API's and that all
+declarations as no longer module scoped under the AMD quotation scheme.",0
+bump version,0
+bump version,0
+client initiates heartbeats and detects when connections are stale,0
+bump version,0
+"fix update to use ssl, specify the right parameters",1
+fix an issue where closing a TCP tunnel caused an infinite loop of errors,1
+"use nrsc to pack static data into the binaries, making adding assets easier and simplifying the build process",0
+make sure every new tunnel connection and every new http connection has a read/write timeouts until handled by a tunnel. fix a bug where a slow tunnel or proxy connection could block all others. fix a bug where sending a non-expected valid ngrok protocol message over a new connection could leak a connection,1
+switch back to Close() calls since CloseRead() seems to cause sockets not to flush their writes,1
+add support for proxy authentication,0
+add support for tunneling through http proxies,0
+use type switching for different commands instead of type codes,0
+add bug reporting instructions on crash,0
+fix a bug which causes updates to be tried without delay after the first update interval,1
+fix a bug where ngrokd would reject http requests with an authorization header if the client had not specified any authentication necessary,1
+fix race condition in logging initialization. go fmt,1
+fix a race condition handling new proxy connections by passing the connection variable into the goroutine instead of closing over it,1

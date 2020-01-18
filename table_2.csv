@@ -1,0 +1,6 @@
+date,commiter,commit_insertion,commit_deletion,file_language,filename,sha_x,project,github_language,bugfix
+Wed Dec 11 13:29:19 2019 +0100,Oliver Eyton-Williamsojeytonwilliams@gmail.com,14,4,JavaScript,client/src/templates/Challenges/utils/frame.js,d6c53eb9142d1986e15b09435cb1191bd35c3aae,freeCodeCamp/freeCodeCamp,JavaScript,1
+Wed Dec 11 06:43:06 2019 -0500,Catalinaionescuc@dickinson.edu,20,9,JavaScript,api-server/common/models/user.js,e154f38118be44b49e9a6a99dd88c447d008f9ac,freeCodeCamp/freeCodeCamp,JavaScript,1
+Wed Dec 11 06:43:06 2019 -0500,Catalinaionescuc@dickinson.edu,14,11,JavaScript,api-server/server/boot/settings.js,e154f38118be44b49e9a6a99dd88c447d008f9ac,freeCodeCamp/freeCodeCamp,JavaScript,1
+Wed Dec 11 06:43:06 2019 -0500,Catalinaionescuc@dickinson.edu,1,0,JavaScript,api-server/server/utils/auth.js,e154f38118be44b49e9a6a99dd88c447d008f9ac,freeCodeCamp/freeCodeCamp,JavaScript,1
+Wed Dec 11 06:43:06 2019 -0500,Catalinaionescuc@dickinson.edu,1,0,JavaScript,api-server/server/utils/publicUserProps.js,e154f38118be44b49e9a6a99dd88c447d008f9ac,freeCodeCamp/freeCodeCamp,JavaScript,1

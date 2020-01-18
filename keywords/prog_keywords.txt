@@ -1,0 +1,35 @@
+exception handling
+error handling
+type error
+type
+compilation error
+copy-paste error
+refactoring
+missing switch case
+faulty initialization
+default value
+declaration
+syntax
+syntactic
+counter
+signature
+variable
+regexp
+cut-paste error
+cut paste error
+operator
+inconsistent name
+parameter
+argument
+procedure
+typo
+copy paste error
+copy-paste error
+syntax
+exception
+params
+rgx
+data type
+data-type
+indentation
+parenthesis

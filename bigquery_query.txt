@@ -1,0 +1,4 @@
+SELECT language.name, COUNT(language.name)
+FROM [bigquery-public-data:github_repos.languages]
+WHERE language.name!='null'
+GROUP BY language.name;
