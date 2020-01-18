@@ -18,6 +18,9 @@ You will also need to run the following command on terminal to download the pre-
 python -m spacy download en_trf_distilbertbaseuncased_lg
 ```
 
+Data used to conduct experiments can be downloaded from the following link
+https://drive.google.com/drive/folders/1w5pY75aVqHDizbtDKQHRgxv6YGjAvyMD?usp=sharing
+
 ### Artifcat details
 The following list explains as in which order the artifacts should be executed:
 1) bigquery_query.txt
