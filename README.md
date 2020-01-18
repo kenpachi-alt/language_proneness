@@ -35,4 +35,5 @@ The following list explains as in which order the artifacts should be executed:
 
 After running these files you can goto individual RQ questions and run the relevant R scripts to get the results
 
-Start from step 4 if you want to reproduce the results of the paper. you just need dataset.csv to get started
+Start from step 4 if you want to reproduce the results of the paper. you just need dataset.csv to get started.
+We have also provided the final csv's required to answer the RQs within each folder as executing the whole project is a time intensive task
